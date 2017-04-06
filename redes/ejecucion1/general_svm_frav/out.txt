@@ -1,0 +1,569 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((653, 49152), (187, 49152), (93, 49152))
+((653,), (187,), (93,))
+(49152,)
+n_train_samples: 653
+n_valid_samples: 93
+n_test_samples: 187
+n_batches:
+n_train_batches: 32
+n_valid_batches: 4
+n_test_batches: 9
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 32
+ 
+('n_train_batches', 32)
+('training @ iter = ', 0)
+epoch 1, minibatch 32/32, validation error 40.000000 %, cost 0.017822
+epoch 2, minibatch 32/32, validation error 40.000000 %, cost 0.024927
+epoch 3, minibatch 32/32, validation error 40.000000 %, cost 0.034076
+('training @ iter = ', 100)
+epoch 4, minibatch 32/32, validation error 40.000000 %, cost 0.034232
+epoch 5, minibatch 32/32, validation error 40.000000 %, cost 0.033886
+epoch 6, minibatch 32/32, validation error 40.000000 %, cost 0.028274
+('training @ iter = ', 200)
+epoch 7, minibatch 32/32, validation error 40.000000 %, cost 0.034337
+epoch 8, minibatch 32/32, validation error 40.000000 %, cost 0.042488
+epoch 9, minibatch 32/32, validation error 40.000000 %, cost 0.041199
+('training @ iter = ', 300)
+epoch 10, minibatch 32/32, validation error 40.000000 %, cost 0.041317
+epoch 11, minibatch 32/32, validation error 40.000000 %, cost 0.036673
+epoch 12, minibatch 32/32, validation error 40.000000 %, cost 0.039196
+('training @ iter = ', 400)
+epoch 13, minibatch 32/32, validation error 40.000000 %, cost 0.034695
+epoch 14, minibatch 32/32, validation error 40.000000 %, cost 0.033216
+epoch 15, minibatch 32/32, validation error 40.000000 %, cost 0.032363
+('training @ iter = ', 500)
+epoch 16, minibatch 32/32, validation error 40.000000 %, cost 0.030132
+epoch 17, minibatch 32/32, validation error 40.000000 %, cost 0.027558
+epoch 18, minibatch 32/32, validation error 40.000000 %, cost 0.022687
+('training @ iter = ', 600)
+epoch 19, minibatch 32/32, validation error 40.000000 %, cost 0.023392
+epoch 20, minibatch 32/32, validation error 40.000000 %, cost 0.016507
+epoch 21, minibatch 32/32, validation error 40.000000 %, cost 0.018574
+('training @ iter = ', 700)
+epoch 22, minibatch 32/32, validation error 40.000000 %, cost 0.018697
+epoch 23, minibatch 32/32, validation error 38.750000 %, cost 0.019036
+epoch 24, minibatch 32/32, validation error 35.000000 %, cost 0.022938
+epoch 25, minibatch 32/32, validation error 35.000000 %, cost 0.024098
+('training @ iter = ', 800)
+epoch 26, minibatch 32/32, validation error 33.750000 %, cost 0.016147
+epoch 27, minibatch 32/32, validation error 31.250000 %, cost 0.030061
+epoch 28, minibatch 32/32, validation error 31.250000 %, cost 0.018754
+('training @ iter = ', 900)
+epoch 29, minibatch 32/32, validation error 37.500000 %, cost 0.013881
+epoch 30, minibatch 32/32, validation error 31.250000 %, cost 0.021805
+epoch 31, minibatch 32/32, validation error 31.250000 %, cost 0.026608
+('training @ iter = ', 1000)
+epoch 32, minibatch 32/32, validation error 30.000000 %, cost 0.016195
+epoch 33, minibatch 32/32, validation error 28.750000 %, cost 0.017508
+epoch 34, minibatch 32/32, validation error 31.250000 %, cost 0.018595
+('training @ iter = ', 1100)
+epoch 35, minibatch 32/32, validation error 28.750000 %, cost 0.014053
+epoch 36, minibatch 32/32, validation error 28.750000 %, cost 0.014712
+epoch 37, minibatch 32/32, validation error 28.750000 %, cost 0.021435
+('training @ iter = ', 1200)
+epoch 38, minibatch 32/32, validation error 26.250000 %, cost 0.010873
+epoch 39, minibatch 32/32, validation error 26.250000 %, cost 0.013474
+epoch 40, minibatch 32/32, validation error 28.750000 %, cost 0.017052
+('training @ iter = ', 1300)
+epoch 41, minibatch 32/32, validation error 26.250000 %, cost 0.010927
+epoch 42, minibatch 32/32, validation error 36.250000 %, cost 0.012208
+epoch 43, minibatch 32/32, validation error 26.250000 %, cost 0.014872
+('training @ iter = ', 1400)
+epoch 44, minibatch 32/32, validation error 38.750000 %, cost 0.020144
+epoch 45, minibatch 32/32, validation error 32.500000 %, cost 0.014888
+epoch 46, minibatch 32/32, validation error 32.500000 %, cost 0.009498
+('training @ iter = ', 1500)
+epoch 47, minibatch 32/32, validation error 30.000000 %, cost 0.013312
+epoch 48, minibatch 32/32, validation error 40.000000 %, cost 0.014900
+epoch 49, minibatch 32/32, validation error 27.500000 %, cost 0.007571
+epoch 50, minibatch 32/32, validation error 36.250000 %, cost 0.017531
+('training @ iter = ', 1600)
+epoch 51, minibatch 32/32, validation error 31.250000 %, cost 0.009241
+epoch 52, minibatch 32/32, validation error 30.000000 %, cost 0.013685
+epoch 53, minibatch 32/32, validation error 26.250000 %, cost 0.020862
+('training @ iter = ', 1700)
+epoch 54, minibatch 32/32, validation error 36.250000 %, cost 0.003482
+epoch 55, minibatch 32/32, validation error 40.000000 %, cost 0.025346
+epoch 56, minibatch 32/32, validation error 26.250000 %, cost 0.012951
+('training @ iter = ', 1800)
+epoch 57, minibatch 32/32, validation error 40.000000 %, cost 0.012292
+epoch 58, minibatch 32/32, validation error 40.000000 %, cost 0.035583
+epoch 59, minibatch 32/32, validation error 40.000000 %, cost 0.017911
+('training @ iter = ', 1900)
+epoch 60, minibatch 32/32, validation error 32.500000 %, cost 0.014853
+epoch 61, minibatch 32/32, validation error 35.000000 %, cost 0.014241
+epoch 62, minibatch 32/32, validation error 40.000000 %, cost 0.020253
+('training @ iter = ', 2000)
+epoch 63, minibatch 32/32, validation error 35.000000 %, cost 0.020286
+epoch 64, minibatch 32/32, validation error 40.000000 %, cost 0.013680
+epoch 65, minibatch 32/32, validation error 35.000000 %, cost 0.014012
+('training @ iter = ', 2100)
+epoch 66, minibatch 32/32, validation error 40.000000 %, cost 0.014640
+epoch 67, minibatch 32/32, validation error 30.000000 %, cost 0.017245
+epoch 68, minibatch 32/32, validation error 33.750000 %, cost 0.029019
+('training @ iter = ', 2200)
+epoch 69, minibatch 32/32, validation error 33.750000 %, cost 0.008964
+epoch 70, minibatch 32/32, validation error 32.500000 %, cost 0.009198
+epoch 71, minibatch 32/32, validation error 32.500000 %, cost 0.010838
+('training @ iter = ', 2300)
+epoch 72, minibatch 32/32, validation error 30.000000 %, cost 0.005624
+epoch 73, minibatch 32/32, validation error 30.000000 %, cost 0.021674
+epoch 74, minibatch 32/32, validation error 27.500000 %, cost 0.020775
+epoch 75, minibatch 32/32, validation error 26.250000 %, cost 0.007917
+('training @ iter = ', 2400)
+epoch 76, minibatch 32/32, validation error 27.500000 %, cost 0.004911
+epoch 77, minibatch 32/32, validation error 28.750000 %, cost 0.008107
+epoch 78, minibatch 32/32, validation error 40.000000 %, cost 0.016898
+('training @ iter = ', 2500)
+epoch 79, minibatch 32/32, validation error 33.750000 %, cost 0.019596
+epoch 80, minibatch 32/32, validation error 40.000000 %, cost 0.004031
+epoch 81, minibatch 32/32, validation error 28.750000 %, cost 0.003899
+('training @ iter = ', 2600)
+epoch 82, minibatch 32/32, validation error 38.750000 %, cost 0.016839
+epoch 83, minibatch 32/32, validation error 27.500000 %, cost 0.007394
+epoch 84, minibatch 32/32, validation error 31.250000 %, cost 0.007948
+('training @ iter = ', 2700)
+epoch 85, minibatch 32/32, validation error 32.500000 %, cost 0.023476
+epoch 86, minibatch 32/32, validation error 30.000000 %, cost 0.015805
+epoch 87, minibatch 32/32, validation error 27.500000 %, cost 0.012158
+('training @ iter = ', 2800)
+epoch 88, minibatch 32/32, validation error 23.750000 %, cost 0.010065
+epoch 89, minibatch 32/32, validation error 28.750000 %, cost 0.007659
+epoch 90, minibatch 32/32, validation error 36.250000 %, cost 0.004288
+('training @ iter = ', 2900)
+epoch 91, minibatch 32/32, validation error 27.500000 %, cost 0.019180
+epoch 92, minibatch 32/32, validation error 25.000000 %, cost 0.006152
+epoch 93, minibatch 32/32, validation error 40.000000 %, cost 0.045425
+('training @ iter = ', 3000)
+epoch 94, minibatch 32/32, validation error 35.000000 %, cost 0.007063
+epoch 95, minibatch 32/32, validation error 33.750000 %, cost 0.006575
+epoch 96, minibatch 32/32, validation error 37.500000 %, cost 0.003937
+('training @ iter = ', 3100)
+epoch 97, minibatch 32/32, validation error 26.250000 %, cost 0.014178
+epoch 98, minibatch 32/32, validation error 28.750000 %, cost 0.004628
+epoch 99, minibatch 32/32, validation error 28.750000 %, cost 0.002696
+epoch 100, minibatch 32/32, validation error 35.000000 %, cost 0.008296
+('training @ iter = ', 3200)
+epoch 101, minibatch 32/32, validation error 25.000000 %, cost 0.005185
+epoch 102, minibatch 32/32, validation error 22.500000 %, cost 0.040787
+epoch 103, minibatch 32/32, validation error 23.750000 %, cost 0.002890
+('training @ iter = ', 3300)
+epoch 104, minibatch 32/32, validation error 22.500000 %, cost 0.004802
+epoch 105, minibatch 32/32, validation error 32.500000 %, cost 0.022112
+epoch 106, minibatch 32/32, validation error 26.250000 %, cost 0.006523
+('training @ iter = ', 3400)
+epoch 107, minibatch 32/32, validation error 22.500000 %, cost 0.000965
+epoch 108, minibatch 32/32, validation error 26.250000 %, cost 0.011258
+epoch 109, minibatch 32/32, validation error 33.750000 %, cost 0.012802
+('training @ iter = ', 3500)
+epoch 110, minibatch 32/32, validation error 17.500000 %, cost 0.002826
+epoch 111, minibatch 32/32, validation error 28.750000 %, cost 0.005686
+epoch 112, minibatch 32/32, validation error 22.500000 %, cost 0.006297
+('training @ iter = ', 3600)
+epoch 113, minibatch 32/32, validation error 20.000000 %, cost 0.009899
+epoch 114, minibatch 32/32, validation error 37.500000 %, cost 0.015637
+epoch 115, minibatch 32/32, validation error 35.000000 %, cost 0.003134
+('training @ iter = ', 3700)
+epoch 116, minibatch 32/32, validation error 28.750000 %, cost 0.009910
+epoch 117, minibatch 32/32, validation error 40.000000 %, cost 0.015805
+epoch 118, minibatch 32/32, validation error 33.750000 %, cost 0.000697
+('training @ iter = ', 3800)
+epoch 119, minibatch 32/32, validation error 26.250000 %, cost 0.015107
+epoch 120, minibatch 32/32, validation error 27.500000 %, cost 0.014508
+epoch 121, minibatch 32/32, validation error 27.500000 %, cost 0.003207
+('training @ iter = ', 3900)
+epoch 122, minibatch 32/32, validation error 40.000000 %, cost 0.002379
+epoch 123, minibatch 32/32, validation error 37.500000 %, cost 0.039424
+epoch 124, minibatch 32/32, validation error 27.500000 %, cost 0.003054
+epoch 125, minibatch 32/32, validation error 22.500000 %, cost 0.006624
+('training @ iter = ', 4000)
+epoch 126, minibatch 32/32, validation error 22.500000 %, cost 0.003730
+epoch 127, minibatch 32/32, validation error 28.750000 %, cost 0.011929
+epoch 128, minibatch 32/32, validation error 28.750000 %, cost 0.000642
+('training @ iter = ', 4100)
+epoch 129, minibatch 32/32, validation error 22.500000 %, cost 0.001950
+epoch 130, minibatch 32/32, validation error 22.500000 %, cost 0.005154
+epoch 131, minibatch 32/32, validation error 32.500000 %, cost 0.003836
+('training @ iter = ', 4200)
+epoch 132, minibatch 32/32, validation error 31.250000 %, cost 0.004157
+epoch 133, minibatch 32/32, validation error 20.000000 %, cost 0.006060
+epoch 134, minibatch 32/32, validation error 37.500000 %, cost 0.000564
+('training @ iter = ', 4300)
+epoch 135, minibatch 32/32, validation error 23.750000 %, cost 0.001788
+epoch 136, minibatch 32/32, validation error 37.500000 %, cost 0.001923
+epoch 137, minibatch 32/32, validation error 16.250000 %, cost 0.018349
+('training @ iter = ', 4400)
+epoch 138, minibatch 32/32, validation error 23.750000 %, cost 0.009918
+epoch 139, minibatch 32/32, validation error 33.750000 %, cost 0.006703
+epoch 140, minibatch 32/32, validation error 27.500000 %, cost 0.006770
+('training @ iter = ', 4500)
+epoch 141, minibatch 32/32, validation error 26.250000 %, cost 0.002088
+epoch 142, minibatch 32/32, validation error 27.500000 %, cost 0.001334
+epoch 143, minibatch 32/32, validation error 26.250000 %, cost 0.001188
+('training @ iter = ', 4600)
+epoch 144, minibatch 32/32, validation error 32.500000 %, cost 0.071539
+epoch 145, minibatch 32/32, validation error 27.500000 %, cost 0.004855
+epoch 146, minibatch 32/32, validation error 32.500000 %, cost 0.064140
+('training @ iter = ', 4700)
+epoch 147, minibatch 32/32, validation error 40.000000 %, cost 0.009620
+epoch 148, minibatch 32/32, validation error 23.750000 %, cost 0.013174
+epoch 149, minibatch 32/32, validation error 23.750000 %, cost 0.018018
+epoch 150, minibatch 32/32, validation error 31.250000 %, cost 0.000412
+('training @ iter = ', 4800)
+epoch 151, minibatch 32/32, validation error 22.500000 %, cost 0.018585
+epoch 152, minibatch 32/32, validation error 22.500000 %, cost 0.002691
+epoch 153, minibatch 32/32, validation error 27.500000 %, cost 0.020593
+('training @ iter = ', 4900)
+epoch 154, minibatch 32/32, validation error 32.500000 %, cost 0.053593
+epoch 155, minibatch 32/32, validation error 23.750000 %, cost 0.004738
+epoch 156, minibatch 32/32, validation error 27.500000 %, cost 0.001631
+('training @ iter = ', 5000)
+epoch 157, minibatch 32/32, validation error 23.750000 %, cost 0.002723
+epoch 158, minibatch 32/32, validation error 31.250000 %, cost 0.025735
+epoch 159, minibatch 32/32, validation error 26.250000 %, cost 0.035636
+('training @ iter = ', 5100)
+epoch 160, minibatch 32/32, validation error 23.750000 %, cost 0.009188
+epoch 161, minibatch 32/32, validation error 20.000000 %, cost 0.011836
+epoch 162, minibatch 32/32, validation error 32.500000 %, cost 0.014043
+('training @ iter = ', 5200)
+epoch 163, minibatch 32/32, validation error 22.500000 %, cost 0.009116
+epoch 164, minibatch 32/32, validation error 22.500000 %, cost 0.001107
+epoch 165, minibatch 32/32, validation error 25.000000 %, cost 0.000270
+('training @ iter = ', 5300)
+epoch 166, minibatch 32/32, validation error 23.750000 %, cost 0.003366
+epoch 167, minibatch 32/32, validation error 28.750000 %, cost 0.004228
+epoch 168, minibatch 32/32, validation error 31.250000 %, cost 0.007771
+('training @ iter = ', 5400)
+epoch 169, minibatch 32/32, validation error 25.000000 %, cost 0.010681
+epoch 170, minibatch 32/32, validation error 31.250000 %, cost 0.050481
+epoch 171, minibatch 32/32, validation error 26.250000 %, cost 0.001201
+('training @ iter = ', 5500)
+epoch 172, minibatch 32/32, validation error 30.000000 %, cost 0.000581
+epoch 173, minibatch 32/32, validation error 21.250000 %, cost 0.000578
+epoch 174, minibatch 32/32, validation error 32.500000 %, cost 0.008540
+epoch 175, minibatch 32/32, validation error 21.250000 %, cost 0.004630
+('training @ iter = ', 5600)
+epoch 176, minibatch 32/32, validation error 23.750000 %, cost 0.002775
+epoch 177, minibatch 32/32, validation error 18.750000 %, cost 0.000821
+epoch 178, minibatch 32/32, validation error 23.750000 %, cost 0.000971
+('training @ iter = ', 5700)
+epoch 179, minibatch 32/32, validation error 25.000000 %, cost 0.002066
+epoch 180, minibatch 32/32, validation error 22.500000 %, cost 0.004552
+epoch 181, minibatch 32/32, validation error 31.250000 %, cost 0.091225
+('training @ iter = ', 5800)
+epoch 182, minibatch 32/32, validation error 25.000000 %, cost 0.024287
+epoch 183, minibatch 32/32, validation error 26.250000 %, cost 0.001731
+epoch 184, minibatch 32/32, validation error 27.500000 %, cost 0.000191
+('training @ iter = ', 5900)
+epoch 185, minibatch 32/32, validation error 21.250000 %, cost 0.000687
+epoch 186, minibatch 32/32, validation error 20.000000 %, cost 0.088377
+epoch 187, minibatch 32/32, validation error 17.500000 %, cost 0.004940
+('training @ iter = ', 6000)
+epoch 188, minibatch 32/32, validation error 18.750000 %, cost 0.003375
+epoch 189, minibatch 32/32, validation error 17.500000 %, cost 0.007420
+epoch 190, minibatch 32/32, validation error 15.000000 %, cost 0.005031
+('training @ iter = ', 6100)
+epoch 191, minibatch 32/32, validation error 21.250000 %, cost 0.005766
+epoch 192, minibatch 32/32, validation error 18.750000 %, cost 0.041954
+epoch 193, minibatch 32/32, validation error 23.750000 %, cost 0.006070
+('training @ iter = ', 6200)
+epoch 194, minibatch 32/32, validation error 16.250000 %, cost 0.001084
+epoch 195, minibatch 32/32, validation error 21.250000 %, cost 0.035076
+epoch 196, minibatch 32/32, validation error 13.750000 %, cost 0.030885
+('training @ iter = ', 6300)
+epoch 197, minibatch 32/32, validation error 26.250000 %, cost 0.000670
+epoch 198, minibatch 32/32, validation error 16.250000 %, cost 0.000217
+epoch 199, minibatch 32/32, validation error 15.000000 %, cost 0.002127
+epoch 200, minibatch 32/32, validation error 20.000000 %, cost 0.004895
+('training @ iter = ', 6400)
+epoch 201, minibatch 32/32, validation error 16.250000 %, cost 0.000016
+epoch 202, minibatch 32/32, validation error 27.500000 %, cost 0.015257
+epoch 203, minibatch 32/32, validation error 23.750000 %, cost 0.002250
+('training @ iter = ', 6500)
+epoch 204, minibatch 32/32, validation error 17.500000 %, cost 0.000602
+epoch 205, minibatch 32/32, validation error 17.500000 %, cost 0.001365
+epoch 206, minibatch 32/32, validation error 17.500000 %, cost 0.048430
+('training @ iter = ', 6600)
+epoch 207, minibatch 32/32, validation error 22.500000 %, cost 0.000114
+epoch 208, minibatch 32/32, validation error 15.000000 %, cost 0.003507
+epoch 209, minibatch 32/32, validation error 13.750000 %, cost 0.000663
+('training @ iter = ', 6700)
+epoch 210, minibatch 32/32, validation error 12.500000 %, cost 0.000974
+epoch 211, minibatch 32/32, validation error 13.750000 %, cost 0.000154
+epoch 212, minibatch 32/32, validation error 13.750000 %, cost 0.000379
+('training @ iter = ', 6800)
+epoch 213, minibatch 32/32, validation error 13.750000 %, cost 0.000160
+epoch 214, minibatch 32/32, validation error 15.000000 %, cost 0.000229
+epoch 215, minibatch 32/32, validation error 12.500000 %, cost 0.000316
+('training @ iter = ', 6900)
+epoch 216, minibatch 32/32, validation error 12.500000 %, cost 0.000351
+epoch 217, minibatch 32/32, validation error 12.500000 %, cost 0.000162
+epoch 218, minibatch 32/32, validation error 12.500000 %, cost 0.000281
+('training @ iter = ', 7000)
+epoch 219, minibatch 32/32, validation error 12.500000 %, cost 0.000076
+epoch 220, minibatch 32/32, validation error 12.500000 %, cost 0.000191
+epoch 221, minibatch 32/32, validation error 12.500000 %, cost 0.000108
+('training @ iter = ', 7100)
+epoch 222, minibatch 32/32, validation error 12.500000 %, cost 0.000240
+epoch 223, minibatch 32/32, validation error 12.500000 %, cost 0.000344
+epoch 224, minibatch 32/32, validation error 12.500000 %, cost 0.000096
+epoch 225, minibatch 32/32, validation error 12.500000 %, cost 0.000065
+('training @ iter = ', 7200)
+epoch 226, minibatch 32/32, validation error 12.500000 %, cost 0.000108
+epoch 227, minibatch 32/32, validation error 12.500000 %, cost 0.000163
+epoch 228, minibatch 32/32, validation error 12.500000 %, cost 0.000195
+('training @ iter = ', 7300)
+epoch 229, minibatch 32/32, validation error 12.500000 %, cost 0.000105
+epoch 230, minibatch 32/32, validation error 12.500000 %, cost 0.000181
+epoch 231, minibatch 32/32, validation error 12.500000 %, cost 0.000094
+('training @ iter = ', 7400)
+epoch 232, minibatch 32/32, validation error 12.500000 %, cost 0.000245
+epoch 233, minibatch 32/32, validation error 12.500000 %, cost 0.000088
+epoch 234, minibatch 32/32, validation error 12.500000 %, cost 0.000153
+('training @ iter = ', 7500)
+epoch 235, minibatch 32/32, validation error 12.500000 %, cost 0.000069
+epoch 236, minibatch 32/32, validation error 12.500000 %, cost 0.000100
+epoch 237, minibatch 32/32, validation error 12.500000 %, cost 0.000142
+('training @ iter = ', 7600)
+epoch 238, minibatch 32/32, validation error 12.500000 %, cost 0.000096
+epoch 239, minibatch 32/32, validation error 12.500000 %, cost 0.000107
+epoch 240, minibatch 32/32, validation error 12.500000 %, cost 0.000037
+('training @ iter = ', 7700)
+epoch 241, minibatch 32/32, validation error 12.500000 %, cost 0.000089
+epoch 242, minibatch 32/32, validation error 12.500000 %, cost 0.000073
+epoch 243, minibatch 32/32, validation error 12.500000 %, cost 0.000065
+('training @ iter = ', 7800)
+epoch 244, minibatch 32/32, validation error 12.500000 %, cost 0.000153
+epoch 245, minibatch 32/32, validation error 12.500000 %, cost 0.000061
+epoch 246, minibatch 32/32, validation error 12.500000 %, cost 0.000085
+('training @ iter = ', 7900)
+epoch 247, minibatch 32/32, validation error 12.500000 %, cost 0.000065
+epoch 248, minibatch 32/32, validation error 12.500000 %, cost 0.000106
+epoch 249, minibatch 32/32, validation error 12.500000 %, cost 0.000164
+epoch 250, minibatch 32/32, validation error 12.500000 %, cost 0.000049
+('training @ iter = ', 8000)
+epoch 251, minibatch 32/32, validation error 12.500000 %, cost 0.000081
+epoch 252, minibatch 32/32, validation error 12.500000 %, cost 0.000061
+epoch 253, minibatch 32/32, validation error 12.500000 %, cost 0.000047
+('training @ iter = ', 8100)
+epoch 254, minibatch 32/32, validation error 12.500000 %, cost 0.000078
+epoch 255, minibatch 32/32, validation error 12.500000 %, cost 0.000044
+epoch 256, minibatch 32/32, validation error 12.500000 %, cost 0.000115
+('training @ iter = ', 8200)
+epoch 257, minibatch 32/32, validation error 12.500000 %, cost 0.000192
+epoch 258, minibatch 32/32, validation error 12.500000 %, cost 0.000044
+epoch 259, minibatch 32/32, validation error 12.500000 %, cost 0.000085
+('training @ iter = ', 8300)
+epoch 260, minibatch 32/32, validation error 12.500000 %, cost 0.000073
+epoch 261, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 262, minibatch 32/32, validation error 12.500000 %, cost 0.000043
+('training @ iter = ', 8400)
+epoch 263, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+epoch 264, minibatch 32/32, validation error 12.500000 %, cost 0.000068
+epoch 265, minibatch 32/32, validation error 12.500000 %, cost 0.000088
+('training @ iter = ', 8500)
+epoch 266, minibatch 32/32, validation error 12.500000 %, cost 0.000046
+epoch 267, minibatch 32/32, validation error 12.500000 %, cost 0.000163
+epoch 268, minibatch 32/32, validation error 12.500000 %, cost 0.000066
+('training @ iter = ', 8600)
+epoch 269, minibatch 32/32, validation error 12.500000 %, cost 0.000041
+epoch 270, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 271, minibatch 32/32, validation error 12.500000 %, cost 0.000144
+('training @ iter = ', 8700)
+epoch 272, minibatch 32/32, validation error 12.500000 %, cost 0.000066
+epoch 273, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 274, minibatch 32/32, validation error 12.500000 %, cost 0.000077
+epoch 275, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+('training @ iter = ', 8800)
+epoch 276, minibatch 32/32, validation error 12.500000 %, cost 0.000039
+epoch 277, minibatch 32/32, validation error 12.500000 %, cost 0.000042
+epoch 278, minibatch 32/32, validation error 12.500000 %, cost 0.000153
+('training @ iter = ', 8900)
+epoch 279, minibatch 32/32, validation error 12.500000 %, cost 0.000056
+epoch 280, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 281, minibatch 32/32, validation error 12.500000 %, cost 0.000095
+('training @ iter = ', 9000)
+epoch 282, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+epoch 283, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+epoch 284, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+('training @ iter = ', 9100)
+epoch 285, minibatch 32/32, validation error 12.500000 %, cost 0.000085
+epoch 286, minibatch 32/32, validation error 12.500000 %, cost 0.000043
+epoch 287, minibatch 32/32, validation error 12.500000 %, cost 0.000053
+('training @ iter = ', 9200)
+epoch 288, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 289, minibatch 32/32, validation error 12.500000 %, cost 0.000078
+epoch 290, minibatch 32/32, validation error 12.500000 %, cost 0.000038
+('training @ iter = ', 9300)
+epoch 291, minibatch 32/32, validation error 12.500000 %, cost 0.000046
+epoch 292, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 293, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+('training @ iter = ', 9400)
+epoch 294, minibatch 32/32, validation error 12.500000 %, cost 0.000068
+epoch 295, minibatch 32/32, validation error 12.500000 %, cost 0.000077
+epoch 296, minibatch 32/32, validation error 12.500000 %, cost 0.000122
+('training @ iter = ', 9500)
+epoch 297, minibatch 32/32, validation error 12.500000 %, cost 0.000072
+epoch 298, minibatch 32/32, validation error 12.500000 %, cost 0.000022
+epoch 299, minibatch 32/32, validation error 12.500000 %, cost 0.000063
+epoch 300, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+('training @ iter = ', 9600)
+epoch 301, minibatch 32/32, validation error 12.500000 %, cost 0.000042
+epoch 302, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 303, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+('training @ iter = ', 9700)
+epoch 304, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 305, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 306, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 9800)
+epoch 307, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 308, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 309, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+('training @ iter = ', 9900)
+epoch 310, minibatch 32/32, validation error 12.500000 %, cost 0.000029
+epoch 311, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 312, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+('training @ iter = ', 10000)
+epoch 313, minibatch 32/32, validation error 12.500000 %, cost 0.000035
+epoch 314, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 315, minibatch 32/32, validation error 12.500000 %, cost 0.000046
+('training @ iter = ', 10100)
+epoch 316, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+epoch 317, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 318, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+('training @ iter = ', 10200)
+epoch 319, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 320, minibatch 32/32, validation error 12.500000 %, cost 0.000093
+epoch 321, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+('training @ iter = ', 10300)
+epoch 322, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 323, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 324, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 325, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+('training @ iter = ', 10400)
+epoch 326, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 327, minibatch 32/32, validation error 12.500000 %, cost 0.000088
+epoch 328, minibatch 32/32, validation error 12.500000 %, cost 0.000038
+('training @ iter = ', 10500)
+epoch 329, minibatch 32/32, validation error 12.500000 %, cost 0.000055
+epoch 330, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 331, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 10600)
+epoch 332, minibatch 32/32, validation error 12.500000 %, cost 0.000096
+epoch 333, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+epoch 334, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+('training @ iter = ', 10700)
+epoch 335, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 336, minibatch 32/32, validation error 12.500000 %, cost 0.000063
+epoch 337, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 10800)
+epoch 338, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+epoch 339, minibatch 32/32, validation error 12.500000 %, cost 0.000051
+epoch 340, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+('training @ iter = ', 10900)
+epoch 341, minibatch 32/32, validation error 12.500000 %, cost 0.000028
+epoch 342, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 343, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+('training @ iter = ', 11000)
+epoch 344, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 345, minibatch 32/32, validation error 12.500000 %, cost 0.000100
+epoch 346, minibatch 32/32, validation error 12.500000 %, cost 0.000086
+('training @ iter = ', 11100)
+epoch 347, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 348, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+epoch 349, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 350, minibatch 32/32, validation error 12.500000 %, cost 0.000059
+('training @ iter = ', 11200)
+epoch 351, minibatch 32/32, validation error 12.500000 %, cost 0.000035
+epoch 352, minibatch 32/32, validation error 12.500000 %, cost 0.000070
+epoch 353, minibatch 32/32, validation error 12.500000 %, cost 0.000029
+('training @ iter = ', 11300)
+epoch 354, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+epoch 355, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 356, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 11400)
+epoch 357, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+epoch 358, minibatch 32/32, validation error 12.500000 %, cost 0.000070
+epoch 359, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+('training @ iter = ', 11500)
+epoch 360, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 361, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 362, minibatch 32/32, validation error 12.500000 %, cost 0.000049
+('training @ iter = ', 11600)
+epoch 363, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 364, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+epoch 365, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+('training @ iter = ', 11700)
+epoch 366, minibatch 32/32, validation error 12.500000 %, cost 0.000044
+epoch 367, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 368, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+('training @ iter = ', 11800)
+epoch 369, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 370, minibatch 32/32, validation error 12.500000 %, cost 0.000112
+epoch 371, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 11900)
+epoch 372, minibatch 32/32, validation error 12.500000 %, cost 0.000060
+epoch 373, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+epoch 374, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 375, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+('training @ iter = ', 12000)
+epoch 376, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 377, minibatch 32/32, validation error 12.500000 %, cost 0.000078
+epoch 378, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+('training @ iter = ', 12100)
+epoch 379, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+epoch 380, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 381, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+('training @ iter = ', 12200)
+epoch 382, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 383, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 384, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+('training @ iter = ', 12300)
+epoch 385, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+epoch 386, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 387, minibatch 32/32, validation error 12.500000 %, cost 0.000028
+('training @ iter = ', 12400)
+epoch 388, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 389, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 390, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+('training @ iter = ', 12500)
+epoch 391, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 392, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 393, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+('training @ iter = ', 12600)
+epoch 394, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+epoch 395, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+epoch 396, minibatch 32/32, validation error 12.500000 %, cost 0.000056
+('training @ iter = ', 12700)
+epoch 397, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 398, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 399, minibatch 32/32, validation error 12.500000 %, cost 0.000042
+epoch 400, minibatch 32/32, validation error 12.500000 %, cost 0.000057
+('optimaC', 0.05)
+softmax
+ test error of best model 10.555556 %
+Optimization complete.
+Best validation score of 12.500000 % obtained at iteration 6720, with test performance 10.555556 %
+('SVM scores:', 0.88888888888888884)
+Class 0 has been misclassified  9 times
+Class 1 has been misclassified  11 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(136, 24, 11, 9)
+Area under the roc curve:
+0.0705418719212
+The code for file casia_Lenet.py ran for 180.55m

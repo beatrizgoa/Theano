@@ -1,0 +1,10 @@
+# En este archivo de python se va a utilizar la base de datos de FRAV y Casia de imagenes  y se va a seguir la configuracion de la CNN del paper 'Learn convolutional neural network for face anti-spoofing'
+
+import numpy
+import timeit
+from pylab import *
+from logistic_sgd import LogisticRegression
+from sklearn.svm import SVC
+import matplotlib.pyplot as plt
+from layers import *
+import sys

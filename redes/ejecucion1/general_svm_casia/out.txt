@@ -1,0 +1,465 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((137, 49152), (39, 49152), (20, 49152))
+((137,), (39,), (20,))
+(49152,)
+n_train_samples: 137
+n_valid_samples: 20
+n_test_samples: 39
+n_batches:
+n_train_batches: 6
+n_valid_batches: 1
+n_test_batches: 1
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 6
+ 
+('n_train_batches', 6)
+('training @ iter = ', 0)
+epoch 1, minibatch 6/6, validation error 10.000000 %, cost 1.485437
+epoch 2, minibatch 6/6, validation error 10.000000 %, cost 0.494269
+epoch 3, minibatch 6/6, validation error 10.000000 %, cost 0.309304
+epoch 4, minibatch 6/6, validation error 10.000000 %, cost 0.498116
+epoch 5, minibatch 6/6, validation error 10.000000 %, cost 0.507035
+epoch 6, minibatch 6/6, validation error 10.000000 %, cost 0.537807
+epoch 7, minibatch 6/6, validation error 10.000000 %, cost 0.531896
+epoch 8, minibatch 6/6, validation error 10.000000 %, cost 0.516702
+epoch 9, minibatch 6/6, validation error 10.000000 %, cost 0.511728
+epoch 10, minibatch 6/6, validation error 10.000000 %, cost 0.600028
+epoch 11, minibatch 6/6, validation error 10.000000 %, cost 0.639755
+epoch 12, minibatch 6/6, validation error 10.000000 %, cost 0.591900
+epoch 13, minibatch 6/6, validation error 10.000000 %, cost 0.642523
+epoch 14, minibatch 6/6, validation error 10.000000 %, cost 0.567396
+epoch 15, minibatch 6/6, validation error 10.000000 %, cost 0.578831
+epoch 16, minibatch 6/6, validation error 10.000000 %, cost 0.582427
+('training @ iter = ', 100)
+epoch 17, minibatch 6/6, validation error 10.000000 %, cost 0.608589
+epoch 18, minibatch 6/6, validation error 10.000000 %, cost 0.575476
+epoch 19, minibatch 6/6, validation error 10.000000 %, cost 0.591189
+epoch 20, minibatch 6/6, validation error 10.000000 %, cost 0.565431
+epoch 21, minibatch 6/6, validation error 10.000000 %, cost 0.571450
+epoch 22, minibatch 6/6, validation error 10.000000 %, cost 0.567843
+epoch 23, minibatch 6/6, validation error 10.000000 %, cost 0.595021
+epoch 24, minibatch 6/6, validation error 10.000000 %, cost 0.601528
+epoch 25, minibatch 6/6, validation error 10.000000 %, cost 0.563992
+epoch 26, minibatch 6/6, validation error 10.000000 %, cost 0.597764
+epoch 27, minibatch 6/6, validation error 10.000000 %, cost 0.572608
+epoch 28, minibatch 6/6, validation error 10.000000 %, cost 0.606331
+epoch 29, minibatch 6/6, validation error 10.000000 %, cost 0.552168
+epoch 30, minibatch 6/6, validation error 10.000000 %, cost 0.535217
+epoch 31, minibatch 6/6, validation error 10.000000 %, cost 0.583688
+epoch 32, minibatch 6/6, validation error 10.000000 %, cost 0.588091
+epoch 33, minibatch 6/6, validation error 10.000000 %, cost 0.582905
+('training @ iter = ', 200)
+epoch 34, minibatch 6/6, validation error 10.000000 %, cost 0.557964
+epoch 35, minibatch 6/6, validation error 10.000000 %, cost 0.573690
+epoch 36, minibatch 6/6, validation error 10.000000 %, cost 0.581050
+epoch 37, minibatch 6/6, validation error 10.000000 %, cost 0.535660
+epoch 38, minibatch 6/6, validation error 10.000000 %, cost 0.583567
+epoch 39, minibatch 6/6, validation error 10.000000 %, cost 0.558707
+epoch 40, minibatch 6/6, validation error 10.000000 %, cost 0.596987
+epoch 41, minibatch 6/6, validation error 10.000000 %, cost 0.601322
+epoch 42, minibatch 6/6, validation error 10.000000 %, cost 0.544739
+epoch 43, minibatch 6/6, validation error 10.000000 %, cost 0.543967
+epoch 44, minibatch 6/6, validation error 10.000000 %, cost 0.553146
+epoch 45, minibatch 6/6, validation error 10.000000 %, cost 0.575920
+epoch 46, minibatch 6/6, validation error 10.000000 %, cost 0.535695
+epoch 47, minibatch 6/6, validation error 10.000000 %, cost 0.539513
+epoch 48, minibatch 6/6, validation error 10.000000 %, cost 0.586739
+epoch 49, minibatch 6/6, validation error 10.000000 %, cost 0.551381
+epoch 50, minibatch 6/6, validation error 10.000000 %, cost 0.536895
+('training @ iter = ', 300)
+epoch 51, minibatch 6/6, validation error 10.000000 %, cost 0.525675
+epoch 52, minibatch 6/6, validation error 10.000000 %, cost 0.563712
+epoch 53, minibatch 6/6, validation error 10.000000 %, cost 0.559307
+epoch 54, minibatch 6/6, validation error 10.000000 %, cost 0.510602
+epoch 55, minibatch 6/6, validation error 10.000000 %, cost 0.554135
+epoch 56, minibatch 6/6, validation error 10.000000 %, cost 0.578567
+epoch 57, minibatch 6/6, validation error 10.000000 %, cost 0.540534
+epoch 58, minibatch 6/6, validation error 10.000000 %, cost 0.543221
+epoch 59, minibatch 6/6, validation error 10.000000 %, cost 0.551425
+epoch 60, minibatch 6/6, validation error 10.000000 %, cost 0.518300
+epoch 61, minibatch 6/6, validation error 10.000000 %, cost 0.564458
+epoch 62, minibatch 6/6, validation error 10.000000 %, cost 0.519298
+epoch 63, minibatch 6/6, validation error 10.000000 %, cost 0.545648
+epoch 64, minibatch 6/6, validation error 10.000000 %, cost 0.499256
+epoch 65, minibatch 6/6, validation error 10.000000 %, cost 0.540675
+epoch 66, minibatch 6/6, validation error 10.000000 %, cost 0.520187
+('training @ iter = ', 400)
+epoch 67, minibatch 6/6, validation error 10.000000 %, cost 0.499079
+epoch 68, minibatch 6/6, validation error 10.000000 %, cost 0.488142
+epoch 69, minibatch 6/6, validation error 10.000000 %, cost 0.455650
+epoch 70, minibatch 6/6, validation error 10.000000 %, cost 0.468409
+epoch 71, minibatch 6/6, validation error 10.000000 %, cost 0.461708
+epoch 72, minibatch 6/6, validation error 10.000000 %, cost 0.466675
+epoch 73, minibatch 6/6, validation error 10.000000 %, cost 0.412756
+epoch 74, minibatch 6/6, validation error 10.000000 %, cost 0.414959
+epoch 75, minibatch 6/6, validation error 10.000000 %, cost 0.452005
+epoch 76, minibatch 6/6, validation error 10.000000 %, cost 0.470515
+epoch 77, minibatch 6/6, validation error 10.000000 %, cost 0.469593
+epoch 78, minibatch 6/6, validation error 10.000000 %, cost 0.445305
+epoch 79, minibatch 6/6, validation error 10.000000 %, cost 0.433705
+epoch 80, minibatch 6/6, validation error 10.000000 %, cost 0.409691
+epoch 81, minibatch 6/6, validation error 10.000000 %, cost 0.349555
+epoch 82, minibatch 6/6, validation error 10.000000 %, cost 0.400995
+epoch 83, minibatch 6/6, validation error 10.000000 %, cost 0.505362
+('training @ iter = ', 500)
+epoch 84, minibatch 6/6, validation error 10.000000 %, cost 0.422430
+epoch 85, minibatch 6/6, validation error 5.000000 %, cost 0.381774
+epoch 86, minibatch 6/6, validation error 5.000000 %, cost 0.424007
+epoch 87, minibatch 6/6, validation error 10.000000 %, cost 0.364369
+epoch 88, minibatch 6/6, validation error 5.000000 %, cost 0.293419
+epoch 89, minibatch 6/6, validation error 5.000000 %, cost 0.448144
+epoch 90, minibatch 6/6, validation error 5.000000 %, cost 0.431433
+epoch 91, minibatch 6/6, validation error 10.000000 %, cost 0.565782
+epoch 92, minibatch 6/6, validation error 5.000000 %, cost 0.484689
+epoch 93, minibatch 6/6, validation error 5.000000 %, cost 0.416452
+epoch 94, minibatch 6/6, validation error 5.000000 %, cost 0.423838
+epoch 95, minibatch 6/6, validation error 10.000000 %, cost 0.517652
+epoch 96, minibatch 6/6, validation error 5.000000 %, cost 0.427332
+epoch 97, minibatch 6/6, validation error 10.000000 %, cost 0.352211
+epoch 98, minibatch 6/6, validation error 10.000000 %, cost 0.471269
+epoch 99, minibatch 6/6, validation error 10.000000 %, cost 0.424577
+epoch 100, minibatch 6/6, validation error 10.000000 %, cost 0.561298
+('training @ iter = ', 600)
+epoch 101, minibatch 6/6, validation error 5.000000 %, cost 0.327415
+epoch 102, minibatch 6/6, validation error 10.000000 %, cost 0.885967
+epoch 103, minibatch 6/6, validation error 10.000000 %, cost 0.550963
+epoch 104, minibatch 6/6, validation error 5.000000 %, cost 0.439060
+epoch 105, minibatch 6/6, validation error 5.000000 %, cost 0.319115
+epoch 106, minibatch 6/6, validation error 10.000000 %, cost 0.321821
+epoch 107, minibatch 6/6, validation error 10.000000 %, cost 0.264250
+epoch 108, minibatch 6/6, validation error 10.000000 %, cost 0.950559
+epoch 109, minibatch 6/6, validation error 10.000000 %, cost 0.533810
+epoch 110, minibatch 6/6, validation error 10.000000 %, cost 0.524164
+epoch 111, minibatch 6/6, validation error 10.000000 %, cost 0.595695
+epoch 112, minibatch 6/6, validation error 10.000000 %, cost 0.604732
+epoch 113, minibatch 6/6, validation error 10.000000 %, cost 0.573751
+epoch 114, minibatch 6/6, validation error 10.000000 %, cost 0.552645
+epoch 115, minibatch 6/6, validation error 10.000000 %, cost 0.545776
+epoch 116, minibatch 6/6, validation error 10.000000 %, cost 0.555957
+('training @ iter = ', 700)
+epoch 117, minibatch 6/6, validation error 10.000000 %, cost 0.553654
+epoch 118, minibatch 6/6, validation error 10.000000 %, cost 0.537366
+epoch 119, minibatch 6/6, validation error 10.000000 %, cost 0.569270
+epoch 120, minibatch 6/6, validation error 10.000000 %, cost 0.548646
+epoch 121, minibatch 6/6, validation error 10.000000 %, cost 0.493700
+epoch 122, minibatch 6/6, validation error 10.000000 %, cost 0.504429
+epoch 123, minibatch 6/6, validation error 5.000000 %, cost 0.444772
+epoch 124, minibatch 6/6, validation error 5.000000 %, cost 0.330608
+epoch 125, minibatch 6/6, validation error 10.000000 %, cost 0.522980
+epoch 126, minibatch 6/6, validation error 5.000000 %, cost 0.369037
+epoch 127, minibatch 6/6, validation error 5.000000 %, cost 0.324306
+epoch 128, minibatch 6/6, validation error 10.000000 %, cost 0.414246
+epoch 129, minibatch 6/6, validation error 5.000000 %, cost 0.269845
+epoch 130, minibatch 6/6, validation error 10.000000 %, cost 0.270592
+epoch 131, minibatch 6/6, validation error 10.000000 %, cost 0.301843
+epoch 132, minibatch 6/6, validation error 15.000000 %, cost 0.474864
+epoch 133, minibatch 6/6, validation error 10.000000 %, cost 0.302817
+('training @ iter = ', 800)
+epoch 134, minibatch 6/6, validation error 10.000000 %, cost 0.215508
+epoch 135, minibatch 6/6, validation error 10.000000 %, cost 0.906408
+epoch 136, minibatch 6/6, validation error 10.000000 %, cost 0.556532
+epoch 137, minibatch 6/6, validation error 15.000000 %, cost 0.496597
+epoch 138, minibatch 6/6, validation error 15.000000 %, cost 0.504712
+epoch 139, minibatch 6/6, validation error 15.000000 %, cost 0.404062
+epoch 140, minibatch 6/6, validation error 10.000000 %, cost 0.353465
+epoch 141, minibatch 6/6, validation error 5.000000 %, cost 0.252360
+epoch 142, minibatch 6/6, validation error 10.000000 %, cost 0.721834
+epoch 143, minibatch 6/6, validation error 10.000000 %, cost 0.308004
+epoch 144, minibatch 6/6, validation error 10.000000 %, cost 0.243303
+epoch 145, minibatch 6/6, validation error 10.000000 %, cost 0.532833
+epoch 146, minibatch 6/6, validation error 20.000000 %, cost 0.453636
+epoch 147, minibatch 6/6, validation error 10.000000 %, cost 0.296907
+epoch 148, minibatch 6/6, validation error 10.000000 %, cost 0.648389
+epoch 149, minibatch 6/6, validation error 10.000000 %, cost 0.413512
+epoch 150, minibatch 6/6, validation error 15.000000 %, cost 0.203977
+('training @ iter = ', 900)
+epoch 151, minibatch 6/6, validation error 10.000000 %, cost 0.305831
+epoch 152, minibatch 6/6, validation error 15.000000 %, cost 0.365260
+epoch 153, minibatch 6/6, validation error 15.000000 %, cost 0.238881
+epoch 154, minibatch 6/6, validation error 10.000000 %, cost 0.536514
+epoch 155, minibatch 6/6, validation error 30.000000 %, cost 0.466132
+epoch 156, minibatch 6/6, validation error 15.000000 %, cost 0.234508
+epoch 157, minibatch 6/6, validation error 10.000000 %, cost 0.445964
+epoch 158, minibatch 6/6, validation error 10.000000 %, cost 0.438107
+epoch 159, minibatch 6/6, validation error 10.000000 %, cost 1.122021
+epoch 160, minibatch 6/6, validation error 30.000000 %, cost 0.334623
+epoch 161, minibatch 6/6, validation error 10.000000 %, cost 0.302251
+epoch 162, minibatch 6/6, validation error 10.000000 %, cost 0.190736
+epoch 163, minibatch 6/6, validation error 10.000000 %, cost 0.208603
+epoch 164, minibatch 6/6, validation error 15.000000 %, cost 0.224434
+epoch 165, minibatch 6/6, validation error 15.000000 %, cost 0.171071
+epoch 166, minibatch 6/6, validation error 10.000000 %, cost 0.168979
+('training @ iter = ', 1000)
+epoch 167, minibatch 6/6, validation error 10.000000 %, cost 0.243420
+epoch 168, minibatch 6/6, validation error 10.000000 %, cost 0.718624
+epoch 169, minibatch 6/6, validation error 15.000000 %, cost 0.327712
+epoch 170, minibatch 6/6, validation error 10.000000 %, cost 0.174073
+epoch 171, minibatch 6/6, validation error 5.000000 %, cost 0.244282
+epoch 172, minibatch 6/6, validation error 15.000000 %, cost 0.143667
+epoch 173, minibatch 6/6, validation error 15.000000 %, cost 0.182192
+epoch 174, minibatch 6/6, validation error 15.000000 %, cost 0.114231
+epoch 175, minibatch 6/6, validation error 15.000000 %, cost 0.079221
+epoch 176, minibatch 6/6, validation error 5.000000 %, cost 0.224496
+epoch 177, minibatch 6/6, validation error 10.000000 %, cost 0.295896
+epoch 178, minibatch 6/6, validation error 10.000000 %, cost 0.172097
+epoch 179, minibatch 6/6, validation error 15.000000 %, cost 0.131951
+epoch 180, minibatch 6/6, validation error 10.000000 %, cost 0.195123
+epoch 181, minibatch 6/6, validation error 15.000000 %, cost 0.131521
+epoch 182, minibatch 6/6, validation error 15.000000 %, cost 0.069358
+epoch 183, minibatch 6/6, validation error 20.000000 %, cost 0.198260
+('training @ iter = ', 1100)
+epoch 184, minibatch 6/6, validation error 15.000000 %, cost 0.126166
+epoch 185, minibatch 6/6, validation error 15.000000 %, cost 0.122606
+epoch 186, minibatch 6/6, validation error 15.000000 %, cost 0.050791
+epoch 187, minibatch 6/6, validation error 15.000000 %, cost 0.066733
+epoch 188, minibatch 6/6, validation error 15.000000 %, cost 0.057627
+epoch 189, minibatch 6/6, validation error 15.000000 %, cost 0.203005
+epoch 190, minibatch 6/6, validation error 15.000000 %, cost 0.167384
+epoch 191, minibatch 6/6, validation error 15.000000 %, cost 0.081818
+epoch 192, minibatch 6/6, validation error 15.000000 %, cost 0.085992
+epoch 193, minibatch 6/6, validation error 10.000000 %, cost 0.202565
+epoch 194, minibatch 6/6, validation error 10.000000 %, cost 0.503285
+epoch 195, minibatch 6/6, validation error 10.000000 %, cost 0.463581
+epoch 196, minibatch 6/6, validation error 15.000000 %, cost 0.133753
+epoch 197, minibatch 6/6, validation error 15.000000 %, cost 0.096008
+epoch 198, minibatch 6/6, validation error 15.000000 %, cost 0.123551
+epoch 199, minibatch 6/6, validation error 25.000000 %, cost 0.152249
+epoch 200, minibatch 6/6, validation error 20.000000 %, cost 0.122524
+('training @ iter = ', 1200)
+epoch 201, minibatch 6/6, validation error 15.000000 %, cost 0.070689
+epoch 202, minibatch 6/6, validation error 15.000000 %, cost 0.098791
+epoch 203, minibatch 6/6, validation error 15.000000 %, cost 0.410276
+epoch 204, minibatch 6/6, validation error 10.000000 %, cost 0.269578
+epoch 205, minibatch 6/6, validation error 15.000000 %, cost 0.119987
+epoch 206, minibatch 6/6, validation error 15.000000 %, cost 0.121058
+epoch 207, minibatch 6/6, validation error 15.000000 %, cost 0.122792
+epoch 208, minibatch 6/6, validation error 15.000000 %, cost 0.106986
+epoch 209, minibatch 6/6, validation error 20.000000 %, cost 0.106396
+epoch 210, minibatch 6/6, validation error 15.000000 %, cost 0.061996
+epoch 211, minibatch 6/6, validation error 15.000000 %, cost 0.050260
+epoch 212, minibatch 6/6, validation error 15.000000 %, cost 0.060306
+epoch 213, minibatch 6/6, validation error 15.000000 %, cost 0.043738
+epoch 214, minibatch 6/6, validation error 15.000000 %, cost 0.054732
+epoch 215, minibatch 6/6, validation error 10.000000 %, cost 0.061404
+epoch 216, minibatch 6/6, validation error 30.000000 %, cost 0.756791
+('training @ iter = ', 1300)
+epoch 217, minibatch 6/6, validation error 30.000000 %, cost 0.336995
+epoch 218, minibatch 6/6, validation error 15.000000 %, cost 0.484079
+epoch 219, minibatch 6/6, validation error 10.000000 %, cost 0.341150
+epoch 220, minibatch 6/6, validation error 15.000000 %, cost 0.128785
+epoch 221, minibatch 6/6, validation error 15.000000 %, cost 0.105332
+epoch 222, minibatch 6/6, validation error 15.000000 %, cost 0.064774
+epoch 223, minibatch 6/6, validation error 15.000000 %, cost 0.038369
+epoch 224, minibatch 6/6, validation error 15.000000 %, cost 0.029722
+epoch 225, minibatch 6/6, validation error 15.000000 %, cost 0.017095
+epoch 226, minibatch 6/6, validation error 15.000000 %, cost 0.013828
+epoch 227, minibatch 6/6, validation error 10.000000 %, cost 0.117301
+epoch 228, minibatch 6/6, validation error 20.000000 %, cost 0.069687
+epoch 229, minibatch 6/6, validation error 15.000000 %, cost 0.028955
+epoch 230, minibatch 6/6, validation error 15.000000 %, cost 0.030225
+epoch 231, minibatch 6/6, validation error 15.000000 %, cost 0.043419
+epoch 232, minibatch 6/6, validation error 15.000000 %, cost 0.021966
+epoch 233, minibatch 6/6, validation error 15.000000 %, cost 0.011674
+('training @ iter = ', 1400)
+epoch 234, minibatch 6/6, validation error 15.000000 %, cost 0.005279
+epoch 235, minibatch 6/6, validation error 15.000000 %, cost 0.018671
+epoch 236, minibatch 6/6, validation error 15.000000 %, cost 0.010976
+epoch 237, minibatch 6/6, validation error 15.000000 %, cost 0.003896
+epoch 238, minibatch 6/6, validation error 15.000000 %, cost 0.021956
+epoch 239, minibatch 6/6, validation error 15.000000 %, cost 0.005722
+epoch 240, minibatch 6/6, validation error 15.000000 %, cost 0.003995
+epoch 241, minibatch 6/6, validation error 15.000000 %, cost 0.011594
+epoch 242, minibatch 6/6, validation error 15.000000 %, cost 0.004581
+epoch 243, minibatch 6/6, validation error 15.000000 %, cost 0.003233
+epoch 244, minibatch 6/6, validation error 15.000000 %, cost 0.016431
+epoch 245, minibatch 6/6, validation error 10.000000 %, cost 1.073875
+epoch 246, minibatch 6/6, validation error 15.000000 %, cost 0.357553
+epoch 247, minibatch 6/6, validation error 10.000000 %, cost 0.313980
+epoch 248, minibatch 6/6, validation error 20.000000 %, cost 0.242922
+epoch 249, minibatch 6/6, validation error 15.000000 %, cost 0.041278
+epoch 250, minibatch 6/6, validation error 15.000000 %, cost 0.036742
+('training @ iter = ', 1500)
+epoch 251, minibatch 6/6, validation error 15.000000 %, cost 0.048859
+epoch 252, minibatch 6/6, validation error 15.000000 %, cost 0.016552
+epoch 253, minibatch 6/6, validation error 15.000000 %, cost 0.020557
+epoch 254, minibatch 6/6, validation error 15.000000 %, cost 0.007659
+epoch 255, minibatch 6/6, validation error 15.000000 %, cost 1.034889
+epoch 256, minibatch 6/6, validation error 35.000000 %, cost 0.375403
+epoch 257, minibatch 6/6, validation error 55.000000 %, cost 0.356761
+epoch 258, minibatch 6/6, validation error 50.000000 %, cost 0.328727
+epoch 259, minibatch 6/6, validation error 45.000000 %, cost 0.411608
+epoch 260, minibatch 6/6, validation error 30.000000 %, cost 0.596913
+epoch 261, minibatch 6/6, validation error 55.000000 %, cost 0.379787
+epoch 262, minibatch 6/6, validation error 15.000000 %, cost 0.568552
+epoch 263, minibatch 6/6, validation error 45.000000 %, cost 0.418870
+epoch 264, minibatch 6/6, validation error 25.000000 %, cost 0.382088
+epoch 265, minibatch 6/6, validation error 15.000000 %, cost 0.738241
+epoch 266, minibatch 6/6, validation error 15.000000 %, cost 0.353774
+('training @ iter = ', 1600)
+epoch 267, minibatch 6/6, validation error 15.000000 %, cost 0.356963
+epoch 268, minibatch 6/6, validation error 15.000000 %, cost 0.113724
+epoch 269, minibatch 6/6, validation error 15.000000 %, cost 0.325229
+epoch 270, minibatch 6/6, validation error 20.000000 %, cost 0.164940
+epoch 271, minibatch 6/6, validation error 15.000000 %, cost 0.489418
+epoch 272, minibatch 6/6, validation error 5.000000 %, cost 0.160965
+epoch 273, minibatch 6/6, validation error 10.000000 %, cost 0.617677
+epoch 274, minibatch 6/6, validation error 10.000000 %, cost 0.466896
+epoch 275, minibatch 6/6, validation error 10.000000 %, cost 0.330252
+epoch 276, minibatch 6/6, validation error 10.000000 %, cost 0.229277
+epoch 277, minibatch 6/6, validation error 10.000000 %, cost 0.163468
+epoch 278, minibatch 6/6, validation error 45.000000 %, cost 0.168379
+epoch 279, minibatch 6/6, validation error 15.000000 %, cost 0.197123
+epoch 280, minibatch 6/6, validation error 55.000000 %, cost 0.143798
+epoch 281, minibatch 6/6, validation error 15.000000 %, cost 0.127922
+epoch 282, minibatch 6/6, validation error 10.000000 %, cost 0.142444
+epoch 283, minibatch 6/6, validation error 10.000000 %, cost 0.085006
+('training @ iter = ', 1700)
+epoch 284, minibatch 6/6, validation error 10.000000 %, cost 0.104195
+epoch 285, minibatch 6/6, validation error 15.000000 %, cost 0.013882
+epoch 286, minibatch 6/6, validation error 5.000000 %, cost 0.194798
+epoch 287, minibatch 6/6, validation error 20.000000 %, cost 0.409834
+epoch 288, minibatch 6/6, validation error 15.000000 %, cost 0.317014
+epoch 289, minibatch 6/6, validation error 10.000000 %, cost 0.169183
+epoch 290, minibatch 6/6, validation error 10.000000 %, cost 0.185692
+epoch 291, minibatch 6/6, validation error 35.000000 %, cost 0.103885
+epoch 292, minibatch 6/6, validation error 10.000000 %, cost 0.120842
+epoch 293, minibatch 6/6, validation error 10.000000 %, cost 0.158876
+epoch 294, minibatch 6/6, validation error 80.000000 %, cost 0.102911
+epoch 295, minibatch 6/6, validation error 10.000000 %, cost 0.193204
+epoch 296, minibatch 6/6, validation error 15.000000 %, cost 0.049403
+epoch 297, minibatch 6/6, validation error 15.000000 %, cost 0.022375
+epoch 298, minibatch 6/6, validation error 10.000000 %, cost 0.170641
+epoch 299, minibatch 6/6, validation error 20.000000 %, cost 0.296757
+epoch 300, minibatch 6/6, validation error 10.000000 %, cost 0.270831
+('training @ iter = ', 1800)
+epoch 301, minibatch 6/6, validation error 10.000000 %, cost 0.211587
+epoch 302, minibatch 6/6, validation error 10.000000 %, cost 0.076146
+epoch 303, minibatch 6/6, validation error 15.000000 %, cost 0.068821
+epoch 304, minibatch 6/6, validation error 15.000000 %, cost 0.054495
+epoch 305, minibatch 6/6, validation error 15.000000 %, cost 0.099372
+epoch 306, minibatch 6/6, validation error 15.000000 %, cost 0.060310
+epoch 307, minibatch 6/6, validation error 15.000000 %, cost 0.081927
+epoch 308, minibatch 6/6, validation error 15.000000 %, cost 0.042436
+epoch 309, minibatch 6/6, validation error 15.000000 %, cost 0.074334
+epoch 310, minibatch 6/6, validation error 15.000000 %, cost 0.050697
+epoch 311, minibatch 6/6, validation error 10.000000 %, cost 0.091750
+epoch 312, minibatch 6/6, validation error 10.000000 %, cost 1.028906
+epoch 313, minibatch 6/6, validation error 15.000000 %, cost 0.223530
+epoch 314, minibatch 6/6, validation error 15.000000 %, cost 0.195898
+epoch 315, minibatch 6/6, validation error 15.000000 %, cost 0.070303
+epoch 316, minibatch 6/6, validation error 15.000000 %, cost 0.066522
+('training @ iter = ', 1900)
+epoch 317, minibatch 6/6, validation error 15.000000 %, cost 0.043315
+epoch 318, minibatch 6/6, validation error 15.000000 %, cost 0.058286
+epoch 319, minibatch 6/6, validation error 15.000000 %, cost 0.015798
+epoch 320, minibatch 6/6, validation error 15.000000 %, cost 0.013648
+epoch 321, minibatch 6/6, validation error 15.000000 %, cost 0.018312
+epoch 322, minibatch 6/6, validation error 15.000000 %, cost 0.012132
+epoch 323, minibatch 6/6, validation error 15.000000 %, cost 0.032614
+epoch 324, minibatch 6/6, validation error 15.000000 %, cost 0.034555
+epoch 325, minibatch 6/6, validation error 15.000000 %, cost 0.009830
+epoch 326, minibatch 6/6, validation error 15.000000 %, cost 0.031986
+epoch 327, minibatch 6/6, validation error 15.000000 %, cost 0.009242
+epoch 328, minibatch 6/6, validation error 15.000000 %, cost 0.010724
+epoch 329, minibatch 6/6, validation error 15.000000 %, cost 0.004772
+epoch 330, minibatch 6/6, validation error 15.000000 %, cost 0.008170
+epoch 331, minibatch 6/6, validation error 15.000000 %, cost 0.002580
+epoch 332, minibatch 6/6, validation error 15.000000 %, cost 0.003525
+epoch 333, minibatch 6/6, validation error 15.000000 %, cost 0.001394
+('training @ iter = ', 2000)
+epoch 334, minibatch 6/6, validation error 15.000000 %, cost 0.001172
+epoch 335, minibatch 6/6, validation error 15.000000 %, cost 0.002418
+epoch 336, minibatch 6/6, validation error 15.000000 %, cost 0.001980
+epoch 337, minibatch 6/6, validation error 15.000000 %, cost 0.001134
+epoch 338, minibatch 6/6, validation error 15.000000 %, cost 0.002285
+epoch 339, minibatch 6/6, validation error 15.000000 %, cost 0.008828
+epoch 340, minibatch 6/6, validation error 15.000000 %, cost 0.011942
+epoch 341, minibatch 6/6, validation error 15.000000 %, cost 0.006091
+epoch 342, minibatch 6/6, validation error 15.000000 %, cost 0.001364
+epoch 343, minibatch 6/6, validation error 15.000000 %, cost 0.001393
+epoch 344, minibatch 6/6, validation error 15.000000 %, cost 0.002357
+epoch 345, minibatch 6/6, validation error 15.000000 %, cost 0.001523
+epoch 346, minibatch 6/6, validation error 15.000000 %, cost 0.003396
+epoch 347, minibatch 6/6, validation error 15.000000 %, cost 0.002624
+epoch 348, minibatch 6/6, validation error 15.000000 %, cost 0.001093
+epoch 349, minibatch 6/6, validation error 15.000000 %, cost 0.000994
+epoch 350, minibatch 6/6, validation error 15.000000 %, cost 0.001791
+('training @ iter = ', 2100)
+epoch 351, minibatch 6/6, validation error 15.000000 %, cost 0.001666
+epoch 352, minibatch 6/6, validation error 15.000000 %, cost 0.000724
+epoch 353, minibatch 6/6, validation error 15.000000 %, cost 0.001184
+epoch 354, minibatch 6/6, validation error 15.000000 %, cost 0.001485
+epoch 355, minibatch 6/6, validation error 15.000000 %, cost 0.000622
+epoch 356, minibatch 6/6, validation error 15.000000 %, cost 0.001501
+epoch 357, minibatch 6/6, validation error 15.000000 %, cost 0.002358
+epoch 358, minibatch 6/6, validation error 15.000000 %, cost 0.000685
+epoch 359, minibatch 6/6, validation error 15.000000 %, cost 0.000384
+epoch 360, minibatch 6/6, validation error 15.000000 %, cost 0.000413
+epoch 361, minibatch 6/6, validation error 15.000000 %, cost 0.000707
+epoch 362, minibatch 6/6, validation error 15.000000 %, cost 0.000726
+epoch 363, minibatch 6/6, validation error 15.000000 %, cost 0.000468
+epoch 364, minibatch 6/6, validation error 15.000000 %, cost 0.000468
+epoch 365, minibatch 6/6, validation error 15.000000 %, cost 0.001260
+epoch 366, minibatch 6/6, validation error 15.000000 %, cost 0.001682
+('training @ iter = ', 2200)
+epoch 367, minibatch 6/6, validation error 15.000000 %, cost 0.000763
+epoch 368, minibatch 6/6, validation error 15.000000 %, cost 0.001143
+epoch 369, minibatch 6/6, validation error 15.000000 %, cost 0.000445
+epoch 370, minibatch 6/6, validation error 15.000000 %, cost 0.001101
+epoch 371, minibatch 6/6, validation error 15.000000 %, cost 0.000291
+epoch 372, minibatch 6/6, validation error 15.000000 %, cost 0.002886
+epoch 373, minibatch 6/6, validation error 15.000000 %, cost 0.000666
+epoch 374, minibatch 6/6, validation error 15.000000 %, cost 0.000553
+epoch 375, minibatch 6/6, validation error 15.000000 %, cost 0.000464
+epoch 376, minibatch 6/6, validation error 15.000000 %, cost 0.000655
+epoch 377, minibatch 6/6, validation error 15.000000 %, cost 0.000412
+epoch 378, minibatch 6/6, validation error 15.000000 %, cost 0.000818
+epoch 379, minibatch 6/6, validation error 15.000000 %, cost 0.001765
+epoch 380, minibatch 6/6, validation error 15.000000 %, cost 0.000402
+epoch 381, minibatch 6/6, validation error 15.000000 %, cost 0.000329
+epoch 382, minibatch 6/6, validation error 15.000000 %, cost 0.000399
+epoch 383, minibatch 6/6, validation error 15.000000 %, cost 0.000203
+('training @ iter = ', 2300)
+epoch 384, minibatch 6/6, validation error 15.000000 %, cost 0.000306
+epoch 385, minibatch 6/6, validation error 15.000000 %, cost 0.000439
+epoch 386, minibatch 6/6, validation error 15.000000 %, cost 0.000394
+epoch 387, minibatch 6/6, validation error 15.000000 %, cost 0.000304
+epoch 388, minibatch 6/6, validation error 15.000000 %, cost 0.000199
+epoch 389, minibatch 6/6, validation error 15.000000 %, cost 0.000434
+epoch 390, minibatch 6/6, validation error 15.000000 %, cost 0.000483
+epoch 391, minibatch 6/6, validation error 15.000000 %, cost 0.001509
+epoch 392, minibatch 6/6, validation error 15.000000 %, cost 0.000405
+epoch 393, minibatch 6/6, validation error 15.000000 %, cost 0.000405
+epoch 394, minibatch 6/6, validation error 15.000000 %, cost 0.000793
+epoch 395, minibatch 6/6, validation error 15.000000 %, cost 0.000464
+epoch 396, minibatch 6/6, validation error 15.000000 %, cost 0.000370
+epoch 397, minibatch 6/6, validation error 15.000000 %, cost 0.000412
+epoch 398, minibatch 6/6, validation error 15.000000 %, cost 0.000250
+epoch 399, minibatch 6/6, validation error 15.000000 %, cost 0.000250
+epoch 400, minibatch 6/6, validation error 15.000000 %, cost 0.000448
+('optimaC', 5)
+softmax
+ test error of best model 5.000000 %
+Optimization complete.
+Best validation score of 5.000000 % obtained at iteration 510, with test performance 5.000000 %
+('SVM scores:', 0.55000000000000004)
+Class 0 has been misclassified  9 times
+Class 1 has been misclassified  0 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(9, 2, 0, 9)
+Area under the roc curve:
+0.0833333333333
+The code for file casia_Lenet.py ran for 34.28m

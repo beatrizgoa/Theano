@@ -1,0 +1,445 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((20, 49152), (20, 49152), (20, 49152))
+((20,), (20,), (20,))
+(49152,)
+n_train_samples: 20
+n_valid_samples: 20
+n_test_samples: 20
+n_batches:
+n_train_batches: 1
+n_valid_batches: 1
+n_test_batches: 1
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 1
+ 
+('n_train_batches', 1)
+('training @ iter = ', 0)
+epoch 1, minibatch 1/1, validation error 40.000000 %, cost 0.693147
+epoch 2, minibatch 1/1, validation error 40.000000 %, cost 0.419236
+epoch 3, minibatch 1/1, validation error 40.000000 %, cost 0.421870
+epoch 4, minibatch 1/1, validation error 40.000000 %, cost 0.420217
+epoch 5, minibatch 1/1, validation error 40.000000 %, cost 0.420816
+epoch 6, minibatch 1/1, validation error 40.000000 %, cost 0.420651
+epoch 7, minibatch 1/1, validation error 40.000000 %, cost 0.419476
+epoch 8, minibatch 1/1, validation error 40.000000 %, cost 0.423780
+epoch 9, minibatch 1/1, validation error 40.000000 %, cost 0.422085
+epoch 10, minibatch 1/1, validation error 40.000000 %, cost 0.422021
+epoch 11, minibatch 1/1, validation error 40.000000 %, cost 0.420922
+epoch 12, minibatch 1/1, validation error 40.000000 %, cost 0.421464
+epoch 13, minibatch 1/1, validation error 40.000000 %, cost 0.428345
+epoch 14, minibatch 1/1, validation error 40.000000 %, cost 0.422245
+epoch 15, minibatch 1/1, validation error 40.000000 %, cost 0.422234
+epoch 16, minibatch 1/1, validation error 40.000000 %, cost 0.426843
+epoch 17, minibatch 1/1, validation error 40.000000 %, cost 0.426943
+epoch 18, minibatch 1/1, validation error 40.000000 %, cost 0.424001
+epoch 19, minibatch 1/1, validation error 40.000000 %, cost 0.428781
+epoch 20, minibatch 1/1, validation error 40.000000 %, cost 0.422314
+epoch 21, minibatch 1/1, validation error 40.000000 %, cost 0.422621
+epoch 22, minibatch 1/1, validation error 40.000000 %, cost 0.419146
+epoch 23, minibatch 1/1, validation error 40.000000 %, cost 0.418811
+epoch 24, minibatch 1/1, validation error 40.000000 %, cost 0.429550
+epoch 25, minibatch 1/1, validation error 40.000000 %, cost 0.420667
+epoch 26, minibatch 1/1, validation error 40.000000 %, cost 0.421577
+epoch 27, minibatch 1/1, validation error 40.000000 %, cost 0.418182
+epoch 28, minibatch 1/1, validation error 40.000000 %, cost 0.422165
+epoch 29, minibatch 1/1, validation error 40.000000 %, cost 0.424659
+epoch 30, minibatch 1/1, validation error 40.000000 %, cost 0.423525
+epoch 31, minibatch 1/1, validation error 40.000000 %, cost 0.423901
+epoch 32, minibatch 1/1, validation error 40.000000 %, cost 0.424629
+epoch 33, minibatch 1/1, validation error 40.000000 %, cost 0.421277
+epoch 34, minibatch 1/1, validation error 40.000000 %, cost 0.425981
+epoch 35, minibatch 1/1, validation error 40.000000 %, cost 0.426139
+epoch 36, minibatch 1/1, validation error 40.000000 %, cost 0.426381
+epoch 37, minibatch 1/1, validation error 40.000000 %, cost 0.425016
+epoch 38, minibatch 1/1, validation error 40.000000 %, cost 0.420598
+epoch 39, minibatch 1/1, validation error 40.000000 %, cost 0.420933
+epoch 40, minibatch 1/1, validation error 40.000000 %, cost 0.420382
+epoch 41, minibatch 1/1, validation error 40.000000 %, cost 0.418430
+epoch 42, minibatch 1/1, validation error 40.000000 %, cost 0.417457
+epoch 43, minibatch 1/1, validation error 40.000000 %, cost 0.419591
+epoch 44, minibatch 1/1, validation error 40.000000 %, cost 0.419449
+epoch 45, minibatch 1/1, validation error 40.000000 %, cost 0.416840
+epoch 46, minibatch 1/1, validation error 40.000000 %, cost 0.424314
+epoch 47, minibatch 1/1, validation error 40.000000 %, cost 0.418506
+epoch 48, minibatch 1/1, validation error 40.000000 %, cost 0.418169
+epoch 49, minibatch 1/1, validation error 40.000000 %, cost 0.420288
+epoch 50, minibatch 1/1, validation error 40.000000 %, cost 0.421390
+epoch 51, minibatch 1/1, validation error 40.000000 %, cost 0.425638
+epoch 52, minibatch 1/1, validation error 40.000000 %, cost 0.425124
+epoch 53, minibatch 1/1, validation error 40.000000 %, cost 0.420519
+epoch 54, minibatch 1/1, validation error 40.000000 %, cost 0.424423
+epoch 55, minibatch 1/1, validation error 40.000000 %, cost 0.422141
+epoch 56, minibatch 1/1, validation error 40.000000 %, cost 0.430819
+epoch 57, minibatch 1/1, validation error 40.000000 %, cost 0.433903
+epoch 58, minibatch 1/1, validation error 40.000000 %, cost 0.420646
+epoch 59, minibatch 1/1, validation error 40.000000 %, cost 0.419931
+epoch 60, minibatch 1/1, validation error 40.000000 %, cost 0.416815
+epoch 61, minibatch 1/1, validation error 40.000000 %, cost 0.425323
+epoch 62, minibatch 1/1, validation error 40.000000 %, cost 0.423906
+epoch 63, minibatch 1/1, validation error 40.000000 %, cost 0.427508
+epoch 64, minibatch 1/1, validation error 40.000000 %, cost 0.427105
+epoch 65, minibatch 1/1, validation error 40.000000 %, cost 0.428599
+epoch 66, minibatch 1/1, validation error 40.000000 %, cost 0.426698
+epoch 67, minibatch 1/1, validation error 40.000000 %, cost 0.427136
+epoch 68, minibatch 1/1, validation error 40.000000 %, cost 0.424562
+epoch 69, minibatch 1/1, validation error 40.000000 %, cost 0.422927
+epoch 70, minibatch 1/1, validation error 40.000000 %, cost 0.426404
+epoch 71, minibatch 1/1, validation error 40.000000 %, cost 0.426364
+epoch 72, minibatch 1/1, validation error 40.000000 %, cost 0.419305
+epoch 73, minibatch 1/1, validation error 40.000000 %, cost 0.422094
+epoch 74, minibatch 1/1, validation error 40.000000 %, cost 0.417383
+epoch 75, minibatch 1/1, validation error 40.000000 %, cost 0.422200
+epoch 76, minibatch 1/1, validation error 40.000000 %, cost 0.420366
+epoch 77, minibatch 1/1, validation error 40.000000 %, cost 0.421380
+epoch 78, minibatch 1/1, validation error 40.000000 %, cost 0.427165
+epoch 79, minibatch 1/1, validation error 40.000000 %, cost 0.419663
+epoch 80, minibatch 1/1, validation error 40.000000 %, cost 0.424011
+epoch 81, minibatch 1/1, validation error 40.000000 %, cost 0.420156
+epoch 82, minibatch 1/1, validation error 40.000000 %, cost 0.414140
+epoch 83, minibatch 1/1, validation error 40.000000 %, cost 0.416676
+epoch 84, minibatch 1/1, validation error 40.000000 %, cost 0.424267
+epoch 85, minibatch 1/1, validation error 40.000000 %, cost 0.426739
+epoch 86, minibatch 1/1, validation error 40.000000 %, cost 0.417658
+epoch 87, minibatch 1/1, validation error 40.000000 %, cost 0.421317
+epoch 88, minibatch 1/1, validation error 40.000000 %, cost 0.428537
+epoch 89, minibatch 1/1, validation error 40.000000 %, cost 0.420553
+epoch 90, minibatch 1/1, validation error 40.000000 %, cost 0.421259
+epoch 91, minibatch 1/1, validation error 40.000000 %, cost 0.420402
+epoch 92, minibatch 1/1, validation error 40.000000 %, cost 0.428928
+epoch 93, minibatch 1/1, validation error 40.000000 %, cost 0.422312
+epoch 94, minibatch 1/1, validation error 40.000000 %, cost 0.416105
+epoch 95, minibatch 1/1, validation error 40.000000 %, cost 0.420502
+epoch 96, minibatch 1/1, validation error 40.000000 %, cost 0.422852
+epoch 97, minibatch 1/1, validation error 40.000000 %, cost 0.423272
+epoch 98, minibatch 1/1, validation error 40.000000 %, cost 0.418464
+epoch 99, minibatch 1/1, validation error 40.000000 %, cost 0.420423
+epoch 100, minibatch 1/1, validation error 40.000000 %, cost 0.420895
+('training @ iter = ', 100)
+epoch 101, minibatch 1/1, validation error 40.000000 %, cost 0.425710
+epoch 102, minibatch 1/1, validation error 40.000000 %, cost 0.417776
+epoch 103, minibatch 1/1, validation error 40.000000 %, cost 0.425452
+epoch 104, minibatch 1/1, validation error 40.000000 %, cost 0.419796
+epoch 105, minibatch 1/1, validation error 40.000000 %, cost 0.418867
+epoch 106, minibatch 1/1, validation error 40.000000 %, cost 0.423122
+epoch 107, minibatch 1/1, validation error 40.000000 %, cost 0.424288
+epoch 108, minibatch 1/1, validation error 40.000000 %, cost 0.420915
+epoch 109, minibatch 1/1, validation error 40.000000 %, cost 0.423758
+epoch 110, minibatch 1/1, validation error 40.000000 %, cost 0.427138
+epoch 111, minibatch 1/1, validation error 40.000000 %, cost 0.424869
+epoch 112, minibatch 1/1, validation error 40.000000 %, cost 0.416334
+epoch 113, minibatch 1/1, validation error 40.000000 %, cost 0.425400
+epoch 114, minibatch 1/1, validation error 40.000000 %, cost 0.422804
+epoch 115, minibatch 1/1, validation error 40.000000 %, cost 0.422669
+epoch 116, minibatch 1/1, validation error 40.000000 %, cost 0.423944
+epoch 117, minibatch 1/1, validation error 40.000000 %, cost 0.426193
+epoch 118, minibatch 1/1, validation error 40.000000 %, cost 0.430956
+epoch 119, minibatch 1/1, validation error 40.000000 %, cost 0.411555
+epoch 120, minibatch 1/1, validation error 40.000000 %, cost 0.425242
+epoch 121, minibatch 1/1, validation error 40.000000 %, cost 0.427324
+epoch 122, minibatch 1/1, validation error 40.000000 %, cost 0.425059
+epoch 123, minibatch 1/1, validation error 40.000000 %, cost 0.421407
+epoch 124, minibatch 1/1, validation error 40.000000 %, cost 0.431001
+epoch 125, minibatch 1/1, validation error 40.000000 %, cost 0.421406
+epoch 126, minibatch 1/1, validation error 40.000000 %, cost 0.429155
+epoch 127, minibatch 1/1, validation error 40.000000 %, cost 0.427324
+epoch 128, minibatch 1/1, validation error 40.000000 %, cost 0.427112
+epoch 129, minibatch 1/1, validation error 40.000000 %, cost 0.418380
+epoch 130, minibatch 1/1, validation error 40.000000 %, cost 0.420099
+epoch 131, minibatch 1/1, validation error 40.000000 %, cost 0.426145
+epoch 132, minibatch 1/1, validation error 40.000000 %, cost 0.424875
+epoch 133, minibatch 1/1, validation error 40.000000 %, cost 0.413028
+epoch 134, minibatch 1/1, validation error 40.000000 %, cost 0.427199
+epoch 135, minibatch 1/1, validation error 40.000000 %, cost 0.413605
+epoch 136, minibatch 1/1, validation error 40.000000 %, cost 0.420764
+epoch 137, minibatch 1/1, validation error 40.000000 %, cost 0.423299
+epoch 138, minibatch 1/1, validation error 40.000000 %, cost 0.408289
+epoch 139, minibatch 1/1, validation error 40.000000 %, cost 0.429550
+epoch 140, minibatch 1/1, validation error 40.000000 %, cost 0.423269
+epoch 141, minibatch 1/1, validation error 40.000000 %, cost 0.418801
+epoch 142, minibatch 1/1, validation error 40.000000 %, cost 0.429190
+epoch 143, minibatch 1/1, validation error 40.000000 %, cost 0.426933
+epoch 144, minibatch 1/1, validation error 40.000000 %, cost 0.425845
+epoch 145, minibatch 1/1, validation error 40.000000 %, cost 0.421908
+epoch 146, minibatch 1/1, validation error 40.000000 %, cost 0.421546
+epoch 147, minibatch 1/1, validation error 40.000000 %, cost 0.419492
+epoch 148, minibatch 1/1, validation error 40.000000 %, cost 0.426349
+epoch 149, minibatch 1/1, validation error 40.000000 %, cost 0.416801
+epoch 150, minibatch 1/1, validation error 40.000000 %, cost 0.419352
+epoch 151, minibatch 1/1, validation error 40.000000 %, cost 0.424778
+epoch 152, minibatch 1/1, validation error 40.000000 %, cost 0.429552
+epoch 153, minibatch 1/1, validation error 40.000000 %, cost 0.417297
+epoch 154, minibatch 1/1, validation error 40.000000 %, cost 0.420048
+epoch 155, minibatch 1/1, validation error 40.000000 %, cost 0.420172
+epoch 156, minibatch 1/1, validation error 40.000000 %, cost 0.407098
+epoch 157, minibatch 1/1, validation error 40.000000 %, cost 0.422373
+epoch 158, minibatch 1/1, validation error 40.000000 %, cost 0.413852
+epoch 159, minibatch 1/1, validation error 40.000000 %, cost 0.420026
+epoch 160, minibatch 1/1, validation error 40.000000 %, cost 0.418283
+epoch 161, minibatch 1/1, validation error 40.000000 %, cost 0.421366
+epoch 162, minibatch 1/1, validation error 40.000000 %, cost 0.413050
+epoch 163, minibatch 1/1, validation error 40.000000 %, cost 0.422078
+epoch 164, minibatch 1/1, validation error 40.000000 %, cost 0.417614
+epoch 165, minibatch 1/1, validation error 40.000000 %, cost 0.420466
+epoch 166, minibatch 1/1, validation error 40.000000 %, cost 0.421798
+epoch 167, minibatch 1/1, validation error 40.000000 %, cost 0.427580
+epoch 168, minibatch 1/1, validation error 40.000000 %, cost 0.425293
+epoch 169, minibatch 1/1, validation error 40.000000 %, cost 0.418120
+epoch 170, minibatch 1/1, validation error 40.000000 %, cost 0.421368
+epoch 171, minibatch 1/1, validation error 40.000000 %, cost 0.419679
+epoch 172, minibatch 1/1, validation error 40.000000 %, cost 0.423867
+epoch 173, minibatch 1/1, validation error 40.000000 %, cost 0.422896
+epoch 174, minibatch 1/1, validation error 40.000000 %, cost 0.417256
+epoch 175, minibatch 1/1, validation error 40.000000 %, cost 0.419556
+epoch 176, minibatch 1/1, validation error 40.000000 %, cost 0.419753
+epoch 177, minibatch 1/1, validation error 40.000000 %, cost 0.424121
+epoch 178, minibatch 1/1, validation error 40.000000 %, cost 0.404756
+epoch 179, minibatch 1/1, validation error 40.000000 %, cost 0.417843
+epoch 180, minibatch 1/1, validation error 40.000000 %, cost 0.415086
+epoch 181, minibatch 1/1, validation error 40.000000 %, cost 0.421148
+epoch 182, minibatch 1/1, validation error 40.000000 %, cost 0.419254
+epoch 183, minibatch 1/1, validation error 40.000000 %, cost 0.412525
+epoch 184, minibatch 1/1, validation error 40.000000 %, cost 0.428939
+epoch 185, minibatch 1/1, validation error 40.000000 %, cost 0.408931
+epoch 186, minibatch 1/1, validation error 40.000000 %, cost 0.423748
+epoch 187, minibatch 1/1, validation error 40.000000 %, cost 0.426067
+epoch 188, minibatch 1/1, validation error 40.000000 %, cost 0.411317
+epoch 189, minibatch 1/1, validation error 40.000000 %, cost 0.421953
+epoch 190, minibatch 1/1, validation error 40.000000 %, cost 0.419620
+epoch 191, minibatch 1/1, validation error 40.000000 %, cost 0.415304
+epoch 192, minibatch 1/1, validation error 40.000000 %, cost 0.425869
+epoch 193, minibatch 1/1, validation error 40.000000 %, cost 0.400720
+epoch 194, minibatch 1/1, validation error 40.000000 %, cost 0.420858
+epoch 195, minibatch 1/1, validation error 40.000000 %, cost 0.418705
+epoch 196, minibatch 1/1, validation error 40.000000 %, cost 0.426663
+epoch 197, minibatch 1/1, validation error 40.000000 %, cost 0.426921
+epoch 198, minibatch 1/1, validation error 40.000000 %, cost 0.412004
+epoch 199, minibatch 1/1, validation error 40.000000 %, cost 0.413697
+epoch 200, minibatch 1/1, validation error 40.000000 %, cost 0.425418
+('training @ iter = ', 200)
+epoch 201, minibatch 1/1, validation error 40.000000 %, cost 0.417848
+epoch 202, minibatch 1/1, validation error 40.000000 %, cost 0.425358
+epoch 203, minibatch 1/1, validation error 40.000000 %, cost 0.420355
+epoch 204, minibatch 1/1, validation error 40.000000 %, cost 0.423546
+epoch 205, minibatch 1/1, validation error 40.000000 %, cost 0.423622
+epoch 206, minibatch 1/1, validation error 40.000000 %, cost 0.419856
+epoch 207, minibatch 1/1, validation error 40.000000 %, cost 0.425592
+epoch 208, minibatch 1/1, validation error 40.000000 %, cost 0.416814
+epoch 209, minibatch 1/1, validation error 40.000000 %, cost 0.416137
+epoch 210, minibatch 1/1, validation error 40.000000 %, cost 0.430807
+epoch 211, minibatch 1/1, validation error 40.000000 %, cost 0.422502
+epoch 212, minibatch 1/1, validation error 40.000000 %, cost 0.422225
+epoch 213, minibatch 1/1, validation error 40.000000 %, cost 0.426898
+epoch 214, minibatch 1/1, validation error 40.000000 %, cost 0.417142
+epoch 215, minibatch 1/1, validation error 40.000000 %, cost 0.424971
+epoch 216, minibatch 1/1, validation error 40.000000 %, cost 0.417313
+epoch 217, minibatch 1/1, validation error 40.000000 %, cost 0.424861
+epoch 218, minibatch 1/1, validation error 40.000000 %, cost 0.418037
+epoch 219, minibatch 1/1, validation error 40.000000 %, cost 0.427563
+epoch 220, minibatch 1/1, validation error 40.000000 %, cost 0.415412
+epoch 221, minibatch 1/1, validation error 40.000000 %, cost 0.425294
+epoch 222, minibatch 1/1, validation error 40.000000 %, cost 0.412318
+epoch 223, minibatch 1/1, validation error 40.000000 %, cost 0.421120
+epoch 224, minibatch 1/1, validation error 40.000000 %, cost 0.417687
+epoch 225, minibatch 1/1, validation error 40.000000 %, cost 0.432900
+epoch 226, minibatch 1/1, validation error 40.000000 %, cost 0.417506
+epoch 227, minibatch 1/1, validation error 40.000000 %, cost 0.406972
+epoch 228, minibatch 1/1, validation error 40.000000 %, cost 0.414956
+epoch 229, minibatch 1/1, validation error 40.000000 %, cost 0.419535
+epoch 230, minibatch 1/1, validation error 40.000000 %, cost 0.419850
+epoch 231, minibatch 1/1, validation error 40.000000 %, cost 0.430174
+epoch 232, minibatch 1/1, validation error 40.000000 %, cost 0.402529
+epoch 233, minibatch 1/1, validation error 40.000000 %, cost 0.426835
+epoch 234, minibatch 1/1, validation error 40.000000 %, cost 0.418456
+epoch 235, minibatch 1/1, validation error 40.000000 %, cost 0.420161
+epoch 236, minibatch 1/1, validation error 40.000000 %, cost 0.417156
+epoch 237, minibatch 1/1, validation error 40.000000 %, cost 0.418936
+epoch 238, minibatch 1/1, validation error 40.000000 %, cost 0.406911
+epoch 239, minibatch 1/1, validation error 40.000000 %, cost 0.423534
+epoch 240, minibatch 1/1, validation error 40.000000 %, cost 0.427816
+epoch 241, minibatch 1/1, validation error 40.000000 %, cost 0.423520
+epoch 242, minibatch 1/1, validation error 40.000000 %, cost 0.418989
+epoch 243, minibatch 1/1, validation error 40.000000 %, cost 0.414882
+epoch 244, minibatch 1/1, validation error 40.000000 %, cost 0.405923
+epoch 245, minibatch 1/1, validation error 40.000000 %, cost 0.406645
+epoch 246, minibatch 1/1, validation error 40.000000 %, cost 0.415043
+epoch 247, minibatch 1/1, validation error 40.000000 %, cost 0.418123
+epoch 248, minibatch 1/1, validation error 40.000000 %, cost 0.423596
+epoch 249, minibatch 1/1, validation error 40.000000 %, cost 0.408264
+epoch 250, minibatch 1/1, validation error 40.000000 %, cost 0.429952
+epoch 251, minibatch 1/1, validation error 40.000000 %, cost 0.425096
+epoch 252, minibatch 1/1, validation error 40.000000 %, cost 0.425213
+epoch 253, minibatch 1/1, validation error 40.000000 %, cost 0.421312
+epoch 254, minibatch 1/1, validation error 40.000000 %, cost 0.417469
+epoch 255, minibatch 1/1, validation error 40.000000 %, cost 0.425295
+epoch 256, minibatch 1/1, validation error 40.000000 %, cost 0.424931
+epoch 257, minibatch 1/1, validation error 40.000000 %, cost 0.420927
+epoch 258, minibatch 1/1, validation error 40.000000 %, cost 0.400791
+epoch 259, minibatch 1/1, validation error 40.000000 %, cost 0.423197
+epoch 260, minibatch 1/1, validation error 40.000000 %, cost 0.417599
+epoch 261, minibatch 1/1, validation error 40.000000 %, cost 0.424426
+epoch 262, minibatch 1/1, validation error 40.000000 %, cost 0.415010
+epoch 263, minibatch 1/1, validation error 40.000000 %, cost 0.415293
+epoch 264, minibatch 1/1, validation error 40.000000 %, cost 0.428532
+epoch 265, minibatch 1/1, validation error 40.000000 %, cost 0.424639
+epoch 266, minibatch 1/1, validation error 40.000000 %, cost 0.428608
+epoch 267, minibatch 1/1, validation error 40.000000 %, cost 0.425780
+epoch 268, minibatch 1/1, validation error 40.000000 %, cost 0.428252
+epoch 269, minibatch 1/1, validation error 40.000000 %, cost 0.427914
+epoch 270, minibatch 1/1, validation error 40.000000 %, cost 0.419154
+epoch 271, minibatch 1/1, validation error 40.000000 %, cost 0.426678
+epoch 272, minibatch 1/1, validation error 40.000000 %, cost 0.432084
+epoch 273, minibatch 1/1, validation error 40.000000 %, cost 0.417663
+epoch 274, minibatch 1/1, validation error 40.000000 %, cost 0.418780
+epoch 275, minibatch 1/1, validation error 40.000000 %, cost 0.432833
+epoch 276, minibatch 1/1, validation error 40.000000 %, cost 0.418842
+epoch 277, minibatch 1/1, validation error 40.000000 %, cost 0.406938
+epoch 278, minibatch 1/1, validation error 40.000000 %, cost 0.414283
+epoch 279, minibatch 1/1, validation error 40.000000 %, cost 0.416028
+epoch 280, minibatch 1/1, validation error 40.000000 %, cost 0.404640
+epoch 281, minibatch 1/1, validation error 40.000000 %, cost 0.406871
+epoch 282, minibatch 1/1, validation error 40.000000 %, cost 0.414132
+epoch 283, minibatch 1/1, validation error 40.000000 %, cost 0.420549
+epoch 284, minibatch 1/1, validation error 40.000000 %, cost 0.429368
+epoch 285, minibatch 1/1, validation error 40.000000 %, cost 0.419604
+epoch 286, minibatch 1/1, validation error 40.000000 %, cost 0.423303
+epoch 287, minibatch 1/1, validation error 40.000000 %, cost 0.419964
+epoch 288, minibatch 1/1, validation error 40.000000 %, cost 0.431755
+epoch 289, minibatch 1/1, validation error 40.000000 %, cost 0.417160
+epoch 290, minibatch 1/1, validation error 40.000000 %, cost 0.415638
+epoch 291, minibatch 1/1, validation error 40.000000 %, cost 0.421709
+epoch 292, minibatch 1/1, validation error 40.000000 %, cost 0.429486
+epoch 293, minibatch 1/1, validation error 40.000000 %, cost 0.423043
+epoch 294, minibatch 1/1, validation error 40.000000 %, cost 0.419141
+epoch 295, minibatch 1/1, validation error 40.000000 %, cost 0.418101
+epoch 296, minibatch 1/1, validation error 40.000000 %, cost 0.422133
+epoch 297, minibatch 1/1, validation error 40.000000 %, cost 0.405687
+epoch 298, minibatch 1/1, validation error 40.000000 %, cost 0.426223
+epoch 299, minibatch 1/1, validation error 40.000000 %, cost 0.420940
+epoch 300, minibatch 1/1, validation error 40.000000 %, cost 0.409493
+('training @ iter = ', 300)
+epoch 301, minibatch 1/1, validation error 40.000000 %, cost 0.405506
+epoch 302, minibatch 1/1, validation error 40.000000 %, cost 0.419482
+epoch 303, minibatch 1/1, validation error 40.000000 %, cost 0.423069
+epoch 304, minibatch 1/1, validation error 40.000000 %, cost 0.409202
+epoch 305, minibatch 1/1, validation error 40.000000 %, cost 0.417045
+epoch 306, minibatch 1/1, validation error 40.000000 %, cost 0.428646
+epoch 307, minibatch 1/1, validation error 40.000000 %, cost 0.423234
+epoch 308, minibatch 1/1, validation error 40.000000 %, cost 0.420976
+epoch 309, minibatch 1/1, validation error 40.000000 %, cost 0.413170
+epoch 310, minibatch 1/1, validation error 40.000000 %, cost 0.418297
+epoch 311, minibatch 1/1, validation error 40.000000 %, cost 0.399238
+epoch 312, minibatch 1/1, validation error 40.000000 %, cost 0.425951
+epoch 313, minibatch 1/1, validation error 40.000000 %, cost 0.430753
+epoch 314, minibatch 1/1, validation error 40.000000 %, cost 0.425039
+epoch 315, minibatch 1/1, validation error 40.000000 %, cost 0.416981
+epoch 316, minibatch 1/1, validation error 40.000000 %, cost 0.413070
+epoch 317, minibatch 1/1, validation error 40.000000 %, cost 0.412926
+epoch 318, minibatch 1/1, validation error 40.000000 %, cost 0.418067
+epoch 319, minibatch 1/1, validation error 40.000000 %, cost 0.415303
+epoch 320, minibatch 1/1, validation error 40.000000 %, cost 0.414577
+epoch 321, minibatch 1/1, validation error 40.000000 %, cost 0.429721
+epoch 322, minibatch 1/1, validation error 40.000000 %, cost 0.418251
+epoch 323, minibatch 1/1, validation error 40.000000 %, cost 0.414823
+epoch 324, minibatch 1/1, validation error 40.000000 %, cost 0.427017
+epoch 325, minibatch 1/1, validation error 40.000000 %, cost 0.419516
+epoch 326, minibatch 1/1, validation error 40.000000 %, cost 0.423283
+epoch 327, minibatch 1/1, validation error 40.000000 %, cost 0.422967
+epoch 328, minibatch 1/1, validation error 40.000000 %, cost 0.420001
+epoch 329, minibatch 1/1, validation error 40.000000 %, cost 0.411837
+epoch 330, minibatch 1/1, validation error 40.000000 %, cost 0.428168
+epoch 331, minibatch 1/1, validation error 40.000000 %, cost 0.415645
+epoch 332, minibatch 1/1, validation error 40.000000 %, cost 0.428100
+epoch 333, minibatch 1/1, validation error 40.000000 %, cost 0.412896
+epoch 334, minibatch 1/1, validation error 40.000000 %, cost 0.414151
+epoch 335, minibatch 1/1, validation error 40.000000 %, cost 0.412034
+epoch 336, minibatch 1/1, validation error 40.000000 %, cost 0.417877
+epoch 337, minibatch 1/1, validation error 40.000000 %, cost 0.421990
+epoch 338, minibatch 1/1, validation error 40.000000 %, cost 0.429821
+epoch 339, minibatch 1/1, validation error 40.000000 %, cost 0.403094
+epoch 340, minibatch 1/1, validation error 40.000000 %, cost 0.412137
+epoch 341, minibatch 1/1, validation error 40.000000 %, cost 0.405751
+epoch 342, minibatch 1/1, validation error 40.000000 %, cost 0.418791
+epoch 343, minibatch 1/1, validation error 40.000000 %, cost 0.416621
+epoch 344, minibatch 1/1, validation error 40.000000 %, cost 0.419351
+epoch 345, minibatch 1/1, validation error 40.000000 %, cost 0.410534
+epoch 346, minibatch 1/1, validation error 40.000000 %, cost 0.414958
+epoch 347, minibatch 1/1, validation error 40.000000 %, cost 0.420096
+epoch 348, minibatch 1/1, validation error 40.000000 %, cost 0.429497
+epoch 349, minibatch 1/1, validation error 40.000000 %, cost 0.424675
+epoch 350, minibatch 1/1, validation error 40.000000 %, cost 0.421490
+epoch 351, minibatch 1/1, validation error 40.000000 %, cost 0.415414
+epoch 352, minibatch 1/1, validation error 40.000000 %, cost 0.422870
+epoch 353, minibatch 1/1, validation error 40.000000 %, cost 0.420877
+epoch 354, minibatch 1/1, validation error 40.000000 %, cost 0.407472
+epoch 355, minibatch 1/1, validation error 40.000000 %, cost 0.432015
+epoch 356, minibatch 1/1, validation error 40.000000 %, cost 0.424899
+epoch 357, minibatch 1/1, validation error 40.000000 %, cost 0.415938
+epoch 358, minibatch 1/1, validation error 40.000000 %, cost 0.410631
+epoch 359, minibatch 1/1, validation error 40.000000 %, cost 0.407096
+epoch 360, minibatch 1/1, validation error 40.000000 %, cost 0.416494
+epoch 361, minibatch 1/1, validation error 40.000000 %, cost 0.430223
+epoch 362, minibatch 1/1, validation error 40.000000 %, cost 0.417189
+epoch 363, minibatch 1/1, validation error 40.000000 %, cost 0.420159
+epoch 364, minibatch 1/1, validation error 40.000000 %, cost 0.414589
+epoch 365, minibatch 1/1, validation error 40.000000 %, cost 0.412018
+epoch 366, minibatch 1/1, validation error 40.000000 %, cost 0.423519
+epoch 367, minibatch 1/1, validation error 40.000000 %, cost 0.420565
+epoch 368, minibatch 1/1, validation error 40.000000 %, cost 0.422268
+epoch 369, minibatch 1/1, validation error 40.000000 %, cost 0.408465
+epoch 370, minibatch 1/1, validation error 40.000000 %, cost 0.421472
+epoch 371, minibatch 1/1, validation error 40.000000 %, cost 0.413745
+epoch 372, minibatch 1/1, validation error 40.000000 %, cost 0.423409
+epoch 373, minibatch 1/1, validation error 40.000000 %, cost 0.418830
+epoch 374, minibatch 1/1, validation error 40.000000 %, cost 0.399892
+epoch 375, minibatch 1/1, validation error 40.000000 %, cost 0.420810
+epoch 376, minibatch 1/1, validation error 40.000000 %, cost 0.425591
+epoch 377, minibatch 1/1, validation error 40.000000 %, cost 0.409608
+epoch 378, minibatch 1/1, validation error 40.000000 %, cost 0.406250
+epoch 379, minibatch 1/1, validation error 40.000000 %, cost 0.420056
+epoch 380, minibatch 1/1, validation error 40.000000 %, cost 0.423715
+epoch 381, minibatch 1/1, validation error 40.000000 %, cost 0.402000
+epoch 382, minibatch 1/1, validation error 40.000000 %, cost 0.415551
+epoch 383, minibatch 1/1, validation error 40.000000 %, cost 0.427818
+epoch 384, minibatch 1/1, validation error 40.000000 %, cost 0.406318
+epoch 385, minibatch 1/1, validation error 40.000000 %, cost 0.415495
+epoch 386, minibatch 1/1, validation error 40.000000 %, cost 0.416871
+epoch 387, minibatch 1/1, validation error 40.000000 %, cost 0.422780
+epoch 388, minibatch 1/1, validation error 40.000000 %, cost 0.412229
+epoch 389, minibatch 1/1, validation error 40.000000 %, cost 0.443142
+epoch 390, minibatch 1/1, validation error 40.000000 %, cost 0.424986
+epoch 391, minibatch 1/1, validation error 40.000000 %, cost 0.427314
+epoch 392, minibatch 1/1, validation error 40.000000 %, cost 0.417193
+epoch 393, minibatch 1/1, validation error 40.000000 %, cost 0.413285
+epoch 394, minibatch 1/1, validation error 40.000000 %, cost 0.415409
+epoch 395, minibatch 1/1, validation error 40.000000 %, cost 0.416622
+epoch 396, minibatch 1/1, validation error 40.000000 %, cost 0.408188
+epoch 397, minibatch 1/1, validation error 40.000000 %, cost 0.418881
+epoch 398, minibatch 1/1, validation error 40.000000 %, cost 0.422700
+epoch 399, minibatch 1/1, validation error 40.000000 %, cost 0.413103
+epoch 400, minibatch 1/1, validation error 40.000000 %, cost 0.426659
+('optimaC', 0.001)
+softmax
+ test error of best model 15.000000 %
+Optimization complete.
+Best validation score of 40.000000 % obtained at iteration 1, with test performance 15.000000 %
+('SVM scores:', 0.84999999999999998)
+Class 0 has been misclassified  0 times
+Class 1 has been misclassified  3 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(17, 0, 3, 0)
+Area under the roc curve:
+0.176470588235
+The code for file casia_Lenet.py ran for 7.27m

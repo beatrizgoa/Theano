@@ -1,0 +1,29 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((189, 49152), (54, 49152), (27, 49152))
+((189,), (54,), (27,))
+n_train_samples: 189
+n_valid_samples: 27
+n_test_samples: 54
+n_batches:
+n_train_batches: 9
+n_valid_batches: 1
+n_test_batches: 2
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 9
+ 
+('n_train_batches', 9)
+('training @ iter = ', 0)
+epoch 1, minibatch 9/9, validation error 40.000000 %, cost 0.676036
+Backend Qt5Agg is interactive backend. Turning interactive mode on.
+('optimaC', 0.001)

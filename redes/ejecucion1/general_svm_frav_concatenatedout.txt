@@ -1,0 +1,27 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((550, 49152), (157, 49152), (78, 49152))
+((550,), (157,), (78,))
+(49152,)
+n_train_samples: 550
+n_valid_samples: 78
+n_test_samples: 157
+n_batches:
+n_train_batches: 27
+n_valid_batches: 3
+n_test_batches: 7
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 27
+ 
+('n_train_batches', 27)
+('training @ iter = ', 0)
