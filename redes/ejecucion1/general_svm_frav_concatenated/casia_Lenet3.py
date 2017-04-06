@@ -17,11 +17,13 @@ import pickle
 import os, argparse
 from casia_Lenet3_RGB import evaluate_lenet5_RGB
 from casia_Lenet3_NIR import evaluate_lenet5_NIR
+from softmax_concatenated import *
 
 #nkerns=[96, 256, 386, 384, 256]
 
 
-def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 844, 256], batch_size=20):
+def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20):
+    start_time = timeit.default_timer()
 
     argumento = argparse.ArgumentParser()
 
@@ -35,9 +37,9 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 844,
     # Se le asigna el segundo argumento ala ruta de salida
     out_path = args['o']
 
-    # orig_stdout = sys.stdout
-    # f = file(out_path+'out.txt', 'w')
-    # sys.stdout = f
+    orig_stdout = sys.stdout
+    f = file(out_path+'out.txt', 'w')
+    sys.stdout = f
 
     print ('In this file are the results of using casia architecture and FRAV image database')
     print ('In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used')
@@ -49,7 +51,7 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 844,
     print ('Start reading the data...')
  
 
-   rng = numpy.random.RandomState(123456)
+    rng = numpy.random.RandomState(123456)
     # open_file2 = open('C:\Users\FRAV\Desktop\Beatriz\FRAv_casia_ImageNet\data_casia_all.pkl', 'rb')
     open_file2 = open(in_path, 'rb')
     [train_index, test_index, validate_index, train_set_x_rgb, test_set_x_rgb, valid_set_x_rgb, train_set_x_nir, test_set_x_nir, valid_set_x_nir, y_train,  y_test, y_val] = pickle.load(open_file2)
@@ -64,18 +66,19 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 844,
     data = [train_set_x_rgb, test_set_x_rgb, valid_set_x_rgb, y_train, y_test, y_val]
     data1 = [train_set_x_nir, test_set_x_nir, valid_set_x_nir, y_train, y_test, y_val]
 
-    RGB_train_x, RGB_test_x= evaluate_lenet5_RGB(0.01, 400, [96, 256, 386, 844, 256], 20, data)
-    NIR_train_x, NIR_test_x= evaluate_lenet5_NIR(0.01, 400, [96, 256, 386, 844, 256], 20, data1)
+    RGB_train_x, RGB_test_x, RGB_valid_x = evaluate_lenet5_RGB(learning_rate, n_epochs, nkerns, batch_size, data, out_path)
+    NIR_train_x, NIR_test_x, NIR_valid_x = evaluate_lenet5_NIR(learning_rate, n_epochs, nkerns, batch_size, data1, out_path)
  
     input_TrainClass_concatenated = np.concatenate([RGB_train_x, NIR_train_x], axis=1)
     input_TestClass_concatenated = np.concatenate([RGB_test_x, NIR_test_x], axis=1)
-
+    input_ValidClass_concatenated = np.concatenate([RGB_valid_x, NIR_valid_x], axis=1)
     ##### SVM #####
     svm_scores = []
     C_range = [0.001,0.005 ,0.01, 0.05, 0.1, 0.5, 1, 2,3, 5, 10]
 
     y_train = y_train[0:len(input_TrainClass_concatenated)]
-    y_test = y_test[0:len(input_test)]
+    y_test = y_test[0:len(input_TestClass_concatenated)]
+    y_val = y_val[0:len(input_ValidClass_concatenated)]
 
     for Ci in C_range:
         SVMcla = SVC(C=Ci, kernel='rbf')
@@ -92,46 +95,37 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 844,
     SVM_pred_prob = SVM2.predict_proba(input_TestClass_concatenated)
     scores_SVM = SVM2.score(input_TestClass_concatenated,y_test)
 
-
-
-    ##### SOFTMAX #####
-    # layer9 = LogisticRegression(input=input_TestClass_concatenated, n_in=4000, n_out=2)
-
-
-
-
-
-    # for i in range(n_test_batches):
-        # y_pred_test = salidas_capa8(i)
-        # y_probabilidad = salidas_probabilidad(i)
-
-        # for j in y_pred_test:
-            #  y_pred_junto.append(j)
-
-        # for j in y_probabilidad:
-            # y_prob_junto.append(j[0])
-
-    # print ('softmax')
-    # print((' test error of best model %f %%') % (test_score * 100.))
-
-    # end_time = timeit.default_timer()
-    # print('Optimization complete.')
-    # print('Best validation score of %f %% obtained at iteration %i, '
-          #'with test performance %f %%' %
-          #(best_validation_loss * 100., best_iter + 1, test_score * 100.))
-
-
-
-
-
     print ('SVM scores:', scores_SVM)
-    auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path)
+    auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path+'SVM-')
+
+    learning_rates = [0.0001, 0.005, 0.001, 0.05, 0.01]
+    iterarions = 400
+    
+    data = [input_TrainClass_concatenated, input_ValidClass_concatenated, input_TestClass_concatenated, y_train, y_val, y_test]
+    validation_losses = np.zeros(len(learning_rates))
+    test_scores = np.zeros(len(learning_rates))
+    iters = np.zeros(len(learning_rates))
+    Softmax_predictions = []
+    Softmax_probabilities = []
+    for i, lr in enumerate(learning_rates):
+        validation_losses[i], test_scores[i], iters[i], predictions_aux, probabilities_aux = sgd_optimization(lr, 400, batch_size, data, 4000, 1)
+        Softmax_predictions.append(predictions_aux)
+        Softmax_probabilities.append(probabilities_aux)
+    indice_softmax = np.argmax(test_scores)
+    print('softmax')
+    print('Softmax probabilities:', Softmax_probabilities[indice_softmax])
+    print('Sofmtax predictions:', Softmax_predictions[indice_softmax]) 
+    auxiliar_functions.analize_results(y_test, Softmax_predictions[indice_softmax], Softmax_probabilities[indice_softmax], out_path+'Softmax-')
+    print('best softmax scores with a learning rate of', learning_rates[indice_softmax], 'best validation score;', validation_losses[indice_softmax], 'at iteration', iters[indice_softmax], 'and test loss:', test_scores[indice_softmax])
+
+
+    end_time = timeit.default_timer()
 
     print(('The code for file ' + os.path.split(__file__)[1] + ' ran for %.2fm' % ((end_time - start_time) / 60.)))
 
 
-    # sys.stdout = orig_stdout
-    # f.close()
+    sys.stdout = orig_stdout
+    f.close()
 
 
 if __name__ == '__main__':

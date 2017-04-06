@@ -20,7 +20,7 @@ import os, argparse
 #nkerns=[96, 256, 386, 384, 256]
 
 
-def evaluate_lenet5(learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=14):
+def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=14):
     """ Demonstrates lenet on MNIST dataset
 
     :type learning_rate: float
@@ -54,7 +54,7 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384
 
     print ('In this file are the results of using casia architecture and FRAV image database')
     print ('In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used')
-    print ('The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20')
+    print ('The configuration of the net is learning rate',learning_rate, 'numero de epochs:',n_epochs,'numero de kernels', nkerns, 'batch size:', batch_size)
     print ('Early stop has been deleted')
     print('For training has been used softmax classifier and for testing softmax and SVM')
     print ('In this example, two classes are going to be used, class 0 for real users and class 1 for attacks')
@@ -69,9 +69,9 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384
     open_file2.close()
 
     train_set_x = train_set_x[0:14]
-    test_set_x = train_set_x[0:14]
+    test_set_x = test_set_x[0:14]
     y_train = y_train[0:14]
-    y_test = y_train[0:14]
+    y_test = y_test[0:14]
     valid_set_x= valid_set_x[0:14]
     y_val = y_val[0:14]
 

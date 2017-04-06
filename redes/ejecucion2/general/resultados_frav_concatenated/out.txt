@@ -1,0 +1,79 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+The configuration of the net is learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((550, 49152), (157, 49152), (78, 49152))
+((550,), (157,), (78,))
+(49152,)
+n_train_samples: 550
+n_valid_samples: 78
+n_test_samples: 157
+n_batches:
+n_train_batches: 27
+n_valid_batches: 3
+n_test_batches: 7
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 27
+ 
+('n_train_batches', 27)
+('training @ iter = ', 0)
+epoch 1, minibatch 27/27, validation error 10.000000 %, cost 0.312830
+epoch 2, minibatch 27/27, validation error 10.000000 %, cost 0.317205
+epoch 3, minibatch 27/27, validation error 10.000000 %, cost 0.322437
+('training @ iter = ', 100)
+epoch 4, minibatch 27/27, validation error 10.000000 %, cost 0.290919
+epoch 5, minibatch 27/27, validation error 10.000000 %, cost 0.332760
+epoch 6, minibatch 27/27, validation error 10.000000 %, cost 0.360777
+epoch 7, minibatch 27/27, validation error 10.000000 %, cost 0.299497
+('training @ iter = ', 200)
+epoch 8, minibatch 27/27, validation error 10.000000 %, cost 0.301433
+epoch 9, minibatch 27/27, validation error 10.000000 %, cost 0.328508
+epoch 10, minibatch 27/27, validation error 10.000000 %, cost 0.317178
+epoch 11, minibatch 27/27, validation error 10.000000 %, cost 0.373734
+('training @ iter = ', 300)
+epoch 12, minibatch 27/27, validation error 10.000000 %, cost 0.340344
+epoch 13, minibatch 27/27, validation error 10.000000 %, cost 0.322084
+epoch 14, minibatch 27/27, validation error 10.000000 %, cost 0.355649
+('training @ iter = ', 400)
+epoch 15, minibatch 27/27, validation error 10.000000 %, cost 0.310233
+epoch 16, minibatch 27/27, validation error 10.000000 %, cost 0.268766
+epoch 17, minibatch 27/27, validation error 10.000000 %, cost 0.247528
+epoch 18, minibatch 27/27, validation error 10.000000 %, cost 0.236189
+('training @ iter = ', 500)
+epoch 19, minibatch 27/27, validation error 10.000000 %, cost 0.289864
+epoch 20, minibatch 27/27, validation error 20.000000 %, cost 0.177448
+epoch 21, minibatch 27/27, validation error 10.000000 %, cost 0.301444
+epoch 22, minibatch 27/27, validation error 10.000000 %, cost 0.322522
+('training @ iter = ', 600)
+epoch 23, minibatch 27/27, validation error 10.000000 %, cost 0.333154
+epoch 24, minibatch 27/27, validation error 10.000000 %, cost 0.235223
+epoch 25, minibatch 27/27, validation error 28.333333 %, cost 0.152819
+('training @ iter = ', 700)
+epoch 26, minibatch 27/27, validation error 10.000000 %, cost 0.341427
+epoch 27, minibatch 27/27, validation error 10.000000 %, cost 0.320557
+epoch 28, minibatch 27/27, validation error 10.000000 %, cost 0.337565
+epoch 29, minibatch 27/27, validation error 10.000000 %, cost 0.235366
+('training @ iter = ', 800)
+epoch 30, minibatch 27/27, validation error 43.333333 %, cost 0.208855
+epoch 31, minibatch 27/27, validation error 60.000000 %, cost 0.248157
+epoch 32, minibatch 27/27, validation error 66.666667 %, cost 0.251954
+epoch 33, minibatch 27/27, validation error 71.666667 %, cost 0.218019
+('training @ iter = ', 900)
+epoch 34, minibatch 27/27, validation error 41.666667 %, cost 0.171568
+epoch 35, minibatch 27/27, validation error 30.000000 %, cost 0.192922
+epoch 36, minibatch 27/27, validation error 18.333333 %, cost 0.140784
+epoch 37, minibatch 27/27, validation error 20.000000 %, cost 0.152443
+('training @ iter = ', 1000)
+epoch 38, minibatch 27/27, validation error 53.333333 %, cost 0.128152
+epoch 39, minibatch 27/27, validation error 10.000000 %, cost 0.273617
+epoch 40, minibatch 27/27, validation error 21.666667 %, cost 0.105565
+('training @ iter = ', 1100)
+epoch 41, m

@@ -1,9 +1,11 @@
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import numpy as np
 import random
 import cv2
 import pickle
 from sklearn.metrics import roc_auc_score, roc_curve, precision_recall_curve
-import matplotlib.pyplot as plt
 from itertools import cycle
 
 

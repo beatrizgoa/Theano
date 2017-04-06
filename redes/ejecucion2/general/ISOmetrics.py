@@ -3,27 +3,51 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-def DETCurve(fps,fns, path_in):
+def DETCurve(y_real, y_prob, clase_y_prob, path_out):
     """
     Given false positive and false negative rates, produce a DET Curve.
     The false positive rate is assumed to be increasing while the false
     negative rate is assumed to be decreasing.
 
     https://jeremykarnowski.wordpress.com/2015/08/07/detection-error-tradeoff-det-curves/
-
     """
-    axis_min = min(fps[0], fns[-1])
-    fig, ax = plt.subplots()
-    plot(fps, fns)
-    yscale('log')
-    xscale('log')
-    ticks_to_use = [0.001, 0.002, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50]
-    ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-    ax.get_yaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
-    ax.set_xticks(ticks_to_use)
-    ax.set_yticks(ticks_to_use)
-    axis([0.001, 50, 0.001, 50])
-    plt.savefig(path_in+'DET_curve.png')
+    FPR = np.zeros(10)
+    FNR = np.zeros(10)
+
+    for threshold in range(0,10):
+        th = threshold*0.1
+        FN = 0.  # real 0 pred 1
+        FP = 0.  # real 1 pred 0
+        TP = 0.
+        TN = 0.
+
+        for pos, value in enumerate(y_prob):
+
+            if value  > th:
+                y_pred = clase_y_prob
+            else:
+                y_pred = 1 - clase_y_prob
+
+            if y_real[pos] == 0 and y_pred == 0:
+                TP += 1
+            if y_real[pos] == 0 and y_pred == 1:
+                FN += 1
+            if y_real[pos] == 1 and y_pred == 1:
+                TN += 1
+            if y_real[pos] == 1 and y_pred == 0:
+                FP += 1
+
+        FPR[threshold] = FP/(FP+TN)
+        FNR[threshold] = FN/(TP+FN)
+
+    print ('FPR, FNR:', FPR, FNR)
+    plt.figure()
+    plt.xlabel('FPR')
+    plt.ylabel('FNR')
+    plt.title('DET curve')
+    plt.plot(FPR,FNR)
+    plt.savefig(path_out+'DET_curve.png')
+    plt.close()
 
 def calculate_sumatorios(clasificacion_real, clasificacion_predict, clas_user, clas_attack):
     sum_APCER = 0
@@ -81,4 +105,5 @@ def metric(probabilidades, clasificacion_predict, clasificacion_real, probabilid
     plt.ylabel('BPCER')
     plt.title('APCER - BPCER curve')
     plt.plot(APCER_ROC,BPCER_ROC)
-    plt.savefig(out_path+'APCER-BPCER curve.png')
+    plt.savefig(out_path+'APCER-BPCER-curve.png')
+    plt.close()

@@ -1,11 +1,13 @@
 # En este archivo de python se va a utilizar la base de datos de FRAV y Casia de imagenes  y se va a seguir la configuracion de la CNN del paper 'Learn convolutional neural network for face anti-spoofing'
 
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import numpy
 import timeit
 from pylab import *
 from logistic_sgd import LogisticRegression
 from sklearn.svm import SVC
-import matplotlib.pyplot as plt
 from layers import *
 import sys
 import theano
@@ -300,15 +302,7 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384,
         }
     )
 
-    cost_test = theano.function(
-        [index],
-        cost,
-        givens={
-            x: valid_set_x[index * batch_size: (index + np.cast['int32'](1)) * batch_size],
-            y: valid_set_x[index * batch_size: (index + np.cast['int32'](1)) * batch_size],
-            is_train: np.cast['int32'](0)
-        }
-    )
+
 
 
     ###############
@@ -369,11 +363,6 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384,
                        this_validation_loss * 100., cost_ij))
 
                 error_epoch.append(this_validation_loss * 100)
-
-                valid_cost = [cost_test(i) for i
-                                     in range(n_valid_batches)]
-
-                cost_validation.append(valid_cost)
 
 
                 # if we got the best validation score until now
@@ -533,7 +522,24 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384,
     auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path)
 
     print(('The code for file ' + os.path.split(__file__)[1] + ' ran for %.2fm' % ((end_time - start_time) / 60.)))
+    
+    print('SVM lineal:')
+    for Ci in C_range:
+        SVMcla = SVC(C=Ci, kernel='rbf')
+        scores = cross_val_score(SVMcla, input_TrainClass, y_train, cv=5,
+                                 scoring='accuracy')  # Con neg_log_loss el predict tiene que ser con probabilidad
+        svm_scores.append(scores.mean())
 
+    optimaC = C_range[svm_scores.index(max(svm_scores))]
+    print('optimaC', optimaC)
+    SVM2 = SVC(C = optimaC, kernel='rbf', probability= True)
+    SVM2.fit(X = input_TrainClass,y = y_train)
+
+    SVM_pred = SVM2.predict(input_test)
+    SVM_pred_prob = SVM2.predict_proba(input_test)
+    scores_SVM = SVM2.score(input_test,y_test)
+    print ('SVM scores:', scores_SVM)
+    auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path+'/svm_lineal')
 
     sys.stdout = orig_stdout
     f.close()

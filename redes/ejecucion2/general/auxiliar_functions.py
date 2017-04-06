@@ -169,7 +169,10 @@ def analize_results(y_real, y_pred, y_probabilidad, path):
     print ('TP, TN, FP, FN')
     print (TP, TN, FP, FN)
 
-    precision, recall, threshold = precision_recall_curve(y_real, y_probabilidad[:,0], pos_label=1)
+    try:
+        precision, recall, threshold = precision_recall_curve(y_real,  y_probabilidad, pos_label=1)
+    except:
+        precision, recall, threshold = precision_recall_curve(y_real,  y_probabilidad[:, 0], pos_label=1)
 
     # setup plot details
     colors = cycle(['navy', 'turquoise', 'darkorange', 'cornflowerblue', 'teal'])
@@ -186,10 +189,17 @@ def analize_results(y_real, y_pred, y_probabilidad, path):
     plt.legend(loc="lower left")
     plt.savefig(path+'Precision-Recall.png')
 
-    fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad[:,0], pos_label=1)
+
+    try:
+        fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad, pos_label=1)
+    except:
+        fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad[:,0], pos_label=1)
 
     print('Area under the roc curve:')
-    roc_auc = roc_auc_score(y_real, y_probabilidad[:,0])
+    try:
+        roc_auc = roc_auc_score(y_real, y_probabilidad)
+    except:
+        roc_auc = roc_auc_score(y_real, y_probabilidad[:,0])
     print(roc_auc)
 
     plt.clf()
@@ -203,6 +213,8 @@ def analize_results(y_real, y_pred, y_probabilidad, path):
     plt.ylabel('True Positive Rate')
     plt.xlabel('False Positive Rate')
     plt.savefig(path+'ROC.png')
+
+    plt.close('all')
 
     return TP, TN, FP, FN
 

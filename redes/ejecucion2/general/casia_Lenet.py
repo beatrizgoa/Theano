@@ -1,7 +1,4 @@
 # En este archivo de python se va a utilizar la base de datos de FRAV y Casia de imagenes  y se va a seguir la configuracion de la CNN del paper 'Learn convolutional neural network for face anti-spoofing'
-import matplotlib as mpl
-mpl.use('Agg')
-import matplotlib.pyplot as plt
 from ISOmetrics import *
 import numpy
 import timeit
@@ -15,11 +12,11 @@ import auxiliar_functions
 import pickle
 import os, argparse
 from classifiers import *
-
+from softmax_concatenated import sgd_optimization
 #nkerns=[96, 256, 386, 384, 256]
 
 
-def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], batch_size=20):
+def evaluate_lenet5(learning_rate=0.01, n_epochs=600, nkerns=[96, 256, 386, 384, 256], batch_size=20):
     """ Demonstrates lenet on MNIST dataset
 
     :type learning_rate: float
@@ -244,6 +241,16 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], bat
         }
     )
 
+    salidas_capa7_valid = theano.function(
+        [index],
+        layer7.output,
+        on_unused_input='ignore',
+        givens={
+            x: valid_set_x[index * batch_size: (index + 1) * batch_size],
+            y: valid_set_y[index * batch_size: (index + 1) * batch_size],
+            is_train: numpy.cast['int32'](0)
+        }
+    )
     salidas_capa7_train = theano.function(
         [index],
         layer7.output,
@@ -452,29 +459,34 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], bat
     layer8.W.set_value(w8_test) # Se cargan para el softmax como clasificador
     layer8.b.set_value(b8_test)
 
-    y_pred_junto = []
-    y_prob_junto = []
 
     input_test = []
+    input_valid = []
     sal_capa7 = [salidas_capa7_test(i) for i in range(n_test_batches)]
 
     for i in sal_capa7:
         for j in i:
             input_test.append(j)
+    sal_capa7_val = [salidas_capa7_valid(i) for i in range(n_valid_batches)]
+
+    for i in sal_capa7_val:
+        for j in i:
+            input_valid.append(j)
 
 
     y_train = y_train[0:len(input_TrainClass)]
     y_test = y_test[0:len(input_test)]
+    y_valid = y_test[0:len(input_valid)]
+
 
 
     ########## SVM ###########
 
     SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(input_TrainClass, y_train, input_test, y_test, 'rbf')
-
     print ('SVM RBF scores:', scores_SVM)
     TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path+'SVM_RBF-')
-    # DETCurve(FP, FN, out_path)
-
+    DETCurve(y_test, SVM_pred_prob[:,1], 1, out_path+'SVM_RBF-')
+    metric(SVM_pred_prob[:,1], SVM_pred, y_test, 1, out_path+'SVM_RBF-')
 
     ########## SVM LINEAR ###########
 
@@ -482,8 +494,8 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], bat
 
     print ('SVM linear scores:', scores_SVM)
     TP, TN, FP, FN =auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path+'SVM_LINEAR-')
-    #  DETCurve(FP, FN, out_path)
-
+    DETCurve(y_test, SVM_pred_prob[:,1], 1, out_path+'SVM_linear-')
+    metric(SVM_pred_prob[:,1], SVM_pred, y_test, 1, out_path+'SVM_linear-')
 
     ############  KNN  ##############
 
@@ -491,54 +503,22 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], bat
 
     print('KNN mean accuracy: ', scores_knn)
     TP, TN, FP, FN =auxiliar_functions.analize_results(y_test, knn_pred, knn_pred_prob, out_path+'KNN-')
-    # DETCurve(FP, FN, out_path)
-
-
-
-    ############## PCA ################
-
-    X_train_after_PCA, X_test_after_PCA = PCAClas(input_TrainClass, y_train, input_test, y_test)
-
-    ########## PCA SVM ###########
-
-    SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test, 'rbf')
-
-    print ('SVM RBF scores:', scores_SVM)
-    TP, TN, FP, FN =auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path + 'PCA_SVM_RBF-')
-    # DETCurve(FP, FN, out_path)
-
-
-    ########## PCA SVM LINEAR ###########
-
-    SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test, 'linear')
-
-    print ('SVM linear scores:', scores_SVM)
-    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path + 'PCA_SVM_LINEAR-')
-    #  DETCurve(FP, FN, out_path)
-
-
-    ############  PCA KNN  ##############
-
-    knn_pred, knn_pred_prob, scores_knn = KNNClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test)
-
-    print('KNN mean accuracy: ', scores_knn)
-    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, knn_pred, knn_pred_prob, out_path + 'PCA_KNN-')
-    # DETCurve(FP, FN, out_path)
-
-
+    DETCurve(y_test, knn_pred_prob[:,1], 1, out_path+'KNN-')
+    metric(knn_pred_prob[:,1], knn_pred, y_test, 1, out_path+'KNN-')
 
     ########## DECISION TREE ###########
-    tree_pred, tree_pred_prob, scores_tree = DecisionTreeClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test)
-
-    print('KNN mean accuracy: ', scores_tree)
+    tree_pred, tree_pred_prob, scores_tree = DecisionTreeClas(input_TrainClass, y_train, input_test, y_test)
+    print('Decision Tree mean accuracy: ', scores_tree)
     TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, tree_pred, tree_pred_prob, out_path + 'DecisionTree-')
-    # DETCurve(FP, FN, out_path)
-
+    DETCurve(y_test, tree_pred_prob[:,1], 1, out_path+'TREE-')
+    metric(tree_pred_prob[:,1], tree_pred, y_test, 1, out_path+'TREE-')
 
 
     ########### SOFTMAX ############
-
     print('----------SOFTMAX---------')
+
+    y_pred_junto = []
+    y_prob_junto = []
 
     # test it on the test set
     test_losses = [test_model(i) for i in range(n_test_batches)]
@@ -552,22 +532,129 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], bat
             y_pred_junto.append(j)
 
         for j in y_probabilidad:
-            y_prob_junto.append(j[0])
+            y_prob_junto.append(j[1])
 
-    print ('softmax')
     print((' test error of best model %f %%') % (test_score * 100.))
 
     print ('SOFTMAX scores:', scores_SVM)
     TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, y_pred_junto, y_prob_junto, out_path+'SOFTMAX-')
-    # DETCurve(FP, FN, out_path)
+    DETCurve(y_test, y_prob_junto, 1, out_path+'SOFTMAX-')
+    metric(y_prob_junto, y_pred_junto, y_test, 1, out_path+'SOFTMAX-')
 
 
+    ############## PCA ################
+
+    X_train_after_PCA, X_test_after_PCA, X_valid_after_PCA = PCAClas(input_TrainClass, y_train, input_test, y_test, input_valid)
+
+    ########## PCA SVM ###########
+
+    SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test, 'rbf')
+    print ('SVM RBF scores:', scores_SVM)
+    TP, TN, FP, FN =auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path + 'PCA_SVM_RBF-')
+    DETCurve(y_test, SVM_pred_prob[:,1], 1,out_path+'PCA_SVM_RBF-')
+    metric(SVM_pred_prob[:,1], SVM_pred, y_test, 1, out_path+'PCA_SVM_RBF-')
+
+    ########## PCA SVM LINEAR ###########
+
+    SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test, 'linear')
+
+    print ('SVM linear scores:', scores_SVM)
+    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path + 'PCA_SVM_LINEAR-')
+    DETCurve(y_test, SVM_pred_prob[:,1], 1, out_path+'PCA_SVM_linear-')
+    metric(SVM_pred_prob[:,1], SVM_pred, y_test, 1, out_path+'PCA_SVM_Linear-')
+
+    ############  PCA KNN  ##############
+
+    knn_pred, knn_pred_prob, scores_knn = KNNClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test)
+    print('KNN mean accuracy: ', scores_knn)
+    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, knn_pred, knn_pred_prob, out_path + 'PCA_KNN-')
+    DETCurve(y_test, knn_pred_prob[:,1], 1, out_path+'PCA_KNN-')
+    metric(knn_pred_prob[:,1], knn_pred, y_test, 1, out_path+'PCA_KNN-')
+
+    ########## DECISION TREE ###########
+    tree_pred, tree_pred_prob, scores_tree = DecisionTreeClas(X_train_after_PCA, y_train, X_test_after_PCA, y_test)
+    print('PCA Decision Tree mean accuracy: ', scores_tree)
+    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, tree_pred, tree_pred_prob, out_path + 'PCA_DecisionTree-')
+    DETCurve(y_test, tree_pred_prob[:,1], 1, out_path+'PCA_TREE-')
+    metric(tree_pred_prob[:,1], tree_pred, y_test, 1, out_path+'PCA_TREE-')
+
+    ########### SOFTMAX + PCA ############
+    print('----------SOFTMAX + PCA---------')
+    learning_rates = [0.0001, 0.005, 0.001, 0.05, 0.01]
+    iterarions = 400
+    data = [X_train_after_PCA, X_valid_after_PCA, X_test_after_PCA , y_train, y_val, y_test]
+    validation_losses = np.zeros(len(learning_rates))
+    test_scores = np.zeros(len(learning_rates))
+    iters = np.zeros(len(learning_rates))
+    Softmax_predictions = []
+    Softmax_probabilities = []
+    for i, lr in enumerate(learning_rates):
+        validation_losses[i], test_scores[i], iters[i], predictions_aux, probabilities_aux = sgd_optimization(lr, 400, batch_size, data, len(X_train_after_PCA[0]), 1)
+        Softmax_predictions.append(predictions_aux)
+        Softmax_probabilities.append(probabilities_aux)
+    indice_softmax = np.argmax(test_scores)
+    auxiliar_functions.analize_results(y_test, Softmax_predictions[indice_softmax], Softmax_probabilities[indice_softmax], out_path+'PCA_Softmax-')
+    metric(Softmax_predictions[indice_softmax], Softmax_probabilities[indice_softmax], y_test, 1, out_path+'PCA_Softmax-')
+    print('best softmax PCA scores with a learning rate of', learning_rates[indice_softmax], 'best validation score:', validation_losses[indice_softmax],'at iteration', iters[indice_softmax], 'and test loss:', test_scores[indice_softmax])
+
+    ##############    LDA   ###################
+    X_train_after_LDA, X_test_after_LDA, X_valid_after_LDA = LDAClas(input_TrainClass, y_train, input_test, y_test, input_valid)
+
+    ########## LDA SVM ###########
+
+    SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(X_train_after_LDA, y_train, X_test_after_LDA, y_test, 'rbf')
+    print ('SVM RBF scores:', scores_SVM)
+    TP, TN, FP, FN =auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path + 'LDA_SVM_RBF-')
+    DETCurve(y_test, SVM_pred_prob[:,1], 1,out_path+'LDA_SVM_RBF-')
+    metric(SVM_pred_prob[:,1], SVM_pred, y_test, 1, out_path+'LDA_SVM_RBF-')
+
+
+    ########## LDA SVM LINEAR ###########
+
+    SVM_pred, SVM_pred_prob, scores_SVM = SVMClas(X_train_after_LDA, y_train, X_test_after_LDA, y_test, 'linear')
+
+    print ('SVM linear scores:', scores_SVM)
+    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, SVM_pred, SVM_pred_prob, out_path + 'LDA_SVM_LINEAR-')
+    DETCurve(y_test, SVM_pred_prob[:,1], 1, out_path+'LDA_SVM_linear-')
+    metric(SVM_pred_prob[:,1], SVM_pred, y_test, 1, out_path+'LDA_SVM_linear-')
+
+    ############  LDA KNN  ##############
+
+    knn_pred, knn_pred_prob, scores_knn = KNNClas(X_train_after_LDA, y_train, X_test_after_LDA, y_test)
+    print('KNN mean accuracy: ', scores_knn)
+    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, knn_pred, knn_pred_prob, out_path + 'LDA_KNN-')
+    DETCurve(y_test, knn_pred_prob[:,1], 1, out_path+'LDA_KNN-')
+    metric(knn_pred_prob[:,1], knn_pred, y_test, 1, out_path+'LDA_KNN-')
+
+    ##########  LDA DECISION TREE ###########
+    tree_pred, tree_pred_prob, scores_tree = DecisionTreeClas(X_train_after_LDA, y_train, X_test_after_LDA, y_test)
+    print('LDA-Tree mean accuracy: ', scores_tree)
+    TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, tree_pred, tree_pred_prob, out_path + 'LDA_DecisionTree-')
+    DETCurve(y_test, tree_pred_prob[:,1], 1, out_path+'LDA_TREE-')
+    metric(tree_pred_prob[:,1], tree_pred, y_test, 1, out_path+'LDA_TREE-')
+
+    ########### SOFTMAX + LDA ############
+    print('----------SOFTMAX + LDA---------')
+    learning_rates = [0.0001, 0.005, 0.001, 0.05, 0.01]
+    iterarions = 400
+    data = [X_train_after_LDA, X_valid_after_LDA, X_test_after_LDA , y_train, y_val, y_test]
+    validation_losses = np.zeros(len(learning_rates))
+    test_scores = np.zeros(len(learning_rates))
+    iters = np.zeros(len(learning_rates))
+    Softmax_predictions = []
+    Softmax_probabilities = []
+    for i, lr in enumerate(learning_rates):
+        validation_losses[i], test_scores[i], iters[i], predictions_aux, probabilities_aux = sgd_optimization(lr, 400, batch_size, data, len(X_train_after_LDA[0]), 1)
+        Softmax_predictions.append(predictions_aux)
+        Softmax_probabilities.append(probabilities_aux)
+    indice_softmax = np.argmax(test_scores)
+    auxiliar_functions.analize_results(y_test, Softmax_predictions[indice_softmax], Softmax_probabilities[indice_softmax], out_path+'LDA_Softmax-')
+    metric(Softmax_predictions[indice_softmax], Softmax_probabilities[indice_softmax], y_test, 1, out_path+'LDA_Softmax-')
+    print('best softmax LDA scores with a learning rate of', learning_rates[indice_softmax], 'best validation score:', validation_losses[indice_softmax],'at iteration', iters[indice_softmax], 'and test loss:', test_scores[indice_softmax])
 
 
 
    ########  FIN CLASIFICADORES #########
-
-    end_time = timeit.default_timer()
     print('Optimization complete.')
     print('Best validation score of %f %% obtained at iteration %i, '
           'with test performance %f %%' %
@@ -585,7 +672,7 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=2, nkerns=[2, 2, 2, 2, 2], bat
     plt.xlabel('iteration')
     plt.savefig(out_path+'cost.png')
 
-
+    end_time = timeit.default_timer()
     print(('The code for file ' + os.path.split(__file__)[1] + ' ran for %.2fm' % ((end_time - start_time) / 60.)))
 
 

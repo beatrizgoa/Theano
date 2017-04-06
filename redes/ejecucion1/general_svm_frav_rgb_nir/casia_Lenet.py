@@ -20,7 +20,7 @@ import os, argparse
 #nkerns=[96, 256, 386, 384, 256]
 
 
-def evaluate_lenet5(learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20):
+def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384, 256], batch_size=20):
     """ Demonstrates lenet on MNIST dataset
 
     :type learning_rate: float
@@ -69,11 +69,11 @@ def evaluate_lenet5(learning_rate=0.001, n_epochs=400, nkerns=[96, 256, 386, 384
     open_file2.close()
 
     train_set_x = train_set_x[0:20]
-    test_set_x = train_set_x[0:20]
+    test_set_x = test_set_x[0:20]
     valid_set_x= valid_set_x[0:20]
 
     y_train = y_train[0:20]
-    y_test = y_train[0:20]
+    y_test = y_test[0:20]
     y_val = y_val[0:20]
 
     print (numpy.array(train_set_x).shape, numpy.array(test_set_x).shape, numpy.array(valid_set_x).shape)

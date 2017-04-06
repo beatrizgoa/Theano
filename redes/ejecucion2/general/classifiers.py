@@ -3,8 +3,7 @@ from sklearn import neighbors
 from sklearn.decomposition import PCA
 from sklearn.cross_validation import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
-from numpy import mean
-
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 
 
@@ -42,10 +41,13 @@ def KNNClas(X_train, y_train, X_test, y_test):
     k_scores = []
     k_range = range(2, 32, 2)
     for i in k_range:
-        neigh = neighbors.KNeighborsClassifier(n_neighbors=i)
-        scores = cross_val_score(neigh, X_train, y_train, cv=5,
-                                 scoring='accuracy')  # Con neg_log_loss el predict tiene que ser con probabilidad
-        k_scores.append(mean(scores))
+        try:
+            neigh = neighbors.KNeighborsClassifier(n_neighbors=i)
+            scores = cross_val_score(neigh, X_train, y_train, cv=5,
+                                     scoring='accuracy')  # Con neg_log_loss el predict tiene que ser con probabilidad
+            k_scores.append(scores.mean())
+        except:
+            print i
 
     optim_position = k_scores.index(max(k_scores))  # esto te da el indice
     optimk = k_range[optim_position]
@@ -61,21 +63,25 @@ def KNNClas(X_train, y_train, X_test, y_test):
     return knn_pred, knn_pred_prob, scores_knn
 
 
-def PCAClas(X_train, y_train, X_test, y_test):
+def PCAClas(X_train, y_train, X_test, y_test, X_valid):
 
     ############## PCA ################
 
     print('---------- PCA results ---------')
 
-    ncomponentes = range(1, 2000, 10)
+    ncomponentes = range(3, 5000, 10)
     PCA_scores = []
-    for n in ncomponentes:
-        pca = PCA(n_components=n)
-        scores = cross_val_score(pca, X_train, y_train, cv=5,
-                                 scoring='accuracy')  # Con neg_log_loss el predict tiene que ser con probabilidad
-        print scores
+    pca = PCA()
 
-        # PCA_scores.append(scores.mean())
+    for n in ncomponentes:
+        try:
+            pca.n_components = n
+            scores = cross_val_score(pca, X_train, y_train, cv=10)  # Con neg_log_loss el predict tiene que ser con probabilidad
+            PCA_scores.append(scores.mean())
+
+        except:
+            print n
+
 
     optimaNcomponentes = ncomponentes[PCA_scores.index(max(PCA_scores))]
     print('PCA optimous componentes number', optimaNcomponentes)
@@ -83,9 +89,43 @@ def PCAClas(X_train, y_train, X_test, y_test):
     pca = PCA(n_components=optimaNcomponentes)
     X_train_after_PCA = pca.fit_transform(X_train)
     X_test_after_PCA = pca.transform(X_test)
+    X_valid_after_PCA = pca.transform(X_valid)
 
-    return X_train_after_PCA, X_test_after_PCA
+    return X_train_after_PCA, X_test_after_PCA, X_valid_after_PCA
 
+
+def LDAClas(X_train, y_train, X_test, y_test, X_valid):
+
+    ############## LDA ################
+
+    print('---------- LDA results ---------')
+
+    ncomponentes = range(1, len(X_train[0]), 10)
+    LDA_scores = []
+    lda = LDA()
+
+    for n in ncomponentes:
+        print ('n', n)
+        try:
+            lda.n_components = n
+            scores = cross_val_score(lda, X_train, y_train, cv=10)  # Con neg_log_loss el predict tiene que ser con probabilidad
+            LDA_scores.append(scores.mean())
+
+        except:
+            print n
+
+    print ('LDA scores:', LDA_scores)
+
+    optimaNcomponentes = ncomponentes[LDA_scores.index(max(LDA_scores))]
+    print('LDA optimous componentes number', optimaNcomponentes)
+
+    lda = LDA(n_components=optimaNcomponentes)
+    X_train_after_LDA = lda.fit_transform(X_train, y_train)
+    X_test_after_LDA = lda.transform(X_test)
+    X_valid_after_LDA = lda.transform(X_valid)
+    
+    print('max lda scores:', max(LDA_scores)) 
+    return X_train_after_LDA, X_test_after_LDA, X_valid_after_LDA
 
 
 def DecisionTreeClas(X_train, y_train, X_test, y_test):
