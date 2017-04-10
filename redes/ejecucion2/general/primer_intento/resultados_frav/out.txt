@@ -1,0 +1,3276 @@
+In this file are the results of using casia architecture and FRAV image database
+In the architecture conv, pool, response normalization,fully connect, dropout and softmax layers are used with relu. No strides are used
+('The configuration of the net is', 'learning_rate=', 0.01, 'n_epochs=', 600, 'nkerns=', [96, 256, 386, 384, 256], 'batch_size=', 20)
+Early stop has been deleted
+For training has been used softmax classifier and for testing softmax and SVM
+In this example, two classes are going to be used, class 0 for real users and class 1 for attacks
+Start reading the data...
+((653, 49152), (187, 49152), (93, 49152))
+((653,), (187,), (93,))
+(49152,)
+n_train_samples: 653
+n_valid_samples: 93
+n_test_samples: 187
+n_batches:
+n_train_batches: 32
+n_valid_batches: 4
+n_test_batches: 9
+... building the model
+... training
+ 
+patience: 100000
+patience_increase: 2
+improvement threshold: 0
+validation_frequency: 32
+ 
+('n_train_batches', 32)
+('training @ iter = ', 0)
+epoch 1, minibatch 32/32, validation error 40.000000 %, cost 0.017822
+epoch 2, minibatch 32/32, validation error 40.000000 %, cost 0.024927
+epoch 3, minibatch 32/32, validation error 40.000000 %, cost 0.034076
+('training @ iter = ', 100)
+epoch 4, minibatch 32/32, validation error 40.000000 %, cost 0.034232
+epoch 5, minibatch 32/32, validation error 40.000000 %, cost 0.033886
+epoch 6, minibatch 32/32, validation error 40.000000 %, cost 0.028274
+('training @ iter = ', 200)
+epoch 7, minibatch 32/32, validation error 40.000000 %, cost 0.034337
+epoch 8, minibatch 32/32, validation error 40.000000 %, cost 0.042488
+epoch 9, minibatch 32/32, validation error 40.000000 %, cost 0.041199
+('training @ iter = ', 300)
+epoch 10, minibatch 32/32, validation error 40.000000 %, cost 0.041317
+epoch 11, minibatch 32/32, validation error 40.000000 %, cost 0.036673
+epoch 12, minibatch 32/32, validation error 40.000000 %, cost 0.039196
+('training @ iter = ', 400)
+epoch 13, minibatch 32/32, validation error 40.000000 %, cost 0.034695
+epoch 14, minibatch 32/32, validation error 40.000000 %, cost 0.033216
+epoch 15, minibatch 32/32, validation error 40.000000 %, cost 0.032363
+('training @ iter = ', 500)
+epoch 16, minibatch 32/32, validation error 40.000000 %, cost 0.030132
+epoch 17, minibatch 32/32, validation error 40.000000 %, cost 0.027558
+epoch 18, minibatch 32/32, validation error 40.000000 %, cost 0.022687
+('training @ iter = ', 600)
+epoch 19, minibatch 32/32, validation error 40.000000 %, cost 0.023392
+epoch 20, minibatch 32/32, validation error 40.000000 %, cost 0.016507
+epoch 21, minibatch 32/32, validation error 40.000000 %, cost 0.018574
+('training @ iter = ', 700)
+epoch 22, minibatch 32/32, validation error 40.000000 %, cost 0.018697
+epoch 23, minibatch 32/32, validation error 38.750000 %, cost 0.019036
+epoch 24, minibatch 32/32, validation error 35.000000 %, cost 0.022938
+epoch 25, minibatch 32/32, validation error 35.000000 %, cost 0.024098
+('training @ iter = ', 800)
+epoch 26, minibatch 32/32, validation error 33.750000 %, cost 0.016147
+epoch 27, minibatch 32/32, validation error 31.250000 %, cost 0.030061
+epoch 28, minibatch 32/32, validation error 31.250000 %, cost 0.018754
+('training @ iter = ', 900)
+epoch 29, minibatch 32/32, validation error 37.500000 %, cost 0.013881
+epoch 30, minibatch 32/32, validation error 31.250000 %, cost 0.021805
+epoch 31, minibatch 32/32, validation error 31.250000 %, cost 0.026608
+('training @ iter = ', 1000)
+epoch 32, minibatch 32/32, validation error 30.000000 %, cost 0.016195
+epoch 33, minibatch 32/32, validation error 28.750000 %, cost 0.017508
+epoch 34, minibatch 32/32, validation error 31.250000 %, cost 0.018595
+('training @ iter = ', 1100)
+epoch 35, minibatch 32/32, validation error 28.750000 %, cost 0.014053
+epoch 36, minibatch 32/32, validation error 28.750000 %, cost 0.014712
+epoch 37, minibatch 32/32, validation error 28.750000 %, cost 0.021435
+('training @ iter = ', 1200)
+epoch 38, minibatch 32/32, validation error 26.250000 %, cost 0.010873
+epoch 39, minibatch 32/32, validation error 26.250000 %, cost 0.013474
+epoch 40, minibatch 32/32, validation error 28.750000 %, cost 0.017052
+('training @ iter = ', 1300)
+epoch 41, minibatch 32/32, validation error 26.250000 %, cost 0.010927
+epoch 42, minibatch 32/32, validation error 36.250000 %, cost 0.012208
+epoch 43, minibatch 32/32, validation error 26.250000 %, cost 0.014872
+('training @ iter = ', 1400)
+epoch 44, minibatch 32/32, validation error 38.750000 %, cost 0.020144
+epoch 45, minibatch 32/32, validation error 32.500000 %, cost 0.014888
+epoch 46, minibatch 32/32, validation error 32.500000 %, cost 0.009498
+('training @ iter = ', 1500)
+epoch 47, minibatch 32/32, validation error 30.000000 %, cost 0.013312
+epoch 48, minibatch 32/32, validation error 40.000000 %, cost 0.014900
+epoch 49, minibatch 32/32, validation error 27.500000 %, cost 0.007571
+epoch 50, minibatch 32/32, validation error 36.250000 %, cost 0.017531
+('training @ iter = ', 1600)
+epoch 51, minibatch 32/32, validation error 31.250000 %, cost 0.009241
+epoch 52, minibatch 32/32, validation error 30.000000 %, cost 0.013685
+epoch 53, minibatch 32/32, validation error 26.250000 %, cost 0.020862
+('training @ iter = ', 1700)
+epoch 54, minibatch 32/32, validation error 36.250000 %, cost 0.003482
+epoch 55, minibatch 32/32, validation error 40.000000 %, cost 0.025346
+epoch 56, minibatch 32/32, validation error 26.250000 %, cost 0.012951
+('training @ iter = ', 1800)
+epoch 57, minibatch 32/32, validation error 40.000000 %, cost 0.012292
+epoch 58, minibatch 32/32, validation error 40.000000 %, cost 0.035583
+epoch 59, minibatch 32/32, validation error 40.000000 %, cost 0.017911
+('training @ iter = ', 1900)
+epoch 60, minibatch 32/32, validation error 32.500000 %, cost 0.014853
+epoch 61, minibatch 32/32, validation error 35.000000 %, cost 0.014241
+epoch 62, minibatch 32/32, validation error 40.000000 %, cost 0.020253
+('training @ iter = ', 2000)
+epoch 63, minibatch 32/32, validation error 35.000000 %, cost 0.020286
+epoch 64, minibatch 32/32, validation error 40.000000 %, cost 0.013680
+epoch 65, minibatch 32/32, validation error 35.000000 %, cost 0.014012
+('training @ iter = ', 2100)
+epoch 66, minibatch 32/32, validation error 40.000000 %, cost 0.014640
+epoch 67, minibatch 32/32, validation error 30.000000 %, cost 0.017245
+epoch 68, minibatch 32/32, validation error 33.750000 %, cost 0.029019
+('training @ iter = ', 2200)
+epoch 69, minibatch 32/32, validation error 33.750000 %, cost 0.008964
+epoch 70, minibatch 32/32, validation error 32.500000 %, cost 0.009198
+epoch 71, minibatch 32/32, validation error 32.500000 %, cost 0.010838
+('training @ iter = ', 2300)
+epoch 72, minibatch 32/32, validation error 30.000000 %, cost 0.005624
+epoch 73, minibatch 32/32, validation error 30.000000 %, cost 0.021674
+epoch 74, minibatch 32/32, validation error 27.500000 %, cost 0.020775
+epoch 75, minibatch 32/32, validation error 26.250000 %, cost 0.007917
+('training @ iter = ', 2400)
+epoch 76, minibatch 32/32, validation error 27.500000 %, cost 0.004911
+epoch 77, minibatch 32/32, validation error 28.750000 %, cost 0.008107
+epoch 78, minibatch 32/32, validation error 40.000000 %, cost 0.016898
+('training @ iter = ', 2500)
+epoch 79, minibatch 32/32, validation error 33.750000 %, cost 0.019596
+epoch 80, minibatch 32/32, validation error 40.000000 %, cost 0.004031
+epoch 81, minibatch 32/32, validation error 28.750000 %, cost 0.003899
+('training @ iter = ', 2600)
+epoch 82, minibatch 32/32, validation error 38.750000 %, cost 0.016839
+epoch 83, minibatch 32/32, validation error 27.500000 %, cost 0.007394
+epoch 84, minibatch 32/32, validation error 31.250000 %, cost 0.007948
+('training @ iter = ', 2700)
+epoch 85, minibatch 32/32, validation error 32.500000 %, cost 0.023476
+epoch 86, minibatch 32/32, validation error 30.000000 %, cost 0.015805
+epoch 87, minibatch 32/32, validation error 27.500000 %, cost 0.012158
+('training @ iter = ', 2800)
+epoch 88, minibatch 32/32, validation error 23.750000 %, cost 0.010065
+epoch 89, minibatch 32/32, validation error 28.750000 %, cost 0.007659
+epoch 90, minibatch 32/32, validation error 36.250000 %, cost 0.004288
+('training @ iter = ', 2900)
+epoch 91, minibatch 32/32, validation error 27.500000 %, cost 0.019180
+epoch 92, minibatch 32/32, validation error 25.000000 %, cost 0.006152
+epoch 93, minibatch 32/32, validation error 40.000000 %, cost 0.045425
+('training @ iter = ', 3000)
+epoch 94, minibatch 32/32, validation error 35.000000 %, cost 0.007063
+epoch 95, minibatch 32/32, validation error 33.750000 %, cost 0.006575
+epoch 96, minibatch 32/32, validation error 37.500000 %, cost 0.003937
+('training @ iter = ', 3100)
+epoch 97, minibatch 32/32, validation error 26.250000 %, cost 0.014178
+epoch 98, minibatch 32/32, validation error 28.750000 %, cost 0.004628
+epoch 99, minibatch 32/32, validation error 28.750000 %, cost 0.002696
+epoch 100, minibatch 32/32, validation error 35.000000 %, cost 0.008296
+('training @ iter = ', 3200)
+epoch 101, minibatch 32/32, validation error 25.000000 %, cost 0.005185
+epoch 102, minibatch 32/32, validation error 22.500000 %, cost 0.040787
+epoch 103, minibatch 32/32, validation error 23.750000 %, cost 0.002890
+('training @ iter = ', 3300)
+epoch 104, minibatch 32/32, validation error 22.500000 %, cost 0.004802
+epoch 105, minibatch 32/32, validation error 32.500000 %, cost 0.022112
+epoch 106, minibatch 32/32, validation error 26.250000 %, cost 0.006523
+('training @ iter = ', 3400)
+epoch 107, minibatch 32/32, validation error 22.500000 %, cost 0.000965
+epoch 108, minibatch 32/32, validation error 26.250000 %, cost 0.011258
+epoch 109, minibatch 32/32, validation error 33.750000 %, cost 0.012802
+('training @ iter = ', 3500)
+epoch 110, minibatch 32/32, validation error 17.500000 %, cost 0.002826
+epoch 111, minibatch 32/32, validation error 28.750000 %, cost 0.005686
+epoch 112, minibatch 32/32, validation error 22.500000 %, cost 0.006297
+('training @ iter = ', 3600)
+epoch 113, minibatch 32/32, validation error 20.000000 %, cost 0.009899
+epoch 114, minibatch 32/32, validation error 37.500000 %, cost 0.015637
+epoch 115, minibatch 32/32, validation error 35.000000 %, cost 0.003134
+('training @ iter = ', 3700)
+epoch 116, minibatch 32/32, validation error 28.750000 %, cost 0.009910
+epoch 117, minibatch 32/32, validation error 40.000000 %, cost 0.015805
+epoch 118, minibatch 32/32, validation error 33.750000 %, cost 0.000697
+('training @ iter = ', 3800)
+epoch 119, minibatch 32/32, validation error 26.250000 %, cost 0.015107
+epoch 120, minibatch 32/32, validation error 27.500000 %, cost 0.014508
+epoch 121, minibatch 32/32, validation error 27.500000 %, cost 0.003207
+('training @ iter = ', 3900)
+epoch 122, minibatch 32/32, validation error 40.000000 %, cost 0.002379
+epoch 123, minibatch 32/32, validation error 37.500000 %, cost 0.039424
+epoch 124, minibatch 32/32, validation error 27.500000 %, cost 0.003054
+epoch 125, minibatch 32/32, validation error 22.500000 %, cost 0.006624
+('training @ iter = ', 4000)
+epoch 126, minibatch 32/32, validation error 22.500000 %, cost 0.003730
+epoch 127, minibatch 32/32, validation error 28.750000 %, cost 0.011929
+epoch 128, minibatch 32/32, validation error 28.750000 %, cost 0.000642
+('training @ iter = ', 4100)
+epoch 129, minibatch 32/32, validation error 22.500000 %, cost 0.001950
+epoch 130, minibatch 32/32, validation error 22.500000 %, cost 0.005154
+epoch 131, minibatch 32/32, validation error 32.500000 %, cost 0.003836
+('training @ iter = ', 4200)
+epoch 132, minibatch 32/32, validation error 31.250000 %, cost 0.004157
+epoch 133, minibatch 32/32, validation error 20.000000 %, cost 0.006060
+epoch 134, minibatch 32/32, validation error 37.500000 %, cost 0.000564
+('training @ iter = ', 4300)
+epoch 135, minibatch 32/32, validation error 23.750000 %, cost 0.001788
+epoch 136, minibatch 32/32, validation error 37.500000 %, cost 0.001923
+epoch 137, minibatch 32/32, validation error 16.250000 %, cost 0.018349
+('training @ iter = ', 4400)
+epoch 138, minibatch 32/32, validation error 23.750000 %, cost 0.009918
+epoch 139, minibatch 32/32, validation error 33.750000 %, cost 0.006703
+epoch 140, minibatch 32/32, validation error 27.500000 %, cost 0.006770
+('training @ iter = ', 4500)
+epoch 141, minibatch 32/32, validation error 26.250000 %, cost 0.002088
+epoch 142, minibatch 32/32, validation error 27.500000 %, cost 0.001334
+epoch 143, minibatch 32/32, validation error 26.250000 %, cost 0.001188
+('training @ iter = ', 4600)
+epoch 144, minibatch 32/32, validation error 32.500000 %, cost 0.071539
+epoch 145, minibatch 32/32, validation error 27.500000 %, cost 0.004855
+epoch 146, minibatch 32/32, validation error 32.500000 %, cost 0.064140
+('training @ iter = ', 4700)
+epoch 147, minibatch 32/32, validation error 40.000000 %, cost 0.009620
+epoch 148, minibatch 32/32, validation error 23.750000 %, cost 0.013174
+epoch 149, minibatch 32/32, validation error 23.750000 %, cost 0.018018
+epoch 150, minibatch 32/32, validation error 31.250000 %, cost 0.000412
+('training @ iter = ', 4800)
+epoch 151, minibatch 32/32, validation error 22.500000 %, cost 0.018585
+epoch 152, minibatch 32/32, validation error 22.500000 %, cost 0.002691
+epoch 153, minibatch 32/32, validation error 27.500000 %, cost 0.020593
+('training @ iter = ', 4900)
+epoch 154, minibatch 32/32, validation error 32.500000 %, cost 0.053593
+epoch 155, minibatch 32/32, validation error 23.750000 %, cost 0.004738
+epoch 156, minibatch 32/32, validation error 27.500000 %, cost 0.001631
+('training @ iter = ', 5000)
+epoch 157, minibatch 32/32, validation error 23.750000 %, cost 0.002723
+epoch 158, minibatch 32/32, validation error 31.250000 %, cost 0.025735
+epoch 159, minibatch 32/32, validation error 26.250000 %, cost 0.035636
+('training @ iter = ', 5100)
+epoch 160, minibatch 32/32, validation error 23.750000 %, cost 0.009188
+epoch 161, minibatch 32/32, validation error 20.000000 %, cost 0.011836
+epoch 162, minibatch 32/32, validation error 32.500000 %, cost 0.014043
+('training @ iter = ', 5200)
+epoch 163, minibatch 32/32, validation error 22.500000 %, cost 0.009116
+epoch 164, minibatch 32/32, validation error 22.500000 %, cost 0.001107
+epoch 165, minibatch 32/32, validation error 25.000000 %, cost 0.000270
+('training @ iter = ', 5300)
+epoch 166, minibatch 32/32, validation error 23.750000 %, cost 0.003366
+epoch 167, minibatch 32/32, validation error 28.750000 %, cost 0.004228
+epoch 168, minibatch 32/32, validation error 31.250000 %, cost 0.007771
+('training @ iter = ', 5400)
+epoch 169, minibatch 32/32, validation error 25.000000 %, cost 0.010681
+epoch 170, minibatch 32/32, validation error 31.250000 %, cost 0.050481
+epoch 171, minibatch 32/32, validation error 26.250000 %, cost 0.001201
+('training @ iter = ', 5500)
+epoch 172, minibatch 32/32, validation error 30.000000 %, cost 0.000581
+epoch 173, minibatch 32/32, validation error 21.250000 %, cost 0.000578
+epoch 174, minibatch 32/32, validation error 32.500000 %, cost 0.008540
+epoch 175, minibatch 32/32, validation error 21.250000 %, cost 0.004630
+('training @ iter = ', 5600)
+epoch 176, minibatch 32/32, validation error 23.750000 %, cost 0.002775
+epoch 177, minibatch 32/32, validation error 18.750000 %, cost 0.000821
+epoch 178, minibatch 32/32, validation error 23.750000 %, cost 0.000971
+('training @ iter = ', 5700)
+epoch 179, minibatch 32/32, validation error 25.000000 %, cost 0.002066
+epoch 180, minibatch 32/32, validation error 22.500000 %, cost 0.004552
+epoch 181, minibatch 32/32, validation error 31.250000 %, cost 0.091225
+('training @ iter = ', 5800)
+epoch 182, minibatch 32/32, validation error 25.000000 %, cost 0.024287
+epoch 183, minibatch 32/32, validation error 26.250000 %, cost 0.001731
+epoch 184, minibatch 32/32, validation error 27.500000 %, cost 0.000191
+('training @ iter = ', 5900)
+epoch 185, minibatch 32/32, validation error 21.250000 %, cost 0.000687
+epoch 186, minibatch 32/32, validation error 20.000000 %, cost 0.088377
+epoch 187, minibatch 32/32, validation error 17.500000 %, cost 0.004940
+('training @ iter = ', 6000)
+epoch 188, minibatch 32/32, validation error 18.750000 %, cost 0.003375
+epoch 189, minibatch 32/32, validation error 17.500000 %, cost 0.007420
+epoch 190, minibatch 32/32, validation error 15.000000 %, cost 0.005031
+('training @ iter = ', 6100)
+epoch 191, minibatch 32/32, validation error 21.250000 %, cost 0.005766
+epoch 192, minibatch 32/32, validation error 18.750000 %, cost 0.041954
+epoch 193, minibatch 32/32, validation error 23.750000 %, cost 0.006070
+('training @ iter = ', 6200)
+epoch 194, minibatch 32/32, validation error 16.250000 %, cost 0.001084
+epoch 195, minibatch 32/32, validation error 21.250000 %, cost 0.035076
+epoch 196, minibatch 32/32, validation error 13.750000 %, cost 0.030885
+('training @ iter = ', 6300)
+epoch 197, minibatch 32/32, validation error 26.250000 %, cost 0.000670
+epoch 198, minibatch 32/32, validation error 16.250000 %, cost 0.000217
+epoch 199, minibatch 32/32, validation error 15.000000 %, cost 0.002127
+epoch 200, minibatch 32/32, validation error 20.000000 %, cost 0.004895
+('training @ iter = ', 6400)
+epoch 201, minibatch 32/32, validation error 16.250000 %, cost 0.000016
+epoch 202, minibatch 32/32, validation error 27.500000 %, cost 0.015257
+epoch 203, minibatch 32/32, validation error 23.750000 %, cost 0.002250
+('training @ iter = ', 6500)
+epoch 204, minibatch 32/32, validation error 17.500000 %, cost 0.000602
+epoch 205, minibatch 32/32, validation error 17.500000 %, cost 0.001365
+epoch 206, minibatch 32/32, validation error 17.500000 %, cost 0.048430
+('training @ iter = ', 6600)
+epoch 207, minibatch 32/32, validation error 22.500000 %, cost 0.000114
+epoch 208, minibatch 32/32, validation error 15.000000 %, cost 0.003507
+epoch 209, minibatch 32/32, validation error 13.750000 %, cost 0.000663
+('training @ iter = ', 6700)
+epoch 210, minibatch 32/32, validation error 12.500000 %, cost 0.000974
+epoch 211, minibatch 32/32, validation error 13.750000 %, cost 0.000154
+epoch 212, minibatch 32/32, validation error 13.750000 %, cost 0.000379
+('training @ iter = ', 6800)
+epoch 213, minibatch 32/32, validation error 13.750000 %, cost 0.000160
+epoch 214, minibatch 32/32, validation error 15.000000 %, cost 0.000229
+epoch 215, minibatch 32/32, validation error 12.500000 %, cost 0.000316
+('training @ iter = ', 6900)
+epoch 216, minibatch 32/32, validation error 12.500000 %, cost 0.000351
+epoch 217, minibatch 32/32, validation error 12.500000 %, cost 0.000162
+epoch 218, minibatch 32/32, validation error 12.500000 %, cost 0.000281
+('training @ iter = ', 7000)
+epoch 219, minibatch 32/32, validation error 12.500000 %, cost 0.000076
+epoch 220, minibatch 32/32, validation error 12.500000 %, cost 0.000191
+epoch 221, minibatch 32/32, validation error 12.500000 %, cost 0.000108
+('training @ iter = ', 7100)
+epoch 222, minibatch 32/32, validation error 12.500000 %, cost 0.000240
+epoch 223, minibatch 32/32, validation error 12.500000 %, cost 0.000344
+epoch 224, minibatch 32/32, validation error 12.500000 %, cost 0.000096
+epoch 225, minibatch 32/32, validation error 12.500000 %, cost 0.000065
+('training @ iter = ', 7200)
+epoch 226, minibatch 32/32, validation error 12.500000 %, cost 0.000108
+epoch 227, minibatch 32/32, validation error 12.500000 %, cost 0.000163
+epoch 228, minibatch 32/32, validation error 12.500000 %, cost 0.000195
+('training @ iter = ', 7300)
+epoch 229, minibatch 32/32, validation error 12.500000 %, cost 0.000105
+epoch 230, minibatch 32/32, validation error 12.500000 %, cost 0.000181
+epoch 231, minibatch 32/32, validation error 12.500000 %, cost 0.000094
+('training @ iter = ', 7400)
+epoch 232, minibatch 32/32, validation error 12.500000 %, cost 0.000245
+epoch 233, minibatch 32/32, validation error 12.500000 %, cost 0.000088
+epoch 234, minibatch 32/32, validation error 12.500000 %, cost 0.000153
+('training @ iter = ', 7500)
+epoch 235, minibatch 32/32, validation error 12.500000 %, cost 0.000069
+epoch 236, minibatch 32/32, validation error 12.500000 %, cost 0.000100
+epoch 237, minibatch 32/32, validation error 12.500000 %, cost 0.000142
+('training @ iter = ', 7600)
+epoch 238, minibatch 32/32, validation error 12.500000 %, cost 0.000096
+epoch 239, minibatch 32/32, validation error 12.500000 %, cost 0.000107
+epoch 240, minibatch 32/32, validation error 12.500000 %, cost 0.000037
+('training @ iter = ', 7700)
+epoch 241, minibatch 32/32, validation error 12.500000 %, cost 0.000089
+epoch 242, minibatch 32/32, validation error 12.500000 %, cost 0.000073
+epoch 243, minibatch 32/32, validation error 12.500000 %, cost 0.000065
+('training @ iter = ', 7800)
+epoch 244, minibatch 32/32, validation error 12.500000 %, cost 0.000153
+epoch 245, minibatch 32/32, validation error 12.500000 %, cost 0.000061
+epoch 246, minibatch 32/32, validation error 12.500000 %, cost 0.000085
+('training @ iter = ', 7900)
+epoch 247, minibatch 32/32, validation error 12.500000 %, cost 0.000065
+epoch 248, minibatch 32/32, validation error 12.500000 %, cost 0.000106
+epoch 249, minibatch 32/32, validation error 12.500000 %, cost 0.000164
+epoch 250, minibatch 32/32, validation error 12.500000 %, cost 0.000049
+('training @ iter = ', 8000)
+epoch 251, minibatch 32/32, validation error 12.500000 %, cost 0.000081
+epoch 252, minibatch 32/32, validation error 12.500000 %, cost 0.000061
+epoch 253, minibatch 32/32, validation error 12.500000 %, cost 0.000047
+('training @ iter = ', 8100)
+epoch 254, minibatch 32/32, validation error 12.500000 %, cost 0.000078
+epoch 255, minibatch 32/32, validation error 12.500000 %, cost 0.000044
+epoch 256, minibatch 32/32, validation error 12.500000 %, cost 0.000115
+('training @ iter = ', 8200)
+epoch 257, minibatch 32/32, validation error 12.500000 %, cost 0.000192
+epoch 258, minibatch 32/32, validation error 12.500000 %, cost 0.000044
+epoch 259, minibatch 32/32, validation error 12.500000 %, cost 0.000085
+('training @ iter = ', 8300)
+epoch 260, minibatch 32/32, validation error 12.500000 %, cost 0.000073
+epoch 261, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 262, minibatch 32/32, validation error 12.500000 %, cost 0.000043
+('training @ iter = ', 8400)
+epoch 263, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+epoch 264, minibatch 32/32, validation error 12.500000 %, cost 0.000068
+epoch 265, minibatch 32/32, validation error 12.500000 %, cost 0.000088
+('training @ iter = ', 8500)
+epoch 266, minibatch 32/32, validation error 12.500000 %, cost 0.000046
+epoch 267, minibatch 32/32, validation error 12.500000 %, cost 0.000163
+epoch 268, minibatch 32/32, validation error 12.500000 %, cost 0.000066
+('training @ iter = ', 8600)
+epoch 269, minibatch 32/32, validation error 12.500000 %, cost 0.000041
+epoch 270, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 271, minibatch 32/32, validation error 12.500000 %, cost 0.000144
+('training @ iter = ', 8700)
+epoch 272, minibatch 32/32, validation error 12.500000 %, cost 0.000066
+epoch 273, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 274, minibatch 32/32, validation error 12.500000 %, cost 0.000077
+epoch 275, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+('training @ iter = ', 8800)
+epoch 276, minibatch 32/32, validation error 12.500000 %, cost 0.000039
+epoch 277, minibatch 32/32, validation error 12.500000 %, cost 0.000042
+epoch 278, minibatch 32/32, validation error 12.500000 %, cost 0.000153
+('training @ iter = ', 8900)
+epoch 279, minibatch 32/32, validation error 12.500000 %, cost 0.000056
+epoch 280, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 281, minibatch 32/32, validation error 12.500000 %, cost 0.000095
+('training @ iter = ', 9000)
+epoch 282, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+epoch 283, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+epoch 284, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+('training @ iter = ', 9100)
+epoch 285, minibatch 32/32, validation error 12.500000 %, cost 0.000085
+epoch 286, minibatch 32/32, validation error 12.500000 %, cost 0.000043
+epoch 287, minibatch 32/32, validation error 12.500000 %, cost 0.000053
+('training @ iter = ', 9200)
+epoch 288, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 289, minibatch 32/32, validation error 12.500000 %, cost 0.000078
+epoch 290, minibatch 32/32, validation error 12.500000 %, cost 0.000038
+('training @ iter = ', 9300)
+epoch 291, minibatch 32/32, validation error 12.500000 %, cost 0.000046
+epoch 292, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 293, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+('training @ iter = ', 9400)
+epoch 294, minibatch 32/32, validation error 12.500000 %, cost 0.000068
+epoch 295, minibatch 32/32, validation error 12.500000 %, cost 0.000077
+epoch 296, minibatch 32/32, validation error 12.500000 %, cost 0.000122
+('training @ iter = ', 9500)
+epoch 297, minibatch 32/32, validation error 12.500000 %, cost 0.000072
+epoch 298, minibatch 32/32, validation error 12.500000 %, cost 0.000022
+epoch 299, minibatch 32/32, validation error 12.500000 %, cost 0.000063
+epoch 300, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+('training @ iter = ', 9600)
+epoch 301, minibatch 32/32, validation error 12.500000 %, cost 0.000042
+epoch 302, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 303, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+('training @ iter = ', 9700)
+epoch 304, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 305, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 306, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 9800)
+epoch 307, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 308, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 309, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+('training @ iter = ', 9900)
+epoch 310, minibatch 32/32, validation error 12.500000 %, cost 0.000029
+epoch 311, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 312, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+('training @ iter = ', 10000)
+epoch 313, minibatch 32/32, validation error 12.500000 %, cost 0.000035
+epoch 314, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 315, minibatch 32/32, validation error 12.500000 %, cost 0.000046
+('training @ iter = ', 10100)
+epoch 316, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+epoch 317, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 318, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+('training @ iter = ', 10200)
+epoch 319, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 320, minibatch 32/32, validation error 12.500000 %, cost 0.000093
+epoch 321, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+('training @ iter = ', 10300)
+epoch 322, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 323, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 324, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 325, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+('training @ iter = ', 10400)
+epoch 326, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 327, minibatch 32/32, validation error 12.500000 %, cost 0.000088
+epoch 328, minibatch 32/32, validation error 12.500000 %, cost 0.000038
+('training @ iter = ', 10500)
+epoch 329, minibatch 32/32, validation error 12.500000 %, cost 0.000055
+epoch 330, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 331, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 10600)
+epoch 332, minibatch 32/32, validation error 12.500000 %, cost 0.000096
+epoch 333, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+epoch 334, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+('training @ iter = ', 10700)
+epoch 335, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 336, minibatch 32/32, validation error 12.500000 %, cost 0.000063
+epoch 337, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 10800)
+epoch 338, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+epoch 339, minibatch 32/32, validation error 12.500000 %, cost 0.000051
+epoch 340, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+('training @ iter = ', 10900)
+epoch 341, minibatch 32/32, validation error 12.500000 %, cost 0.000028
+epoch 342, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 343, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+('training @ iter = ', 11000)
+epoch 344, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 345, minibatch 32/32, validation error 12.500000 %, cost 0.000100
+epoch 346, minibatch 32/32, validation error 12.500000 %, cost 0.000086
+('training @ iter = ', 11100)
+epoch 347, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 348, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+epoch 349, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 350, minibatch 32/32, validation error 12.500000 %, cost 0.000059
+('training @ iter = ', 11200)
+epoch 351, minibatch 32/32, validation error 12.500000 %, cost 0.000035
+epoch 352, minibatch 32/32, validation error 12.500000 %, cost 0.000070
+epoch 353, minibatch 32/32, validation error 12.500000 %, cost 0.000029
+('training @ iter = ', 11300)
+epoch 354, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+epoch 355, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 356, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+('training @ iter = ', 11400)
+epoch 357, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+epoch 358, minibatch 32/32, validation error 12.500000 %, cost 0.000070
+epoch 359, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+('training @ iter = ', 11500)
+epoch 360, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 361, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 362, minibatch 32/32, validation error 12.500000 %, cost 0.000049
+('training @ iter = ', 11600)
+epoch 363, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 364, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+epoch 365, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+('training @ iter = ', 11700)
+epoch 366, minibatch 32/32, validation error 12.500000 %, cost 0.000044
+epoch 367, minibatch 32/32, validation error 12.500000 %, cost 0.000034
+epoch 368, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+('training @ iter = ', 11800)
+epoch 369, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 370, minibatch 32/32, validation error 12.500000 %, cost 0.000112
+epoch 371, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 11900)
+epoch 372, minibatch 32/32, validation error 12.500000 %, cost 0.000060
+epoch 373, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+epoch 374, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 375, minibatch 32/32, validation error 12.500000 %, cost 0.000036
+('training @ iter = ', 12000)
+epoch 376, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 377, minibatch 32/32, validation error 12.500000 %, cost 0.000078
+epoch 378, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+('training @ iter = ', 12100)
+epoch 379, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+epoch 380, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 381, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+('training @ iter = ', 12200)
+epoch 382, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 383, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 384, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+('training @ iter = ', 12300)
+epoch 385, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+epoch 386, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 387, minibatch 32/32, validation error 12.500000 %, cost 0.000028
+('training @ iter = ', 12400)
+epoch 388, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 389, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 390, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+('training @ iter = ', 12500)
+epoch 391, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 392, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 393, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+('training @ iter = ', 12600)
+epoch 394, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+epoch 395, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+epoch 396, minibatch 32/32, validation error 12.500000 %, cost 0.000056
+('training @ iter = ', 12700)
+epoch 397, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 398, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 399, minibatch 32/32, validation error 12.500000 %, cost 0.000042
+epoch 400, minibatch 32/32, validation error 12.500000 %, cost 0.000057
+('training @ iter = ', 12800)
+epoch 401, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 402, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 403, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 12900)
+epoch 404, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 405, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 406, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+('training @ iter = ', 13000)
+epoch 407, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 408, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+epoch 409, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+('training @ iter = ', 13100)
+epoch 410, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 411, minibatch 32/32, validation error 12.500000 %, cost 0.000022
+epoch 412, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+('training @ iter = ', 13200)
+epoch 413, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+epoch 414, minibatch 32/32, validation error 12.500000 %, cost 0.000072
+epoch 415, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+('training @ iter = ', 13300)
+epoch 416, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 417, minibatch 32/32, validation error 12.500000 %, cost 0.000075
+epoch 418, minibatch 32/32, validation error 12.500000 %, cost 0.000049
+('training @ iter = ', 13400)
+epoch 419, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 420, minibatch 32/32, validation error 12.500000 %, cost 0.000038
+epoch 421, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+('training @ iter = ', 13500)
+epoch 422, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 423, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 424, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 425, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+('training @ iter = ', 13600)
+epoch 426, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+epoch 427, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 428, minibatch 32/32, validation error 12.500000 %, cost 0.000039
+('training @ iter = ', 13700)
+epoch 429, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 430, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 431, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+('training @ iter = ', 13800)
+epoch 432, minibatch 32/32, validation error 12.500000 %, cost 0.000037
+epoch 433, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+epoch 434, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+('training @ iter = ', 13900)
+epoch 435, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 436, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+epoch 437, minibatch 32/32, validation error 12.500000 %, cost 0.000032
+('training @ iter = ', 14000)
+epoch 438, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 439, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 440, minibatch 32/32, validation error 12.500000 %, cost 0.000089
+('training @ iter = ', 14100)
+epoch 441, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+epoch 442, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 443, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 14200)
+epoch 444, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 445, minibatch 32/32, validation error 12.500000 %, cost 0.000056
+epoch 446, minibatch 32/32, validation error 12.500000 %, cost 0.000022
+('training @ iter = ', 14300)
+epoch 447, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 448, minibatch 32/32, validation error 12.500000 %, cost 0.000035
+epoch 449, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 450, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+('training @ iter = ', 14400)
+epoch 451, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 452, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+epoch 453, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+('training @ iter = ', 14500)
+epoch 454, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 455, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 456, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+('training @ iter = ', 14600)
+epoch 457, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 458, minibatch 32/32, validation error 12.500000 %, cost 0.000022
+epoch 459, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+('training @ iter = ', 14700)
+epoch 460, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 461, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 462, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+('training @ iter = ', 14800)
+epoch 463, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 464, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+epoch 465, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+('training @ iter = ', 14900)
+epoch 466, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 467, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 468, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+('training @ iter = ', 15000)
+epoch 469, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 470, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 471, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+('training @ iter = ', 15100)
+epoch 472, minibatch 32/32, validation error 12.500000 %, cost 0.000006
+epoch 473, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+epoch 474, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+epoch 475, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+('training @ iter = ', 15200)
+epoch 476, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 477, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 478, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+('training @ iter = ', 15300)
+epoch 479, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 480, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+epoch 481, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+('training @ iter = ', 15400)
+epoch 482, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 483, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 484, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+('training @ iter = ', 15500)
+epoch 485, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+epoch 486, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+epoch 487, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 15600)
+epoch 488, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 489, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 490, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+('training @ iter = ', 15700)
+epoch 491, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+epoch 492, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 493, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+('training @ iter = ', 15800)
+epoch 494, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 495, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 496, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+('training @ iter = ', 15900)
+epoch 497, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 498, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 499, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 500, minibatch 32/32, validation error 12.500000 %, cost 0.000069
+('training @ iter = ', 16000)
+epoch 501, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+epoch 502, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 503, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+('training @ iter = ', 16100)
+epoch 504, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 505, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 506, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+('training @ iter = ', 16200)
+epoch 507, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+epoch 508, minibatch 32/32, validation error 12.500000 %, cost 0.000022
+epoch 509, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+('training @ iter = ', 16300)
+epoch 510, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 511, minibatch 32/32, validation error 12.500000 %, cost 0.000048
+epoch 512, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+('training @ iter = ', 16400)
+epoch 513, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 514, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 515, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+('training @ iter = ', 16500)
+epoch 516, minibatch 32/32, validation error 12.500000 %, cost 0.000041
+epoch 517, minibatch 32/32, validation error 12.500000 %, cost 0.000004
+epoch 518, minibatch 32/32, validation error 12.500000 %, cost 0.000024
+('training @ iter = ', 16600)
+epoch 519, minibatch 32/32, validation error 12.500000 %, cost 0.000052
+epoch 520, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 521, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+('training @ iter = ', 16700)
+epoch 522, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+epoch 523, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 524, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+epoch 525, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+('training @ iter = ', 16800)
+epoch 526, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 527, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+epoch 528, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+('training @ iter = ', 16900)
+epoch 529, minibatch 32/32, validation error 12.500000 %, cost 0.000031
+epoch 530, minibatch 32/32, validation error 12.500000 %, cost 0.000027
+epoch 531, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 17000)
+epoch 532, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 533, minibatch 32/32, validation error 12.500000 %, cost 0.000041
+epoch 534, minibatch 32/32, validation error 12.500000 %, cost 0.000019
+('training @ iter = ', 17100)
+epoch 535, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+epoch 536, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 537, minibatch 32/32, validation error 12.500000 %, cost 0.000050
+('training @ iter = ', 17200)
+epoch 538, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 539, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 540, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+('training @ iter = ', 17300)
+epoch 541, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+epoch 542, minibatch 32/32, validation error 12.500000 %, cost 0.000006
+epoch 543, minibatch 32/32, validation error 12.500000 %, cost 0.000004
+('training @ iter = ', 17400)
+epoch 544, minibatch 32/32, validation error 12.500000 %, cost 0.000026
+epoch 545, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 546, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+('training @ iter = ', 17500)
+epoch 547, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+epoch 548, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+epoch 549, minibatch 32/32, validation error 12.500000 %, cost 0.000062
+epoch 550, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+('training @ iter = ', 17600)
+epoch 551, minibatch 32/32, validation error 12.500000 %, cost 0.000020
+epoch 552, minibatch 32/32, validation error 12.500000 %, cost 0.000030
+epoch 553, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+('training @ iter = ', 17700)
+epoch 554, minibatch 32/32, validation error 12.500000 %, cost 0.000005
+epoch 555, minibatch 32/32, validation error 12.500000 %, cost 0.000057
+epoch 556, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 17800)
+epoch 557, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 558, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 559, minibatch 32/32, validation error 12.500000 %, cost 0.000033
+('training @ iter = ', 17900)
+epoch 560, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 561, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 562, minibatch 32/32, validation error 12.500000 %, cost 0.000010
+('training @ iter = ', 18000)
+epoch 563, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 564, minibatch 32/32, validation error 12.500000 %, cost 0.000017
+epoch 565, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+('training @ iter = ', 18100)
+epoch 566, minibatch 32/32, validation error 12.500000 %, cost 0.000025
+epoch 567, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 568, minibatch 32/32, validation error 12.500000 %, cost 0.000011
+('training @ iter = ', 18200)
+epoch 569, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+epoch 570, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 571, minibatch 32/32, validation error 12.500000 %, cost 0.000009
+('training @ iter = ', 18300)
+epoch 572, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+epoch 573, minibatch 32/32, validation error 12.500000 %, cost 0.000021
+epoch 574, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 575, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+('training @ iter = ', 18400)
+epoch 576, minibatch 32/32, validation error 12.500000 %, cost 0.000023
+epoch 577, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 578, minibatch 32/32, validation error 12.500000 %, cost 0.000040
+('training @ iter = ', 18500)
+epoch 579, minibatch 32/32, validation error 12.500000 %, cost 0.000012
+epoch 580, minibatch 32/32, validation error 13.750000 %, cost 0.000006
+epoch 581, minibatch 32/32, validation error 13.750000 %, cost 0.000012
+('training @ iter = ', 18600)
+epoch 582, minibatch 32/32, validation error 13.750000 %, cost 0.000015
+epoch 583, minibatch 32/32, validation error 13.750000 %, cost 0.000012
+epoch 584, minibatch 32/32, validation error 13.750000 %, cost 0.000010
+('training @ iter = ', 18700)
+epoch 585, minibatch 32/32, validation error 13.750000 %, cost 0.000022
+epoch 586, minibatch 32/32, validation error 13.750000 %, cost 0.000010
+epoch 587, minibatch 32/32, validation error 13.750000 %, cost 0.000007
+('training @ iter = ', 18800)
+epoch 588, minibatch 32/32, validation error 13.750000 %, cost 0.000004
+epoch 589, minibatch 32/32, validation error 13.750000 %, cost 0.000011
+epoch 590, minibatch 32/32, validation error 13.750000 %, cost 0.000019
+('training @ iter = ', 18900)
+epoch 591, minibatch 32/32, validation error 12.500000 %, cost 0.000018
+epoch 592, minibatch 32/32, validation error 13.750000 %, cost 0.000026
+epoch 593, minibatch 32/32, validation error 12.500000 %, cost 0.000013
+('training @ iter = ', 19000)
+epoch 594, minibatch 32/32, validation error 13.750000 %, cost 0.000036
+epoch 595, minibatch 32/32, validation error 13.750000 %, cost 0.000008
+epoch 596, minibatch 32/32, validation error 12.500000 %, cost 0.000014
+('training @ iter = ', 19100)
+epoch 597, minibatch 32/32, validation error 12.500000 %, cost 0.000008
+epoch 598, minibatch 32/32, validation error 12.500000 %, cost 0.000016
+epoch 599, minibatch 32/32, validation error 12.500000 %, cost 0.000015
+epoch 600, minibatch 32/32, validation error 12.500000 %, cost 0.000007
+('----------SVM results ---------  KERNEL = ', 'rbf')
+('optimaC', 0.05)
+('SVM RBF scores:', 0.88888888888888884)
+Class 0 has been misclassified  9 times
+Class 1 has been misclassified  11 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(136, 24, 11, 9)
+Area under the roc curve:
+0.0705418719212
+('FPR, FNR:', array([ 0.        ,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.28571429,  0.31428571,  0.31428571,  0.4       ,  0.4       ]), array([ 1.        ,  0.10344828,  0.07586207,  0.07586207,  0.06896552,
+        0.06896552,  0.06206897,  0.05517241,  0.05517241,  0.04827586]))
+APCER =  0.0620689655172 BPCER =  0.314285714286
+('----------SVM results ---------  KERNEL = ', 'linear')
+('optimaC', 0.001)
+('SVM linear scores:', 0.80555555555555558)
+Class 0 has been misclassified  0 times
+Class 1 has been misclassified  35 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(145, 0, 35, 0)
+Area under the roc curve:
+0.0715270935961
+('FPR, FNR:', array([ 0.        ,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.22857143,  0.22857143,  0.22857143,  0.31428571,  0.34285714]), array([ 1.        ,  0.11034483,  0.09655172,  0.08965517,  0.07586207,
+        0.07586207,  0.06896552,  0.06896552,  0.06206897,  0.05517241]))
+APCER =  0.0 BPCER =  1.0
+---------- KNN results ---------
+('optim k value:', 2)
+('KNN mean accuracy: ', 0.88888888888888884)
+Class 0 has been misclassified  12 times
+Class 1 has been misclassified  8 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(133, 27, 8, 12)
+Area under the roc curve:
+0.155665024631
+('FPR, FNR:', array([ 0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143]), array([ 0.08275862,  0.08275862,  0.08275862,  0.08275862,  0.08275862,
+        0.08275862,  0.08275862,  0.08275862,  0.08275862,  0.08275862]))
+APCER =  0.0827586206897 BPCER =  0.228571428571
+---------- DECISION TREES results ---------
+('optim depth:', 10)
+('Decision Tree mean accuracy: ', 0.8833333333333333)
+Class 0 has been misclassified  9 times
+Class 1 has been misclassified  12 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(136, 23, 12, 9)
+Area under the roc curve:
+0.202463054187
+('FPR, FNR:', array([ 0.34285714,  0.34285714,  0.34285714,  0.34285714,  0.34285714,
+        0.34285714,  0.34285714,  0.34285714,  0.34285714,  0.34285714]), array([ 0.06206897,  0.06206897,  0.06206897,  0.06206897,  0.06206897,
+        0.06206897,  0.06206897,  0.06206897,  0.06206897,  0.06206897]))
+APCER =  0.0620689655172 BPCER =  0.342857142857
+----------SOFTMAX---------
+ test error of best model 10.555556 %
+('SOFTMAX scores:', 0.80555555555555558)
+Class 0 has been misclassified  10 times
+Class 1 has been misclassified  9 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(135, 26, 9, 10)
+Area under the roc curve:
+0.928472906404
+('FPR, FNR:', array([ 0.        ,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.25714286,  0.28571429,  0.28571429,  0.31428571,  0.4       ]), array([ 1.        ,  0.08965517,  0.07586207,  0.07586207,  0.06896552,
+        0.06896552,  0.06896552,  0.06206897,  0.06206897,  0.05517241]))
+APCER =  0.0689655172414 BPCER =  0.257142857143
+---------- PCA results ---------
+583
+593
+603
+613
+623
+633
+643
+653
+663
+673
+683
+693
+703
+713
+723
+733
+743
+753
+763
+773
+783
+793
+803
+813
+823
+833
+843
+853
+863
+873
+883
+893
+903
+913
+923
+933
+943
+953
+963
+973
+983
+993
+1003
+1013
+1023
+1033
+1043
+1053
+1063
+1073
+1083
+1093
+1103
+1113
+1123
+1133
+1143
+1153
+1163
+1173
+1183
+1193
+1203
+1213
+1223
+1233
+1243
+1253
+1263
+1273
+1283
+1293
+1303
+1313
+1323
+1333
+1343
+1353
+1363
+1373
+1383
+1393
+1403
+1413
+1423
+1433
+1443
+1453
+1463
+1473
+1483
+1493
+1503
+1513
+1523
+1533
+1543
+1553
+1563
+1573
+1583
+1593
+1603
+1613
+1623
+1633
+1643
+1653
+1663
+1673
+1683
+1693
+1703
+1713
+1723
+1733
+1743
+1753
+1763
+1773
+1783
+1793
+1803
+1813
+1823
+1833
+1843
+1853
+1863
+1873
+1883
+1893
+1903
+1913
+1923
+1933
+1943
+1953
+1963
+1973
+1983
+1993
+2003
+2013
+2023
+2033
+2043
+2053
+2063
+2073
+2083
+2093
+2103
+2113
+2123
+2133
+2143
+2153
+2163
+2173
+2183
+2193
+2203
+2213
+2223
+2233
+2243
+2253
+2263
+2273
+2283
+2293
+2303
+2313
+2323
+2333
+2343
+2353
+2363
+2373
+2383
+2393
+2403
+2413
+2423
+2433
+2443
+2453
+2463
+2473
+2483
+2493
+2503
+2513
+2523
+2533
+2543
+2553
+2563
+2573
+2583
+2593
+2603
+2613
+2623
+2633
+2643
+2653
+2663
+2673
+2683
+2693
+2703
+2713
+2723
+2733
+2743
+2753
+2763
+2773
+2783
+2793
+2803
+2813
+2823
+2833
+2843
+2853
+2863
+2873
+2883
+2893
+2903
+2913
+2923
+2933
+2943
+2953
+2963
+2973
+2983
+2993
+3003
+3013
+3023
+3033
+3043
+3053
+3063
+3073
+3083
+3093
+3103
+3113
+3123
+3133
+3143
+3153
+3163
+3173
+3183
+3193
+3203
+3213
+3223
+3233
+3243
+3253
+3263
+3273
+3283
+3293
+3303
+3313
+3323
+3333
+3343
+3353
+3363
+3373
+3383
+3393
+3403
+3413
+3423
+3433
+3443
+3453
+3463
+3473
+3483
+3493
+3503
+3513
+3523
+3533
+3543
+3553
+3563
+3573
+3583
+3593
+3603
+3613
+3623
+3633
+3643
+3653
+3663
+3673
+3683
+3693
+3703
+3713
+3723
+3733
+3743
+3753
+3763
+3773
+3783
+3793
+3803
+3813
+3823
+3833
+3843
+3853
+3863
+3873
+3883
+3893
+3903
+3913
+3923
+3933
+3943
+3953
+3963
+3973
+3983
+3993
+4003
+4013
+4023
+4033
+4043
+4053
+4063
+4073
+4083
+4093
+4103
+4113
+4123
+4133
+4143
+4153
+4163
+4173
+4183
+4193
+4203
+4213
+4223
+4233
+4243
+4253
+4263
+4273
+4283
+4293
+4303
+4313
+4323
+4333
+4343
+4353
+4363
+4373
+4383
+4393
+4403
+4413
+4423
+4433
+4443
+4453
+4463
+4473
+4483
+4493
+4503
+4513
+4523
+4533
+4543
+4553
+4563
+4573
+4583
+4593
+4603
+4613
+4623
+4633
+4643
+4653
+4663
+4673
+4683
+4693
+4703
+4713
+4723
+4733
+4743
+4753
+4763
+4773
+4783
+4793
+4803
+4813
+4823
+4833
+4843
+4853
+4863
+4873
+4883
+4893
+4903
+4913
+4923
+4933
+4943
+4953
+4963
+4973
+4983
+4993
+('PCA optimous componentes number', 463)
+('----------SVM results ---------  KERNEL = ', 'rbf')
+('optimaC', 0.5)
+('SVM RBF scores:', 0.90000000000000002)
+Class 0 has been misclassified  10 times
+Class 1 has been misclassified  8 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(135, 27, 8, 10)
+Area under the roc curve:
+0.0815763546798
+('FPR, FNR:', array([ 0.        ,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.22857143,  0.22857143,  0.28571429,  0.31428571,  0.31428571]), array([ 1.        ,  0.08965517,  0.07586207,  0.07586207,  0.06896552,
+        0.06896552,  0.06896552,  0.06896552,  0.06206897,  0.06206897]))
+APCER =  0.0689655172414 BPCER =  0.228571428571
+('----------SVM results ---------  KERNEL = ', 'linear')
+('optimaC', 0.001)
+('SVM linear scores:', 0.80555555555555558)
+Class 0 has been misclassified  0 times
+Class 1 has been misclassified  35 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(145, 0, 35, 0)
+Area under the roc curve:
+0.0816748768473
+('FPR, FNR:', array([ 0.        ,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143]), array([ 1.        ,  0.11034483,  0.09655172,  0.08965517,  0.08965517,
+        0.08965517,  0.07586207,  0.07586207,  0.07586207,  0.06896552]))
+APCER =  0.0 BPCER =  1.0
+---------- KNN results ---------
+('optim k value:', 2)
+('KNN mean accuracy: ', 0.89444444444444449)
+Class 0 has been misclassified  11 times
+Class 1 has been misclassified  8 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(134, 27, 8, 11)
+Area under the roc curve:
+0.153004926108
+('FPR, FNR:', array([ 0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143]), array([ 0.08275862,  0.08275862,  0.08275862,  0.08275862,  0.08275862,
+        0.07586207,  0.07586207,  0.07586207,  0.07586207,  0.07586207]))
+APCER =  0.0758620689655 BPCER =  0.228571428571
+---------- DECISION TREES results ---------
+('optim depth:', 2)
+('PCA Decision Tree mean accuracy: ', 0.90000000000000002)
+Class 0 has been misclassified  10 times
+Class 1 has been misclassified  8 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(135, 27, 8, 10)
+Area under the roc curve:
+0.148768472906
+('FPR, FNR:', array([ 0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.22857143,  0.22857143,  0.22857143,  0.22857143,  0.22857143]), array([ 0.06896552,  0.06896552,  0.06896552,  0.06896552,  0.06896552,
+        0.06896552,  0.06896552,  0.06896552,  0.06896552,  0.06896552]))
+APCER =  0.0689655172414 BPCER =  0.228571428571
+----------SOFTMAX + PCA---------
+... training softmax model with a learning rate= 0.0001
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 15.000000 %
+epoch 3, minibatch 32/32, validation error 15.000000 %
+epoch 4, minibatch 32/32, validation error 15.000000 %
+epoch 5, minibatch 32/32, validation error 15.000000 %
+epoch 6, minibatch 32/32, validation error 15.000000 %
+epoch 7, minibatch 32/32, validation error 15.000000 %
+epoch 8, minibatch 32/32, validation error 15.000000 %
+epoch 9, minibatch 32/32, validation error 15.000000 %
+epoch 10, minibatch 32/32, validation error 15.000000 %
+epoch 11, minibatch 32/32, validation error 15.000000 %
+epoch 12, minibatch 32/32, validation error 15.000000 %
+epoch 13, minibatch 32/32, validation error 16.250000 %
+epoch 14, minibatch 32/32, validation error 15.000000 %
+epoch 15, minibatch 32/32, validation error 15.000000 %
+epoch 16, minibatch 32/32, validation error 15.000000 %
+epoch 17, minibatch 32/32, validation error 15.000000 %
+epoch 18, minibatch 32/32, validation error 15.000000 %
+epoch 19, minibatch 32/32, validation error 15.000000 %
+epoch 20, minibatch 32/32, validation error 15.000000 %
+epoch 21, minibatch 32/32, validation error 15.000000 %
+epoch 22, minibatch 32/32, validation error 15.000000 %
+epoch 23, minibatch 32/32, validation error 15.000000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 13.750000 %
+epoch 34, minibatch 32/32, validation error 13.750000 %
+epoch 35, minibatch 32/32, validation error 13.750000 %
+epoch 36, minibatch 32/32, validation error 13.750000 %
+epoch 37, minibatch 32/32, validation error 13.750000 %
+epoch 38, minibatch 32/32, validation error 13.750000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 13.750000 %
+epoch 51, minibatch 32/32, validation error 13.750000 %
+epoch 52, minibatch 32/32, validation error 13.750000 %
+epoch 53, minibatch 32/32, validation error 13.750000 %
+epoch 54, minibatch 32/32, validation error 13.750000 %
+epoch 55, minibatch 32/32, validation error 13.750000 %
+epoch 56, minibatch 32/32, validation error 13.750000 %
+epoch 57, minibatch 32/32, validation error 13.750000 %
+epoch 58, minibatch 32/32, validation error 13.750000 %
+epoch 59, minibatch 32/32, validation error 13.750000 %
+epoch 60, minibatch 32/32, validation error 13.750000 %
+epoch 61, minibatch 32/32, validation error 13.750000 %
+epoch 62, minibatch 32/32, validation error 13.750000 %
+epoch 63, minibatch 32/32, validation error 13.750000 %
+epoch 64, minibatch 32/32, validation error 13.750000 %
+epoch 65, minibatch 32/32, validation error 13.750000 %
+epoch 66, minibatch 32/32, validation error 13.750000 %
+epoch 67, minibatch 32/32, validation error 13.750000 %
+epoch 68, minibatch 32/32, validation error 13.750000 %
+epoch 69, minibatch 32/32, validation error 13.750000 %
+epoch 70, minibatch 32/32, validation error 13.750000 %
+epoch 71, minibatch 32/32, validation error 13.750000 %
+epoch 72, minibatch 32/32, validation error 13.750000 %
+epoch 73, minibatch 32/32, validation error 13.750000 %
+epoch 74, minibatch 32/32, validation error 13.750000 %
+epoch 75, minibatch 32/32, validation error 13.750000 %
+epoch 76, minibatch 32/32, validation error 13.750000 %
+epoch 77, minibatch 32/32, validation error 13.750000 %
+epoch 78, minibatch 32/32, validation error 13.750000 %
+epoch 79, minibatch 32/32, validation error 13.750000 %
+epoch 80, minibatch 32/32, validation error 13.750000 %
+epoch 81, minibatch 32/32, validation error 13.750000 %
+epoch 82, minibatch 32/32, validation error 13.750000 %
+epoch 83, minibatch 32/32, validation error 13.750000 %
+epoch 84, minibatch 32/32, validation error 13.750000 %
+epoch 85, minibatch 32/32, validation error 13.750000 %
+epoch 86, minibatch 32/32, validation error 13.750000 %
+epoch 87, minibatch 32/32, validation error 13.750000 %
+epoch 88, minibatch 32/32, validation error 13.750000 %
+epoch 89, minibatch 32/32, validation error 13.750000 %
+epoch 90, minibatch 32/32, validation error 13.750000 %
+epoch 91, minibatch 32/32, validation error 13.750000 %
+epoch 92, minibatch 32/32, validation error 13.750000 %
+epoch 93, minibatch 32/32, validation error 13.750000 %
+epoch 94, minibatch 32/32, validation error 13.750000 %
+epoch 95, minibatch 32/32, validation error 13.750000 %
+epoch 96, minibatch 32/32, validation error 13.750000 %
+epoch 97, minibatch 32/32, validation error 13.750000 %
+epoch 98, minibatch 32/32, validation error 13.750000 %
+epoch 99, minibatch 32/32, validation error 13.750000 %
+epoch 100, minibatch 32/32, validation error 13.750000 %
+epoch 101, minibatch 32/32, validation error 13.750000 %
+epoch 102, minibatch 32/32, validation error 13.750000 %
+epoch 103, minibatch 32/32, validation error 13.750000 %
+epoch 104, minibatch 32/32, validation error 13.750000 %
+epoch 105, minibatch 32/32, validation error 13.750000 %
+epoch 106, minibatch 32/32, validation error 13.750000 %
+epoch 107, minibatch 32/32, validation error 13.750000 %
+epoch 108, minibatch 32/32, validation error 13.750000 %
+epoch 109, minibatch 32/32, validation error 13.750000 %
+epoch 110, minibatch 32/32, validation error 13.750000 %
+epoch 111, minibatch 32/32, validation error 13.750000 %
+epoch 112, minibatch 32/32, validation error 13.750000 %
+epoch 113, minibatch 32/32, validation error 13.750000 %
+epoch 114, minibatch 32/32, validation error 13.750000 %
+epoch 115, minibatch 32/32, validation error 13.750000 %
+epoch 116, minibatch 32/32, validation error 13.750000 %
+epoch 117, minibatch 32/32, validation error 13.750000 %
+epoch 118, minibatch 32/32, validation error 13.750000 %
+epoch 119, minibatch 32/32, validation error 13.750000 %
+epoch 120, minibatch 32/32, validation error 13.750000 %
+epoch 121, minibatch 32/32, validation error 13.750000 %
+epoch 122, minibatch 32/32, validation error 13.750000 %
+epoch 123, minibatch 32/32, validation error 13.750000 %
+epoch 124, minibatch 32/32, validation error 13.750000 %
+epoch 125, minibatch 32/32, validation error 13.750000 %
+epoch 126, minibatch 32/32, validation error 13.750000 %
+epoch 127, minibatch 32/32, validation error 13.750000 %
+epoch 128, minibatch 32/32, validation error 13.750000 %
+epoch 129, minibatch 32/32, validation error 13.750000 %
+epoch 130, minibatch 32/32, validation error 13.750000 %
+epoch 131, minibatch 32/32, validation error 13.750000 %
+epoch 132, minibatch 32/32, validation error 13.750000 %
+epoch 133, minibatch 32/32, validation error 13.750000 %
+epoch 134, minibatch 32/32, validation error 13.750000 %
+epoch 135, minibatch 32/32, validation error 13.750000 %
+epoch 136, minibatch 32/32, validation error 13.750000 %
+epoch 137, minibatch 32/32, validation error 13.750000 %
+epoch 138, minibatch 32/32, validation error 13.750000 %
+epoch 139, minibatch 32/32, validation error 13.750000 %
+epoch 140, minibatch 32/32, validation error 13.750000 %
+epoch 141, minibatch 32/32, validation error 13.750000 %
+epoch 142, minibatch 32/32, validation error 13.750000 %
+epoch 143, minibatch 32/32, validation error 13.750000 %
+epoch 144, minibatch 32/32, validation error 13.750000 %
+epoch 145, minibatch 32/32, validation error 13.750000 %
+epoch 146, minibatch 32/32, validation error 13.750000 %
+epoch 147, minibatch 32/32, validation error 13.750000 %
+epoch 148, minibatch 32/32, validation error 13.750000 %
+epoch 149, minibatch 32/32, validation error 13.750000 %
+epoch 150, minibatch 32/32, validation error 13.750000 %
+epoch 151, minibatch 32/32, validation error 13.750000 %
+epoch 152, minibatch 32/32, validation error 13.750000 %
+epoch 153, minibatch 32/32, validation error 13.750000 %
+epoch 154, minibatch 32/32, validation error 13.750000 %
+epoch 155, minibatch 32/32, validation error 13.750000 %
+epoch 156, minibatch 32/32, validation error 13.750000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 17.777778 %
+The code run for 157 epochs, with 87.453538 epochs/sec
+... training softmax model with a learning rate= 0.005
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 15.000000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 13.750000 %
+epoch 34, minibatch 32/32, validation error 13.750000 %
+epoch 35, minibatch 32/32, validation error 13.750000 %
+epoch 36, minibatch 32/32, validation error 13.750000 %
+epoch 37, minibatch 32/32, validation error 13.750000 %
+epoch 38, minibatch 32/32, validation error 13.750000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 12.500000 %
+epoch 51, minibatch 32/32, validation error 12.500000 %
+epoch 52, minibatch 32/32, validation error 12.500000 %
+epoch 53, minibatch 32/32, validation error 12.500000 %
+epoch 54, minibatch 32/32, validation error 12.500000 %
+epoch 55, minibatch 32/32, validation error 12.500000 %
+epoch 56, minibatch 32/32, validation error 12.500000 %
+epoch 57, minibatch 32/32, validation error 12.500000 %
+epoch 58, minibatch 32/32, validation error 12.500000 %
+epoch 59, minibatch 32/32, validation error 12.500000 %
+epoch 60, minibatch 32/32, validation error 12.500000 %
+epoch 61, minibatch 32/32, validation error 12.500000 %
+epoch 62, minibatch 32/32, validation error 12.500000 %
+epoch 63, minibatch 32/32, validation error 12.500000 %
+epoch 64, minibatch 32/32, validation error 12.500000 %
+epoch 65, minibatch 32/32, validation error 12.500000 %
+epoch 66, minibatch 32/32, validation error 12.500000 %
+epoch 67, minibatch 32/32, validation error 12.500000 %
+epoch 68, minibatch 32/32, validation error 12.500000 %
+epoch 69, minibatch 32/32, validation error 12.500000 %
+epoch 70, minibatch 32/32, validation error 12.500000 %
+epoch 71, minibatch 32/32, validation error 12.500000 %
+epoch 72, minibatch 32/32, validation error 12.500000 %
+epoch 73, minibatch 32/32, validation error 12.500000 %
+epoch 74, minibatch 32/32, validation error 12.500000 %
+epoch 75, minibatch 32/32, validation error 12.500000 %
+epoch 76, minibatch 32/32, validation error 12.500000 %
+epoch 77, minibatch 32/32, validation error 12.500000 %
+epoch 78, minibatch 32/32, validation error 12.500000 %
+epoch 79, minibatch 32/32, validation error 12.500000 %
+epoch 80, minibatch 32/32, validation error 12.500000 %
+epoch 81, minibatch 32/32, validation error 12.500000 %
+epoch 82, minibatch 32/32, validation error 12.500000 %
+epoch 83, minibatch 32/32, validation error 12.500000 %
+epoch 84, minibatch 32/32, validation error 12.500000 %
+epoch 85, minibatch 32/32, validation error 12.500000 %
+epoch 86, minibatch 32/32, validation error 12.500000 %
+epoch 87, minibatch 32/32, validation error 12.500000 %
+epoch 88, minibatch 32/32, validation error 12.500000 %
+epoch 89, minibatch 32/32, validation error 12.500000 %
+epoch 90, minibatch 32/32, validation error 12.500000 %
+epoch 91, minibatch 32/32, validation error 12.500000 %
+epoch 92, minibatch 32/32, validation error 12.500000 %
+epoch 93, minibatch 32/32, validation error 12.500000 %
+epoch 94, minibatch 32/32, validation error 12.500000 %
+epoch 95, minibatch 32/32, validation error 12.500000 %
+epoch 96, minibatch 32/32, validation error 12.500000 %
+epoch 97, minibatch 32/32, validation error 12.500000 %
+epoch 98, minibatch 32/32, validation error 12.500000 %
+epoch 99, minibatch 32/32, validation error 12.500000 %
+epoch 100, minibatch 32/32, validation error 12.500000 %
+epoch 101, minibatch 32/32, validation error 12.500000 %
+epoch 102, minibatch 32/32, validation error 12.500000 %
+epoch 103, minibatch 32/32, validation error 12.500000 %
+epoch 104, minibatch 32/32, validation error 12.500000 %
+epoch 105, minibatch 32/32, validation error 12.500000 %
+epoch 106, minibatch 32/32, validation error 12.500000 %
+epoch 107, minibatch 32/32, validation error 12.500000 %
+epoch 108, minibatch 32/32, validation error 12.500000 %
+epoch 109, minibatch 32/32, validation error 12.500000 %
+epoch 110, minibatch 32/32, validation error 12.500000 %
+epoch 111, minibatch 32/32, validation error 12.500000 %
+epoch 112, minibatch 32/32, validation error 12.500000 %
+epoch 113, minibatch 32/32, validation error 12.500000 %
+epoch 114, minibatch 32/32, validation error 12.500000 %
+epoch 115, minibatch 32/32, validation error 12.500000 %
+epoch 116, minibatch 32/32, validation error 12.500000 %
+epoch 117, minibatch 32/32, validation error 12.500000 %
+epoch 118, minibatch 32/32, validation error 12.500000 %
+epoch 119, minibatch 32/32, validation error 12.500000 %
+epoch 120, minibatch 32/32, validation error 12.500000 %
+epoch 121, minibatch 32/32, validation error 12.500000 %
+epoch 122, minibatch 32/32, validation error 12.500000 %
+epoch 123, minibatch 32/32, validation error 12.500000 %
+epoch 124, minibatch 32/32, validation error 12.500000 %
+epoch 125, minibatch 32/32, validation error 12.500000 %
+epoch 126, minibatch 32/32, validation error 12.500000 %
+epoch 127, minibatch 32/32, validation error 12.500000 %
+epoch 128, minibatch 32/32, validation error 12.500000 %
+epoch 129, minibatch 32/32, validation error 12.500000 %
+epoch 130, minibatch 32/32, validation error 12.500000 %
+epoch 131, minibatch 32/32, validation error 12.500000 %
+epoch 132, minibatch 32/32, validation error 12.500000 %
+epoch 133, minibatch 32/32, validation error 12.500000 %
+epoch 134, minibatch 32/32, validation error 12.500000 %
+epoch 135, minibatch 32/32, validation error 12.500000 %
+epoch 136, minibatch 32/32, validation error 12.500000 %
+epoch 137, minibatch 32/32, validation error 12.500000 %
+epoch 138, minibatch 32/32, validation error 12.500000 %
+epoch 139, minibatch 32/32, validation error 12.500000 %
+epoch 140, minibatch 32/32, validation error 12.500000 %
+epoch 141, minibatch 32/32, validation error 12.500000 %
+epoch 142, minibatch 32/32, validation error 12.500000 %
+epoch 143, minibatch 32/32, validation error 12.500000 %
+epoch 144, minibatch 32/32, validation error 12.500000 %
+epoch 145, minibatch 32/32, validation error 12.500000 %
+epoch 146, minibatch 32/32, validation error 12.500000 %
+epoch 147, minibatch 32/32, validation error 12.500000 %
+epoch 148, minibatch 32/32, validation error 12.500000 %
+epoch 149, minibatch 32/32, validation error 12.500000 %
+epoch 150, minibatch 32/32, validation error 12.500000 %
+epoch 151, minibatch 32/32, validation error 12.500000 %
+epoch 152, minibatch 32/32, validation error 12.500000 %
+epoch 153, minibatch 32/32, validation error 12.500000 %
+epoch 154, minibatch 32/32, validation error 12.500000 %
+epoch 155, minibatch 32/32, validation error 12.500000 %
+epoch 156, minibatch 32/32, validation error 12.500000 %
+Softmax optimization complete with best validation score of 12.500000 %,with test performance 13.888889 %
+The code run for 157 epochs, with 87.571630 epochs/sec
+... training softmax model with a learning rate= 0.001
+epoch 1, minibatch 32/32, validation error 15.000000 %
+epoch 2, minibatch 32/32, validation error 15.000000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 15.000000 %
+epoch 34, minibatch 32/32, validation error 15.000000 %
+epoch 35, minibatch 32/32, validation error 15.000000 %
+epoch 36, minibatch 32/32, validation error 15.000000 %
+epoch 37, minibatch 32/32, validation error 15.000000 %
+epoch 38, minibatch 32/32, validation error 15.000000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 13.750000 %
+epoch 51, minibatch 32/32, validation error 13.750000 %
+epoch 52, minibatch 32/32, validation error 13.750000 %
+epoch 53, minibatch 32/32, validation error 13.750000 %
+epoch 54, minibatch 32/32, validation error 13.750000 %
+epoch 55, minibatch 32/32, validation error 13.750000 %
+epoch 56, minibatch 32/32, validation error 13.750000 %
+epoch 57, minibatch 32/32, validation error 13.750000 %
+epoch 58, minibatch 32/32, validation error 13.750000 %
+epoch 59, minibatch 32/32, validation error 13.750000 %
+epoch 60, minibatch 32/32, validation error 13.750000 %
+epoch 61, minibatch 32/32, validation error 13.750000 %
+epoch 62, minibatch 32/32, validation error 13.750000 %
+epoch 63, minibatch 32/32, validation error 13.750000 %
+epoch 64, minibatch 32/32, validation error 13.750000 %
+epoch 65, minibatch 32/32, validation error 13.750000 %
+epoch 66, minibatch 32/32, validation error 13.750000 %
+epoch 67, minibatch 32/32, validation error 13.750000 %
+epoch 68, minibatch 32/32, validation error 13.750000 %
+epoch 69, minibatch 32/32, validation error 13.750000 %
+epoch 70, minibatch 32/32, validation error 13.750000 %
+epoch 71, minibatch 32/32, validation error 13.750000 %
+epoch 72, minibatch 32/32, validation error 13.750000 %
+epoch 73, minibatch 32/32, validation error 13.750000 %
+epoch 74, minibatch 32/32, validation error 13.750000 %
+epoch 75, minibatch 32/32, validation error 13.750000 %
+epoch 76, minibatch 32/32, validation error 13.750000 %
+epoch 77, minibatch 32/32, validation error 13.750000 %
+epoch 78, minibatch 32/32, validation error 13.750000 %
+epoch 79, minibatch 32/32, validation error 13.750000 %
+epoch 80, minibatch 32/32, validation error 13.750000 %
+epoch 81, minibatch 32/32, validation error 13.750000 %
+epoch 82, minibatch 32/32, validation error 13.750000 %
+epoch 83, minibatch 32/32, validation error 13.750000 %
+epoch 84, minibatch 32/32, validation error 13.750000 %
+epoch 85, minibatch 32/32, validation error 13.750000 %
+epoch 86, minibatch 32/32, validation error 13.750000 %
+epoch 87, minibatch 32/32, validation error 13.750000 %
+epoch 88, minibatch 32/32, validation error 13.750000 %
+epoch 89, minibatch 32/32, validation error 13.750000 %
+epoch 90, minibatch 32/32, validation error 13.750000 %
+epoch 91, minibatch 32/32, validation error 13.750000 %
+epoch 92, minibatch 32/32, validation error 13.750000 %
+epoch 93, minibatch 32/32, validation error 13.750000 %
+epoch 94, minibatch 32/32, validation error 13.750000 %
+epoch 95, minibatch 32/32, validation error 13.750000 %
+epoch 96, minibatch 32/32, validation error 13.750000 %
+epoch 97, minibatch 32/32, validation error 13.750000 %
+epoch 98, minibatch 32/32, validation error 13.750000 %
+epoch 99, minibatch 32/32, validation error 13.750000 %
+epoch 100, minibatch 32/32, validation error 13.750000 %
+epoch 101, minibatch 32/32, validation error 13.750000 %
+epoch 102, minibatch 32/32, validation error 13.750000 %
+epoch 103, minibatch 32/32, validation error 13.750000 %
+epoch 104, minibatch 32/32, validation error 13.750000 %
+epoch 105, minibatch 32/32, validation error 13.750000 %
+epoch 106, minibatch 32/32, validation error 13.750000 %
+epoch 107, minibatch 32/32, validation error 13.750000 %
+epoch 108, minibatch 32/32, validation error 13.750000 %
+epoch 109, minibatch 32/32, validation error 13.750000 %
+epoch 110, minibatch 32/32, validation error 13.750000 %
+epoch 111, minibatch 32/32, validation error 13.750000 %
+epoch 112, minibatch 32/32, validation error 13.750000 %
+epoch 113, minibatch 32/32, validation error 13.750000 %
+epoch 114, minibatch 32/32, validation error 13.750000 %
+epoch 115, minibatch 32/32, validation error 13.750000 %
+epoch 116, minibatch 32/32, validation error 13.750000 %
+epoch 117, minibatch 32/32, validation error 13.750000 %
+epoch 118, minibatch 32/32, validation error 13.750000 %
+epoch 119, minibatch 32/32, validation error 13.750000 %
+epoch 120, minibatch 32/32, validation error 13.750000 %
+epoch 121, minibatch 32/32, validation error 13.750000 %
+epoch 122, minibatch 32/32, validation error 13.750000 %
+epoch 123, minibatch 32/32, validation error 13.750000 %
+epoch 124, minibatch 32/32, validation error 13.750000 %
+epoch 125, minibatch 32/32, validation error 13.750000 %
+epoch 126, minibatch 32/32, validation error 13.750000 %
+epoch 127, minibatch 32/32, validation error 13.750000 %
+epoch 128, minibatch 32/32, validation error 13.750000 %
+epoch 129, minibatch 32/32, validation error 13.750000 %
+epoch 130, minibatch 32/32, validation error 13.750000 %
+epoch 131, minibatch 32/32, validation error 13.750000 %
+epoch 132, minibatch 32/32, validation error 13.750000 %
+epoch 133, minibatch 32/32, validation error 13.750000 %
+epoch 134, minibatch 32/32, validation error 13.750000 %
+epoch 135, minibatch 32/32, validation error 13.750000 %
+epoch 136, minibatch 32/32, validation error 13.750000 %
+epoch 137, minibatch 32/32, validation error 13.750000 %
+epoch 138, minibatch 32/32, validation error 13.750000 %
+epoch 139, minibatch 32/32, validation error 13.750000 %
+epoch 140, minibatch 32/32, validation error 13.750000 %
+epoch 141, minibatch 32/32, validation error 13.750000 %
+epoch 142, minibatch 32/32, validation error 13.750000 %
+epoch 143, minibatch 32/32, validation error 13.750000 %
+epoch 144, minibatch 32/32, validation error 13.750000 %
+epoch 145, minibatch 32/32, validation error 13.750000 %
+epoch 146, minibatch 32/32, validation error 13.750000 %
+epoch 147, minibatch 32/32, validation error 13.750000 %
+epoch 148, minibatch 32/32, validation error 13.750000 %
+epoch 149, minibatch 32/32, validation error 13.750000 %
+epoch 150, minibatch 32/32, validation error 13.750000 %
+epoch 151, minibatch 32/32, validation error 13.750000 %
+epoch 152, minibatch 32/32, validation error 13.750000 %
+epoch 153, minibatch 32/32, validation error 13.750000 %
+epoch 154, minibatch 32/32, validation error 13.750000 %
+epoch 155, minibatch 32/32, validation error 13.750000 %
+epoch 156, minibatch 32/32, validation error 13.750000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 17.222222 %
+The code run for 157 epochs, with 87.382667 epochs/sec
+... training softmax model with a learning rate= 0.05
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 12.500000 %
+epoch 4, minibatch 32/32, validation error 12.500000 %
+epoch 5, minibatch 32/32, validation error 12.500000 %
+epoch 6, minibatch 32/32, validation error 12.500000 %
+epoch 7, minibatch 32/32, validation error 12.500000 %
+epoch 8, minibatch 32/32, validation error 12.500000 %
+epoch 9, minibatch 32/32, validation error 12.500000 %
+epoch 10, minibatch 32/32, validation error 12.500000 %
+epoch 11, minibatch 32/32, validation error 12.500000 %
+epoch 12, minibatch 32/32, validation error 12.500000 %
+epoch 13, minibatch 32/32, validation error 12.500000 %
+epoch 14, minibatch 32/32, validation error 12.500000 %
+epoch 15, minibatch 32/32, validation error 12.500000 %
+epoch 16, minibatch 32/32, validation error 12.500000 %
+epoch 17, minibatch 32/32, validation error 12.500000 %
+epoch 18, minibatch 32/32, validation error 12.500000 %
+epoch 19, minibatch 32/32, validation error 12.500000 %
+epoch 20, minibatch 32/32, validation error 12.500000 %
+epoch 21, minibatch 32/32, validation error 12.500000 %
+epoch 22, minibatch 32/32, validation error 12.500000 %
+epoch 23, minibatch 32/32, validation error 12.500000 %
+epoch 24, minibatch 32/32, validation error 12.500000 %
+epoch 25, minibatch 32/32, validation error 12.500000 %
+epoch 26, minibatch 32/32, validation error 12.500000 %
+epoch 27, minibatch 32/32, validation error 12.500000 %
+epoch 28, minibatch 32/32, validation error 12.500000 %
+epoch 29, minibatch 32/32, validation error 12.500000 %
+epoch 30, minibatch 32/32, validation error 12.500000 %
+epoch 31, minibatch 32/32, validation error 12.500000 %
+epoch 32, minibatch 32/32, validation error 12.500000 %
+epoch 33, minibatch 32/32, validation error 12.500000 %
+epoch 34, minibatch 32/32, validation error 12.500000 %
+epoch 35, minibatch 32/32, validation error 12.500000 %
+epoch 36, minibatch 32/32, validation error 12.500000 %
+epoch 37, minibatch 32/32, validation error 12.500000 %
+epoch 38, minibatch 32/32, validation error 12.500000 %
+epoch 39, minibatch 32/32, validation error 12.500000 %
+epoch 40, minibatch 32/32, validation error 12.500000 %
+epoch 41, minibatch 32/32, validation error 12.500000 %
+epoch 42, minibatch 32/32, validation error 12.500000 %
+epoch 43, minibatch 32/32, validation error 12.500000 %
+epoch 44, minibatch 32/32, validation error 12.500000 %
+epoch 45, minibatch 32/32, validation error 12.500000 %
+epoch 46, minibatch 32/32, validation error 12.500000 %
+epoch 47, minibatch 32/32, validation error 12.500000 %
+epoch 48, minibatch 32/32, validation error 12.500000 %
+epoch 49, minibatch 32/32, validation error 12.500000 %
+epoch 50, minibatch 32/32, validation error 12.500000 %
+epoch 51, minibatch 32/32, validation error 12.500000 %
+epoch 52, minibatch 32/32, validation error 12.500000 %
+epoch 53, minibatch 32/32, validation error 12.500000 %
+epoch 54, minibatch 32/32, validation error 12.500000 %
+epoch 55, minibatch 32/32, validation error 12.500000 %
+epoch 56, minibatch 32/32, validation error 12.500000 %
+epoch 57, minibatch 32/32, validation error 12.500000 %
+epoch 58, minibatch 32/32, validation error 12.500000 %
+epoch 59, minibatch 32/32, validation error 12.500000 %
+epoch 60, minibatch 32/32, validation error 12.500000 %
+epoch 61, minibatch 32/32, validation error 12.500000 %
+epoch 62, minibatch 32/32, validation error 12.500000 %
+epoch 63, minibatch 32/32, validation error 12.500000 %
+epoch 64, minibatch 32/32, validation error 12.500000 %
+epoch 65, minibatch 32/32, validation error 12.500000 %
+epoch 66, minibatch 32/32, validation error 12.500000 %
+epoch 67, minibatch 32/32, validation error 12.500000 %
+epoch 68, minibatch 32/32, validation error 12.500000 %
+epoch 69, minibatch 32/32, validation error 12.500000 %
+epoch 70, minibatch 32/32, validation error 12.500000 %
+epoch 71, minibatch 32/32, validation error 12.500000 %
+epoch 72, minibatch 32/32, validation error 12.500000 %
+epoch 73, minibatch 32/32, validation error 12.500000 %
+epoch 74, minibatch 32/32, validation error 12.500000 %
+epoch 75, minibatch 32/32, validation error 12.500000 %
+epoch 76, minibatch 32/32, validation error 12.500000 %
+epoch 77, minibatch 32/32, validation error 12.500000 %
+epoch 78, minibatch 32/32, validation error 12.500000 %
+epoch 79, minibatch 32/32, validation error 12.500000 %
+epoch 80, minibatch 32/32, validation error 12.500000 %
+epoch 81, minibatch 32/32, validation error 12.500000 %
+epoch 82, minibatch 32/32, validation error 12.500000 %
+epoch 83, minibatch 32/32, validation error 12.500000 %
+epoch 84, minibatch 32/32, validation error 12.500000 %
+epoch 85, minibatch 32/32, validation error 12.500000 %
+epoch 86, minibatch 32/32, validation error 12.500000 %
+epoch 87, minibatch 32/32, validation error 12.500000 %
+epoch 88, minibatch 32/32, validation error 12.500000 %
+epoch 89, minibatch 32/32, validation error 12.500000 %
+epoch 90, minibatch 32/32, validation error 12.500000 %
+epoch 91, minibatch 32/32, validation error 12.500000 %
+epoch 92, minibatch 32/32, validation error 12.500000 %
+epoch 93, minibatch 32/32, validation error 12.500000 %
+epoch 94, minibatch 32/32, validation error 12.500000 %
+epoch 95, minibatch 32/32, validation error 12.500000 %
+epoch 96, minibatch 32/32, validation error 12.500000 %
+epoch 97, minibatch 32/32, validation error 12.500000 %
+epoch 98, minibatch 32/32, validation error 12.500000 %
+epoch 99, minibatch 32/32, validation error 12.500000 %
+epoch 100, minibatch 32/32, validation error 12.500000 %
+epoch 101, minibatch 32/32, validation error 12.500000 %
+epoch 102, minibatch 32/32, validation error 12.500000 %
+epoch 103, minibatch 32/32, validation error 12.500000 %
+epoch 104, minibatch 32/32, validation error 12.500000 %
+epoch 105, minibatch 32/32, validation error 12.500000 %
+epoch 106, minibatch 32/32, validation error 12.500000 %
+epoch 107, minibatch 32/32, validation error 12.500000 %
+epoch 108, minibatch 32/32, validation error 12.500000 %
+epoch 109, minibatch 32/32, validation error 12.500000 %
+epoch 110, minibatch 32/32, validation error 12.500000 %
+epoch 111, minibatch 32/32, validation error 12.500000 %
+epoch 112, minibatch 32/32, validation error 12.500000 %
+epoch 113, minibatch 32/32, validation error 12.500000 %
+epoch 114, minibatch 32/32, validation error 12.500000 %
+epoch 115, minibatch 32/32, validation error 12.500000 %
+epoch 116, minibatch 32/32, validation error 12.500000 %
+epoch 117, minibatch 32/32, validation error 12.500000 %
+epoch 118, minibatch 32/32, validation error 12.500000 %
+epoch 119, minibatch 32/32, validation error 12.500000 %
+epoch 120, minibatch 32/32, validation error 12.500000 %
+epoch 121, minibatch 32/32, validation error 12.500000 %
+epoch 122, minibatch 32/32, validation error 12.500000 %
+epoch 123, minibatch 32/32, validation error 12.500000 %
+epoch 124, minibatch 32/32, validation error 12.500000 %
+epoch 125, minibatch 32/32, validation error 12.500000 %
+epoch 126, minibatch 32/32, validation error 12.500000 %
+epoch 127, minibatch 32/32, validation error 12.500000 %
+epoch 128, minibatch 32/32, validation error 12.500000 %
+epoch 129, minibatch 32/32, validation error 12.500000 %
+epoch 130, minibatch 32/32, validation error 12.500000 %
+epoch 131, minibatch 32/32, validation error 12.500000 %
+epoch 132, minibatch 32/32, validation error 12.500000 %
+epoch 133, minibatch 32/32, validation error 12.500000 %
+epoch 134, minibatch 32/32, validation error 12.500000 %
+epoch 135, minibatch 32/32, validation error 12.500000 %
+epoch 136, minibatch 32/32, validation error 12.500000 %
+epoch 137, minibatch 32/32, validation error 12.500000 %
+epoch 138, minibatch 32/32, validation error 12.500000 %
+epoch 139, minibatch 32/32, validation error 12.500000 %
+epoch 140, minibatch 32/32, validation error 12.500000 %
+epoch 141, minibatch 32/32, validation error 12.500000 %
+epoch 142, minibatch 32/32, validation error 12.500000 %
+epoch 143, minibatch 32/32, validation error 12.500000 %
+epoch 144, minibatch 32/32, validation error 12.500000 %
+epoch 145, minibatch 32/32, validation error 12.500000 %
+epoch 146, minibatch 32/32, validation error 12.500000 %
+epoch 147, minibatch 32/32, validation error 12.500000 %
+epoch 148, minibatch 32/32, validation error 12.500000 %
+epoch 149, minibatch 32/32, validation error 12.500000 %
+epoch 150, minibatch 32/32, validation error 12.500000 %
+epoch 151, minibatch 32/32, validation error 12.500000 %
+epoch 152, minibatch 32/32, validation error 12.500000 %
+epoch 153, minibatch 32/32, validation error 12.500000 %
+epoch 154, minibatch 32/32, validation error 12.500000 %
+epoch 155, minibatch 32/32, validation error 12.500000 %
+epoch 156, minibatch 32/32, validation error 12.500000 %
+Softmax optimization complete with best validation score of 12.500000 %,with test performance 13.888889 %
+The code run for 157 epochs, with 87.713179 epochs/sec
+... training softmax model with a learning rate= 0.01
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 15.000000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 12.500000 %
+epoch 25, minibatch 32/32, validation error 12.500000 %
+epoch 26, minibatch 32/32, validation error 12.500000 %
+epoch 27, minibatch 32/32, validation error 12.500000 %
+epoch 28, minibatch 32/32, validation error 12.500000 %
+epoch 29, minibatch 32/32, validation error 12.500000 %
+epoch 30, minibatch 32/32, validation error 12.500000 %
+epoch 31, minibatch 32/32, validation error 12.500000 %
+epoch 32, minibatch 32/32, validation error 12.500000 %
+epoch 33, minibatch 32/32, validation error 12.500000 %
+epoch 34, minibatch 32/32, validation error 12.500000 %
+epoch 35, minibatch 32/32, validation error 12.500000 %
+epoch 36, minibatch 32/32, validation error 12.500000 %
+epoch 37, minibatch 32/32, validation error 12.500000 %
+epoch 38, minibatch 32/32, validation error 12.500000 %
+epoch 39, minibatch 32/32, validation error 12.500000 %
+epoch 40, minibatch 32/32, validation error 12.500000 %
+epoch 41, minibatch 32/32, validation error 12.500000 %
+epoch 42, minibatch 32/32, validation error 12.500000 %
+epoch 43, minibatch 32/32, validation error 12.500000 %
+epoch 44, minibatch 32/32, validation error 12.500000 %
+epoch 45, minibatch 32/32, validation error 12.500000 %
+epoch 46, minibatch 32/32, validation error 12.500000 %
+epoch 47, minibatch 32/32, validation error 12.500000 %
+epoch 48, minibatch 32/32, validation error 12.500000 %
+epoch 49, minibatch 32/32, validation error 12.500000 %
+epoch 50, minibatch 32/32, validation error 12.500000 %
+epoch 51, minibatch 32/32, validation error 12.500000 %
+epoch 52, minibatch 32/32, validation error 12.500000 %
+epoch 53, minibatch 32/32, validation error 12.500000 %
+epoch 54, minibatch 32/32, validation error 12.500000 %
+epoch 55, minibatch 32/32, validation error 12.500000 %
+epoch 56, minibatch 32/32, validation error 12.500000 %
+epoch 57, minibatch 32/32, validation error 12.500000 %
+epoch 58, minibatch 32/32, validation error 12.500000 %
+epoch 59, minibatch 32/32, validation error 12.500000 %
+epoch 60, minibatch 32/32, validation error 12.500000 %
+epoch 61, minibatch 32/32, validation error 12.500000 %
+epoch 62, minibatch 32/32, validation error 12.500000 %
+epoch 63, minibatch 32/32, validation error 12.500000 %
+epoch 64, minibatch 32/32, validation error 12.500000 %
+epoch 65, minibatch 32/32, validation error 12.500000 %
+epoch 66, minibatch 32/32, validation error 12.500000 %
+epoch 67, minibatch 32/32, validation error 12.500000 %
+epoch 68, minibatch 32/32, validation error 12.500000 %
+epoch 69, minibatch 32/32, validation error 12.500000 %
+epoch 70, minibatch 32/32, validation error 12.500000 %
+epoch 71, minibatch 32/32, validation error 12.500000 %
+epoch 72, minibatch 32/32, validation error 12.500000 %
+epoch 73, minibatch 32/32, validation error 12.500000 %
+epoch 74, minibatch 32/32, validation error 12.500000 %
+epoch 75, minibatch 32/32, validation error 12.500000 %
+epoch 76, minibatch 32/32, validation error 12.500000 %
+epoch 77, minibatch 32/32, validation error 12.500000 %
+epoch 78, minibatch 32/32, validation error 12.500000 %
+epoch 79, minibatch 32/32, validation error 12.500000 %
+epoch 80, minibatch 32/32, validation error 12.500000 %
+epoch 81, minibatch 32/32, validation error 12.500000 %
+epoch 82, minibatch 32/32, validation error 12.500000 %
+epoch 83, minibatch 32/32, validation error 12.500000 %
+epoch 84, minibatch 32/32, validation error 12.500000 %
+epoch 85, minibatch 32/32, validation error 12.500000 %
+epoch 86, minibatch 32/32, validation error 12.500000 %
+epoch 87, minibatch 32/32, validation error 12.500000 %
+epoch 88, minibatch 32/32, validation error 12.500000 %
+epoch 89, minibatch 32/32, validation error 12.500000 %
+epoch 90, minibatch 32/32, validation error 12.500000 %
+epoch 91, minibatch 32/32, validation error 12.500000 %
+epoch 92, minibatch 32/32, validation error 12.500000 %
+epoch 93, minibatch 32/32, validation error 12.500000 %
+epoch 94, minibatch 32/32, validation error 12.500000 %
+epoch 95, minibatch 32/32, validation error 12.500000 %
+epoch 96, minibatch 32/32, validation error 12.500000 %
+epoch 97, minibatch 32/32, validation error 12.500000 %
+epoch 98, minibatch 32/32, validation error 12.500000 %
+epoch 99, minibatch 32/32, validation error 12.500000 %
+epoch 100, minibatch 32/32, validation error 12.500000 %
+epoch 101, minibatch 32/32, validation error 12.500000 %
+epoch 102, minibatch 32/32, validation error 12.500000 %
+epoch 103, minibatch 32/32, validation error 12.500000 %
+epoch 104, minibatch 32/32, validation error 12.500000 %
+epoch 105, minibatch 32/32, validation error 12.500000 %
+epoch 106, minibatch 32/32, validation error 12.500000 %
+epoch 107, minibatch 32/32, validation error 12.500000 %
+epoch 108, minibatch 32/32, validation error 12.500000 %
+epoch 109, minibatch 32/32, validation error 12.500000 %
+epoch 110, minibatch 32/32, validation error 12.500000 %
+epoch 111, minibatch 32/32, validation error 12.500000 %
+epoch 112, minibatch 32/32, validation error 12.500000 %
+epoch 113, minibatch 32/32, validation error 12.500000 %
+epoch 114, minibatch 32/32, validation error 12.500000 %
+epoch 115, minibatch 32/32, validation error 12.500000 %
+epoch 116, minibatch 32/32, validation error 12.500000 %
+epoch 117, minibatch 32/32, validation error 12.500000 %
+epoch 118, minibatch 32/32, validation error 12.500000 %
+epoch 119, minibatch 32/32, validation error 12.500000 %
+epoch 120, minibatch 32/32, validation error 12.500000 %
+epoch 121, minibatch 32/32, validation error 12.500000 %
+epoch 122, minibatch 32/32, validation error 12.500000 %
+epoch 123, minibatch 32/32, validation error 12.500000 %
+epoch 124, minibatch 32/32, validation error 12.500000 %
+epoch 125, minibatch 32/32, validation error 12.500000 %
+epoch 126, minibatch 32/32, validation error 12.500000 %
+epoch 127, minibatch 32/32, validation error 12.500000 %
+epoch 128, minibatch 32/32, validation error 12.500000 %
+epoch 129, minibatch 32/32, validation error 12.500000 %
+epoch 130, minibatch 32/32, validation error 12.500000 %
+epoch 131, minibatch 32/32, validation error 12.500000 %
+epoch 132, minibatch 32/32, validation error 12.500000 %
+epoch 133, minibatch 32/32, validation error 12.500000 %
+epoch 134, minibatch 32/32, validation error 12.500000 %
+epoch 135, minibatch 32/32, validation error 12.500000 %
+epoch 136, minibatch 32/32, validation error 12.500000 %
+epoch 137, minibatch 32/32, validation error 12.500000 %
+epoch 138, minibatch 32/32, validation error 12.500000 %
+epoch 139, minibatch 32/32, validation error 12.500000 %
+epoch 140, minibatch 32/32, validation error 12.500000 %
+epoch 141, minibatch 32/32, validation error 12.500000 %
+epoch 142, minibatch 32/32, validation error 12.500000 %
+epoch 143, minibatch 32/32, validation error 12.500000 %
+epoch 144, minibatch 32/32, validation error 12.500000 %
+epoch 145, minibatch 32/32, validation error 12.500000 %
+epoch 146, minibatch 32/32, validation error 12.500000 %
+epoch 147, minibatch 32/32, validation error 12.500000 %
+epoch 148, minibatch 32/32, validation error 12.500000 %
+epoch 149, minibatch 32/32, validation error 12.500000 %
+epoch 150, minibatch 32/32, validation error 12.500000 %
+epoch 151, minibatch 32/32, validation error 12.500000 %
+epoch 152, minibatch 32/32, validation error 12.500000 %
+epoch 153, minibatch 32/32, validation error 12.500000 %
+epoch 154, minibatch 32/32, validation error 12.500000 %
+epoch 155, minibatch 32/32, validation error 12.500000 %
+epoch 156, minibatch 32/32, validation error 12.500000 %
+Softmax optimization complete with best validation score of 12.500000 %,with test performance 13.888889 %
+The code run for 157 epochs, with 87.015168 epochs/sec
+Class 0 has been misclassified  28 times
+Class 1 has been misclassified  4 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(117, 31, 4, 28)
+Area under the roc curve:
+0.929064039409
+APCER =  0.0 BPCER =  0.0
+('best softmax PCA scores with a learning rate of', 0.0001, 'best validation score:', 0.13749999999999998, 'at iteration', 5000.0, 'and test loss:', 0.17777777777777778)
+---------- LDA results ---------
+('n', 1)
+('n', 11)
+('n', 21)
+('n', 31)
+('n', 41)
+('n', 51)
+('n', 61)
+('n', 71)
+('n', 81)
+('n', 91)
+('n', 101)
+('n', 111)
+('n', 121)
+('n', 131)
+('n', 141)
+('n', 151)
+('n', 161)
+('n', 171)
+('n', 181)
+('n', 191)
+('n', 201)
+('n', 211)
+('n', 221)
+('n', 231)
+('n', 241)
+('n', 251)
+('n', 261)
+('n', 271)
+('n', 281)
+('n', 291)
+('n', 301)
+('n', 311)
+('n', 321)
+('n', 331)
+('n', 341)
+('n', 351)
+('n', 361)
+('n', 371)
+('n', 381)
+('n', 391)
+('n', 401)
+('n', 411)
+('n', 421)
+('n', 431)
+('n', 441)
+('n', 451)
+('n', 461)
+('n', 471)
+('n', 481)
+('n', 491)
+('n', 501)
+('n', 511)
+('n', 521)
+('n', 531)
+('n', 541)
+('n', 551)
+('n', 561)
+('n', 571)
+('n', 581)
+('n', 591)
+('n', 601)
+('n', 611)
+('n', 621)
+('n', 631)
+('n', 641)
+('n', 651)
+('n', 661)
+('n', 671)
+('n', 681)
+('n', 691)
+('n', 701)
+('n', 711)
+('n', 721)
+('n', 731)
+('n', 741)
+('n', 751)
+('n', 761)
+('n', 771)
+('n', 781)
+('n', 791)
+('n', 801)
+('n', 811)
+('n', 821)
+('n', 831)
+('n', 841)
+('n', 851)
+('n', 861)
+('n', 871)
+('n', 881)
+('n', 891)
+('n', 901)
+('n', 911)
+('n', 921)
+('n', 931)
+('n', 941)
+('n', 951)
+('n', 961)
+('n', 971)
+('n', 981)
+('n', 991)
+('n', 1001)
+('n', 1011)
+('n', 1021)
+('n', 1031)
+('n', 1041)
+('n', 1051)
+('n', 1061)
+('n', 1071)
+('n', 1081)
+('n', 1091)
+('n', 1101)
+('n', 1111)
+('n', 1121)
+('n', 1131)
+('n', 1141)
+('n', 1151)
+('n', 1161)
+('n', 1171)
+('n', 1181)
+('n', 1191)
+('n', 1201)
+('n', 1211)
+('n', 1221)
+('n', 1231)
+('n', 1241)
+('n', 1251)
+('n', 1261)
+('n', 1271)
+('n', 1281)
+('n', 1291)
+('n', 1301)
+('n', 1311)
+('n', 1321)
+('n', 1331)
+('n', 1341)
+('n', 1351)
+('n', 1361)
+('n', 1371)
+('n', 1381)
+('n', 1391)
+('n', 1401)
+('n', 1411)
+('n', 1421)
+('n', 1431)
+('n', 1441)
+('n', 1451)
+('n', 1461)
+('n', 1471)
+('n', 1481)
+('n', 1491)
+('n', 1501)
+('n', 1511)
+('n', 1521)
+('n', 1531)
+('n', 1541)
+('n', 1551)
+('n', 1561)
+('n', 1571)
+('n', 1581)
+('n', 1591)
+('n', 1601)
+('n', 1611)
+('n', 1621)
+('n', 1631)
+('n', 1641)
+('n', 1651)
+('n', 1661)
+('n', 1671)
+('n', 1681)
+('n', 1691)
+('n', 1701)
+('n', 1711)
+('n', 1721)
+('n', 1731)
+('n', 1741)
+('n', 1751)
+('n', 1761)
+('n', 1771)
+('n', 1781)
+('n', 1791)
+('n', 1801)
+('n', 1811)
+('n', 1821)
+('n', 1831)
+('n', 1841)
+('n', 1851)
+('n', 1861)
+('n', 1871)
+('n', 1881)
+('n', 1891)
+('n', 1901)
+('n', 1911)
+('n', 1921)
+('n', 1931)
+('n', 1941)
+('n', 1951)
+('n', 1961)
+('n', 1971)
+('n', 1981)
+('n', 1991)
+('LDA scores:', [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+('LDA optimous componentes number', 1)
+('max lda scores:', 1.0)
+('----------SVM results ---------  KERNEL = ', 'rbf')
+('optimaC', 0.05)
+('SVM RBF scores:', 0.87777777777777777)
+Class 0 has been misclassified  7 times
+Class 1 has been misclassified  15 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(138, 20, 15, 7)
+Area under the roc curve:
+0.126108374384
+('FPR, FNR:', array([ 0.        ,  0.22857143,  0.22857143,  0.22857143,  0.22857143,
+        0.42857143,  0.45714286,  0.48571429,  0.51428571,  0.57142857]), array([ 1.        ,  0.13103448,  0.11034483,  0.11034483,  0.11034483,
+        0.04827586,  0.04137931,  0.04137931,  0.04137931,  0.04137931]))
+APCER =  0.048275862069 BPCER =  0.428571428571
+('----------SVM results ---------  KERNEL = ', 'linear')
+('optimaC', 0.001)
+('SVM linear scores:', 0.80555555555555558)
+Class 0 has been misclassified  0 times
+Class 1 has been misclassified  35 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(145, 0, 35, 0)
+Area under the roc curve:
+0.122660098522
+('FPR, FNR:', array([ 0.        ,  0.17142857,  0.17142857,  0.17142857,  0.17142857,
+        0.2       ,  0.2       ,  0.22857143,  0.22857143,  0.45714286]), array([ 1.        ,  0.17931034,  0.16551724,  0.14482759,  0.13793103,
+        0.13793103,  0.13103448,  0.11034483,  0.11034483,  0.04137931]))
+APCER =  0.0 BPCER =  1.0
+---------- KNN results ---------
+('optim k value:', 2)
+('KNN mean accuracy: ', 0.88888888888888884)
+Class 0 has been misclassified  9 times
+Class 1 has been misclassified  11 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(136, 24, 11, 9)
+Area under the roc curve:
+0.188177339901
+('FPR, FNR:', array([ 0.31428571,  0.31428571,  0.31428571,  0.31428571,  0.31428571,
+        0.31428571,  0.31428571,  0.31428571,  0.31428571,  0.31428571]), array([ 0.06206897,  0.06206897,  0.06206897,  0.06206897,  0.06206897,
+        0.06206897,  0.06206897,  0.06206897,  0.06206897,  0.06206897]))
+APCER =  0.0620689655172 BPCER =  0.314285714286
+---------- DECISION TREES results ---------
+('optim depth:', 2)
+('LDA-Tree mean accuracy: ', 0.88888888888888884)
+Class 0 has been misclassified  9 times
+Class 1 has been misclassified  11 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(136, 24, 11, 9)
+Area under the roc curve:
+0.188177339901
+('FPR, FNR:', array([ 0.31428571,  0.31428571,  0.31428571,  0.31428571,  0.31428571,
+        0.31428571,  0.31428571,  0.31428571,  0.31428571,  0.31428571]), array([ 0.06206897,  0.06206897,  0.06206897,  0.06206897,  0.06206897,
+        0.06206897,  0.06206897,  0.06206897,  0.06206897,  0.06206897]))
+APCER =  0.0620689655172 BPCER =  0.314285714286
+----------SOFTMAX + LDA---------
+... training softmax model with a learning rate= 0.0001
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 13.750000 %
+epoch 34, minibatch 32/32, validation error 13.750000 %
+epoch 35, minibatch 32/32, validation error 13.750000 %
+epoch 36, minibatch 32/32, validation error 13.750000 %
+epoch 37, minibatch 32/32, validation error 13.750000 %
+epoch 38, minibatch 32/32, validation error 13.750000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 13.750000 %
+epoch 51, minibatch 32/32, validation error 13.750000 %
+epoch 52, minibatch 32/32, validation error 13.750000 %
+epoch 53, minibatch 32/32, validation error 13.750000 %
+epoch 54, minibatch 32/32, validation error 13.750000 %
+epoch 55, minibatch 32/32, validation error 13.750000 %
+epoch 56, minibatch 32/32, validation error 13.750000 %
+epoch 57, minibatch 32/32, validation error 13.750000 %
+epoch 58, minibatch 32/32, validation error 13.750000 %
+epoch 59, minibatch 32/32, validation error 13.750000 %
+epoch 60, minibatch 32/32, validation error 13.750000 %
+epoch 61, minibatch 32/32, validation error 13.750000 %
+epoch 62, minibatch 32/32, validation error 13.750000 %
+epoch 63, minibatch 32/32, validation error 13.750000 %
+epoch 64, minibatch 32/32, validation error 13.750000 %
+epoch 65, minibatch 32/32, validation error 13.750000 %
+epoch 66, minibatch 32/32, validation error 13.750000 %
+epoch 67, minibatch 32/32, validation error 13.750000 %
+epoch 68, minibatch 32/32, validation error 13.750000 %
+epoch 69, minibatch 32/32, validation error 13.750000 %
+epoch 70, minibatch 32/32, validation error 13.750000 %
+epoch 71, minibatch 32/32, validation error 13.750000 %
+epoch 72, minibatch 32/32, validation error 13.750000 %
+epoch 73, minibatch 32/32, validation error 13.750000 %
+epoch 74, minibatch 32/32, validation error 13.750000 %
+epoch 75, minibatch 32/32, validation error 13.750000 %
+epoch 76, minibatch 32/32, validation error 13.750000 %
+epoch 77, minibatch 32/32, validation error 13.750000 %
+epoch 78, minibatch 32/32, validation error 13.750000 %
+epoch 79, minibatch 32/32, validation error 13.750000 %
+epoch 80, minibatch 32/32, validation error 13.750000 %
+epoch 81, minibatch 32/32, validation error 13.750000 %
+epoch 82, minibatch 32/32, validation error 13.750000 %
+epoch 83, minibatch 32/32, validation error 13.750000 %
+epoch 84, minibatch 32/32, validation error 13.750000 %
+epoch 85, minibatch 32/32, validation error 13.750000 %
+epoch 86, minibatch 32/32, validation error 13.750000 %
+epoch 87, minibatch 32/32, validation error 13.750000 %
+epoch 88, minibatch 32/32, validation error 13.750000 %
+epoch 89, minibatch 32/32, validation error 13.750000 %
+epoch 90, minibatch 32/32, validation error 13.750000 %
+epoch 91, minibatch 32/32, validation error 13.750000 %
+epoch 92, minibatch 32/32, validation error 13.750000 %
+epoch 93, minibatch 32/32, validation error 13.750000 %
+epoch 94, minibatch 32/32, validation error 13.750000 %
+epoch 95, minibatch 32/32, validation error 13.750000 %
+epoch 96, minibatch 32/32, validation error 13.750000 %
+epoch 97, minibatch 32/32, validation error 13.750000 %
+epoch 98, minibatch 32/32, validation error 13.750000 %
+epoch 99, minibatch 32/32, validation error 13.750000 %
+epoch 100, minibatch 32/32, validation error 13.750000 %
+epoch 101, minibatch 32/32, validation error 13.750000 %
+epoch 102, minibatch 32/32, validation error 13.750000 %
+epoch 103, minibatch 32/32, validation error 13.750000 %
+epoch 104, minibatch 32/32, validation error 13.750000 %
+epoch 105, minibatch 32/32, validation error 13.750000 %
+epoch 106, minibatch 32/32, validation error 13.750000 %
+epoch 107, minibatch 32/32, validation error 13.750000 %
+epoch 108, minibatch 32/32, validation error 13.750000 %
+epoch 109, minibatch 32/32, validation error 13.750000 %
+epoch 110, minibatch 32/32, validation error 13.750000 %
+epoch 111, minibatch 32/32, validation error 13.750000 %
+epoch 112, minibatch 32/32, validation error 13.750000 %
+epoch 113, minibatch 32/32, validation error 13.750000 %
+epoch 114, minibatch 32/32, validation error 13.750000 %
+epoch 115, minibatch 32/32, validation error 13.750000 %
+epoch 116, minibatch 32/32, validation error 13.750000 %
+epoch 117, minibatch 32/32, validation error 13.750000 %
+epoch 118, minibatch 32/32, validation error 13.750000 %
+epoch 119, minibatch 32/32, validation error 13.750000 %
+epoch 120, minibatch 32/32, validation error 13.750000 %
+epoch 121, minibatch 32/32, validation error 13.750000 %
+epoch 122, minibatch 32/32, validation error 13.750000 %
+epoch 123, minibatch 32/32, validation error 13.750000 %
+epoch 124, minibatch 32/32, validation error 13.750000 %
+epoch 125, minibatch 32/32, validation error 13.750000 %
+epoch 126, minibatch 32/32, validation error 13.750000 %
+epoch 127, minibatch 32/32, validation error 13.750000 %
+epoch 128, minibatch 32/32, validation error 13.750000 %
+epoch 129, minibatch 32/32, validation error 13.750000 %
+epoch 130, minibatch 32/32, validation error 13.750000 %
+epoch 131, minibatch 32/32, validation error 13.750000 %
+epoch 132, minibatch 32/32, validation error 13.750000 %
+epoch 133, minibatch 32/32, validation error 13.750000 %
+epoch 134, minibatch 32/32, validation error 13.750000 %
+epoch 135, minibatch 32/32, validation error 13.750000 %
+epoch 136, minibatch 32/32, validation error 13.750000 %
+epoch 137, minibatch 32/32, validation error 13.750000 %
+epoch 138, minibatch 32/32, validation error 13.750000 %
+epoch 139, minibatch 32/32, validation error 13.750000 %
+epoch 140, minibatch 32/32, validation error 13.750000 %
+epoch 141, minibatch 32/32, validation error 13.750000 %
+epoch 142, minibatch 32/32, validation error 13.750000 %
+epoch 143, minibatch 32/32, validation error 13.750000 %
+epoch 144, minibatch 32/32, validation error 13.750000 %
+epoch 145, minibatch 32/32, validation error 13.750000 %
+epoch 146, minibatch 32/32, validation error 13.750000 %
+epoch 147, minibatch 32/32, validation error 13.750000 %
+epoch 148, minibatch 32/32, validation error 13.750000 %
+epoch 149, minibatch 32/32, validation error 13.750000 %
+epoch 150, minibatch 32/32, validation error 13.750000 %
+epoch 151, minibatch 32/32, validation error 13.750000 %
+epoch 152, minibatch 32/32, validation error 13.750000 %
+epoch 153, minibatch 32/32, validation error 13.750000 %
+epoch 154, minibatch 32/32, validation error 13.750000 %
+epoch 155, minibatch 32/32, validation error 13.750000 %
+epoch 156, minibatch 32/32, validation error 13.750000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 17.222222 %
+The code run for 157 epochs, with 90.936785 epochs/sec
+... training softmax model with a learning rate= 0.005
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 13.750000 %
+epoch 34, minibatch 32/32, validation error 13.750000 %
+epoch 35, minibatch 32/32, validation error 13.750000 %
+epoch 36, minibatch 32/32, validation error 13.750000 %
+epoch 37, minibatch 32/32, validation error 13.750000 %
+epoch 38, minibatch 32/32, validation error 13.750000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 13.750000 %
+epoch 51, minibatch 32/32, validation error 13.750000 %
+epoch 52, minibatch 32/32, validation error 13.750000 %
+epoch 53, minibatch 32/32, validation error 13.750000 %
+epoch 54, minibatch 32/32, validation error 13.750000 %
+epoch 55, minibatch 32/32, validation error 13.750000 %
+epoch 56, minibatch 32/32, validation error 13.750000 %
+epoch 57, minibatch 32/32, validation error 13.750000 %
+epoch 58, minibatch 32/32, validation error 13.750000 %
+epoch 59, minibatch 32/32, validation error 13.750000 %
+epoch 60, minibatch 32/32, validation error 13.750000 %
+epoch 61, minibatch 32/32, validation error 13.750000 %
+epoch 62, minibatch 32/32, validation error 13.750000 %
+epoch 63, minibatch 32/32, validation error 13.750000 %
+epoch 64, minibatch 32/32, validation error 13.750000 %
+epoch 65, minibatch 32/32, validation error 13.750000 %
+epoch 66, minibatch 32/32, validation error 13.750000 %
+epoch 67, minibatch 32/32, validation error 13.750000 %
+epoch 68, minibatch 32/32, validation error 13.750000 %
+epoch 69, minibatch 32/32, validation error 13.750000 %
+epoch 70, minibatch 32/32, validation error 13.750000 %
+epoch 71, minibatch 32/32, validation error 13.750000 %
+epoch 72, minibatch 32/32, validation error 13.750000 %
+epoch 73, minibatch 32/32, validation error 13.750000 %
+epoch 74, minibatch 32/32, validation error 13.750000 %
+epoch 75, minibatch 32/32, validation error 13.750000 %
+epoch 76, minibatch 32/32, validation error 13.750000 %
+epoch 77, minibatch 32/32, validation error 13.750000 %
+epoch 78, minibatch 32/32, validation error 13.750000 %
+epoch 79, minibatch 32/32, validation error 13.750000 %
+epoch 80, minibatch 32/32, validation error 13.750000 %
+epoch 81, minibatch 32/32, validation error 13.750000 %
+epoch 82, minibatch 32/32, validation error 13.750000 %
+epoch 83, minibatch 32/32, validation error 13.750000 %
+epoch 84, minibatch 32/32, validation error 13.750000 %
+epoch 85, minibatch 32/32, validation error 13.750000 %
+epoch 86, minibatch 32/32, validation error 13.750000 %
+epoch 87, minibatch 32/32, validation error 13.750000 %
+epoch 88, minibatch 32/32, validation error 13.750000 %
+epoch 89, minibatch 32/32, validation error 13.750000 %
+epoch 90, minibatch 32/32, validation error 13.750000 %
+epoch 91, minibatch 32/32, validation error 13.750000 %
+epoch 92, minibatch 32/32, validation error 13.750000 %
+epoch 93, minibatch 32/32, validation error 13.750000 %
+epoch 94, minibatch 32/32, validation error 13.750000 %
+epoch 95, minibatch 32/32, validation error 13.750000 %
+epoch 96, minibatch 32/32, validation error 13.750000 %
+epoch 97, minibatch 32/32, validation error 13.750000 %
+epoch 98, minibatch 32/32, validation error 13.750000 %
+epoch 99, minibatch 32/32, validation error 13.750000 %
+epoch 100, minibatch 32/32, validation error 13.750000 %
+epoch 101, minibatch 32/32, validation error 13.750000 %
+epoch 102, minibatch 32/32, validation error 13.750000 %
+epoch 103, minibatch 32/32, validation error 13.750000 %
+epoch 104, minibatch 32/32, validation error 13.750000 %
+epoch 105, minibatch 32/32, validation error 13.750000 %
+epoch 106, minibatch 32/32, validation error 13.750000 %
+epoch 107, minibatch 32/32, validation error 13.750000 %
+epoch 108, minibatch 32/32, validation error 13.750000 %
+epoch 109, minibatch 32/32, validation error 13.750000 %
+epoch 110, minibatch 32/32, validation error 13.750000 %
+epoch 111, minibatch 32/32, validation error 13.750000 %
+epoch 112, minibatch 32/32, validation error 13.750000 %
+epoch 113, minibatch 32/32, validation error 13.750000 %
+epoch 114, minibatch 32/32, validation error 13.750000 %
+epoch 115, minibatch 32/32, validation error 13.750000 %
+epoch 116, minibatch 32/32, validation error 13.750000 %
+epoch 117, minibatch 32/32, validation error 13.750000 %
+epoch 118, minibatch 32/32, validation error 13.750000 %
+epoch 119, minibatch 32/32, validation error 13.750000 %
+epoch 120, minibatch 32/32, validation error 13.750000 %
+epoch 121, minibatch 32/32, validation error 13.750000 %
+epoch 122, minibatch 32/32, validation error 13.750000 %
+epoch 123, minibatch 32/32, validation error 13.750000 %
+epoch 124, minibatch 32/32, validation error 13.750000 %
+epoch 125, minibatch 32/32, validation error 13.750000 %
+epoch 126, minibatch 32/32, validation error 13.750000 %
+epoch 127, minibatch 32/32, validation error 13.750000 %
+epoch 128, minibatch 32/32, validation error 13.750000 %
+epoch 129, minibatch 32/32, validation error 13.750000 %
+epoch 130, minibatch 32/32, validation error 13.750000 %
+epoch 131, minibatch 32/32, validation error 13.750000 %
+epoch 132, minibatch 32/32, validation error 13.750000 %
+epoch 133, minibatch 32/32, validation error 13.750000 %
+epoch 134, minibatch 32/32, validation error 13.750000 %
+epoch 135, minibatch 32/32, validation error 13.750000 %
+epoch 136, minibatch 32/32, validation error 13.750000 %
+epoch 137, minibatch 32/32, validation error 13.750000 %
+epoch 138, minibatch 32/32, validation error 13.750000 %
+epoch 139, minibatch 32/32, validation error 13.750000 %
+epoch 140, minibatch 32/32, validation error 13.750000 %
+epoch 141, minibatch 32/32, validation error 13.750000 %
+epoch 142, minibatch 32/32, validation error 13.750000 %
+epoch 143, minibatch 32/32, validation error 13.750000 %
+epoch 144, minibatch 32/32, validation error 13.750000 %
+epoch 145, minibatch 32/32, validation error 13.750000 %
+epoch 146, minibatch 32/32, validation error 13.750000 %
+epoch 147, minibatch 32/32, validation error 13.750000 %
+epoch 148, minibatch 32/32, validation error 13.750000 %
+epoch 149, minibatch 32/32, validation error 13.750000 %
+epoch 150, minibatch 32/32, validation error 13.750000 %
+epoch 151, minibatch 32/32, validation error 13.750000 %
+epoch 152, minibatch 32/32, validation error 13.750000 %
+epoch 153, minibatch 32/32, validation error 13.750000 %
+epoch 154, minibatch 32/32, validation error 13.750000 %
+epoch 155, minibatch 32/32, validation error 13.750000 %
+epoch 156, minibatch 32/32, validation error 13.750000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 16.666667 %
+The code run for 157 epochs, with 91.005479 epochs/sec
+... training softmax model with a learning rate= 0.001
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 13.750000 %
+epoch 34, minibatch 32/32, validation error 13.750000 %
+epoch 35, minibatch 32/32, validation error 13.750000 %
+epoch 36, minibatch 32/32, validation error 13.750000 %
+epoch 37, minibatch 32/32, validation error 13.750000 %
+epoch 38, minibatch 32/32, validation error 13.750000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 13.750000 %
+epoch 51, minibatch 32/32, validation error 13.750000 %
+epoch 52, minibatch 32/32, validation error 13.750000 %
+epoch 53, minibatch 32/32, validation error 13.750000 %
+epoch 54, minibatch 32/32, validation error 13.750000 %
+epoch 55, minibatch 32/32, validation error 13.750000 %
+epoch 56, minibatch 32/32, validation error 13.750000 %
+epoch 57, minibatch 32/32, validation error 13.750000 %
+epoch 58, minibatch 32/32, validation error 13.750000 %
+epoch 59, minibatch 32/32, validation error 13.750000 %
+epoch 60, minibatch 32/32, validation error 13.750000 %
+epoch 61, minibatch 32/32, validation error 13.750000 %
+epoch 62, minibatch 32/32, validation error 13.750000 %
+epoch 63, minibatch 32/32, validation error 13.750000 %
+epoch 64, minibatch 32/32, validation error 13.750000 %
+epoch 65, minibatch 32/32, validation error 13.750000 %
+epoch 66, minibatch 32/32, validation error 13.750000 %
+epoch 67, minibatch 32/32, validation error 13.750000 %
+epoch 68, minibatch 32/32, validation error 13.750000 %
+epoch 69, minibatch 32/32, validation error 13.750000 %
+epoch 70, minibatch 32/32, validation error 13.750000 %
+epoch 71, minibatch 32/32, validation error 13.750000 %
+epoch 72, minibatch 32/32, validation error 13.750000 %
+epoch 73, minibatch 32/32, validation error 13.750000 %
+epoch 74, minibatch 32/32, validation error 13.750000 %
+epoch 75, minibatch 32/32, validation error 13.750000 %
+epoch 76, minibatch 32/32, validation error 13.750000 %
+epoch 77, minibatch 32/32, validation error 13.750000 %
+epoch 78, minibatch 32/32, validation error 13.750000 %
+epoch 79, minibatch 32/32, validation error 13.750000 %
+epoch 80, minibatch 32/32, validation error 13.750000 %
+epoch 81, minibatch 32/32, validation error 13.750000 %
+epoch 82, minibatch 32/32, validation error 13.750000 %
+epoch 83, minibatch 32/32, validation error 13.750000 %
+epoch 84, minibatch 32/32, validation error 13.750000 %
+epoch 85, minibatch 32/32, validation error 13.750000 %
+epoch 86, minibatch 32/32, validation error 13.750000 %
+epoch 87, minibatch 32/32, validation error 13.750000 %
+epoch 88, minibatch 32/32, validation error 13.750000 %
+epoch 89, minibatch 32/32, validation error 13.750000 %
+epoch 90, minibatch 32/32, validation error 13.750000 %
+epoch 91, minibatch 32/32, validation error 13.750000 %
+epoch 92, minibatch 32/32, validation error 13.750000 %
+epoch 93, minibatch 32/32, validation error 13.750000 %
+epoch 94, minibatch 32/32, validation error 13.750000 %
+epoch 95, minibatch 32/32, validation error 13.750000 %
+epoch 96, minibatch 32/32, validation error 13.750000 %
+epoch 97, minibatch 32/32, validation error 13.750000 %
+epoch 98, minibatch 32/32, validation error 13.750000 %
+epoch 99, minibatch 32/32, validation error 13.750000 %
+epoch 100, minibatch 32/32, validation error 13.750000 %
+epoch 101, minibatch 32/32, validation error 13.750000 %
+epoch 102, minibatch 32/32, validation error 13.750000 %
+epoch 103, minibatch 32/32, validation error 13.750000 %
+epoch 104, minibatch 32/32, validation error 13.750000 %
+epoch 105, minibatch 32/32, validation error 13.750000 %
+epoch 106, minibatch 32/32, validation error 13.750000 %
+epoch 107, minibatch 32/32, validation error 13.750000 %
+epoch 108, minibatch 32/32, validation error 13.750000 %
+epoch 109, minibatch 32/32, validation error 13.750000 %
+epoch 110, minibatch 32/32, validation error 13.750000 %
+epoch 111, minibatch 32/32, validation error 13.750000 %
+epoch 112, minibatch 32/32, validation error 13.750000 %
+epoch 113, minibatch 32/32, validation error 13.750000 %
+epoch 114, minibatch 32/32, validation error 13.750000 %
+epoch 115, minibatch 32/32, validation error 13.750000 %
+epoch 116, minibatch 32/32, validation error 13.750000 %
+epoch 117, minibatch 32/32, validation error 13.750000 %
+epoch 118, minibatch 32/32, validation error 13.750000 %
+epoch 119, minibatch 32/32, validation error 13.750000 %
+epoch 120, minibatch 32/32, validation error 13.750000 %
+epoch 121, minibatch 32/32, validation error 13.750000 %
+epoch 122, minibatch 32/32, validation error 13.750000 %
+epoch 123, minibatch 32/32, validation error 13.750000 %
+epoch 124, minibatch 32/32, validation error 13.750000 %
+epoch 125, minibatch 32/32, validation error 13.750000 %
+epoch 126, minibatch 32/32, validation error 13.750000 %
+epoch 127, minibatch 32/32, validation error 13.750000 %
+epoch 128, minibatch 32/32, validation error 13.750000 %
+epoch 129, minibatch 32/32, validation error 13.750000 %
+epoch 130, minibatch 32/32, validation error 13.750000 %
+epoch 131, minibatch 32/32, validation error 13.750000 %
+epoch 132, minibatch 32/32, validation error 13.750000 %
+epoch 133, minibatch 32/32, validation error 13.750000 %
+epoch 134, minibatch 32/32, validation error 13.750000 %
+epoch 135, minibatch 32/32, validation error 13.750000 %
+epoch 136, minibatch 32/32, validation error 13.750000 %
+epoch 137, minibatch 32/32, validation error 13.750000 %
+epoch 138, minibatch 32/32, validation error 13.750000 %
+epoch 139, minibatch 32/32, validation error 13.750000 %
+epoch 140, minibatch 32/32, validation error 13.750000 %
+epoch 141, minibatch 32/32, validation error 13.750000 %
+epoch 142, minibatch 32/32, validation error 13.750000 %
+epoch 143, minibatch 32/32, validation error 13.750000 %
+epoch 144, minibatch 32/32, validation error 13.750000 %
+epoch 145, minibatch 32/32, validation error 13.750000 %
+epoch 146, minibatch 32/32, validation error 13.750000 %
+epoch 147, minibatch 32/32, validation error 13.750000 %
+epoch 148, minibatch 32/32, validation error 13.750000 %
+epoch 149, minibatch 32/32, validation error 13.750000 %
+epoch 150, minibatch 32/32, validation error 13.750000 %
+epoch 151, minibatch 32/32, validation error 13.750000 %
+epoch 152, minibatch 32/32, validation error 13.750000 %
+epoch 153, minibatch 32/32, validation error 13.750000 %
+epoch 154, minibatch 32/32, validation error 13.750000 %
+epoch 155, minibatch 32/32, validation error 13.750000 %
+epoch 156, minibatch 32/32, validation error 13.750000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 16.666667 %
+The code run for 157 epochs, with 89.511228 epochs/sec
+... training softmax model with a learning rate= 0.05
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 15.000000 %
+epoch 19, minibatch 32/32, validation error 15.000000 %
+epoch 20, minibatch 32/32, validation error 15.000000 %
+epoch 21, minibatch 32/32, validation error 15.000000 %
+epoch 22, minibatch 32/32, validation error 15.000000 %
+epoch 23, minibatch 32/32, validation error 15.000000 %
+epoch 24, minibatch 32/32, validation error 15.000000 %
+epoch 25, minibatch 32/32, validation error 15.000000 %
+epoch 26, minibatch 32/32, validation error 15.000000 %
+epoch 27, minibatch 32/32, validation error 15.000000 %
+epoch 28, minibatch 32/32, validation error 15.000000 %
+epoch 29, minibatch 32/32, validation error 15.000000 %
+epoch 30, minibatch 32/32, validation error 15.000000 %
+epoch 31, minibatch 32/32, validation error 15.000000 %
+epoch 32, minibatch 32/32, validation error 15.000000 %
+epoch 33, minibatch 32/32, validation error 15.000000 %
+epoch 34, minibatch 32/32, validation error 15.000000 %
+epoch 35, minibatch 32/32, validation error 15.000000 %
+epoch 36, minibatch 32/32, validation error 15.000000 %
+epoch 37, minibatch 32/32, validation error 15.000000 %
+epoch 38, minibatch 32/32, validation error 15.000000 %
+epoch 39, minibatch 32/32, validation error 15.000000 %
+epoch 40, minibatch 32/32, validation error 15.000000 %
+epoch 41, minibatch 32/32, validation error 15.000000 %
+epoch 42, minibatch 32/32, validation error 15.000000 %
+epoch 43, minibatch 32/32, validation error 15.000000 %
+epoch 44, minibatch 32/32, validation error 15.000000 %
+epoch 45, minibatch 32/32, validation error 15.000000 %
+epoch 46, minibatch 32/32, validation error 15.000000 %
+epoch 47, minibatch 32/32, validation error 15.000000 %
+epoch 48, minibatch 32/32, validation error 15.000000 %
+epoch 49, minibatch 32/32, validation error 15.000000 %
+epoch 50, minibatch 32/32, validation error 15.000000 %
+epoch 51, minibatch 32/32, validation error 15.000000 %
+epoch 52, minibatch 32/32, validation error 15.000000 %
+epoch 53, minibatch 32/32, validation error 15.000000 %
+epoch 54, minibatch 32/32, validation error 15.000000 %
+epoch 55, minibatch 32/32, validation error 15.000000 %
+epoch 56, minibatch 32/32, validation error 15.000000 %
+epoch 57, minibatch 32/32, validation error 15.000000 %
+epoch 58, minibatch 32/32, validation error 15.000000 %
+epoch 59, minibatch 32/32, validation error 15.000000 %
+epoch 60, minibatch 32/32, validation error 15.000000 %
+epoch 61, minibatch 32/32, validation error 15.000000 %
+epoch 62, minibatch 32/32, validation error 15.000000 %
+epoch 63, minibatch 32/32, validation error 15.000000 %
+epoch 64, minibatch 32/32, validation error 15.000000 %
+epoch 65, minibatch 32/32, validation error 15.000000 %
+epoch 66, minibatch 32/32, validation error 15.000000 %
+epoch 67, minibatch 32/32, validation error 15.000000 %
+epoch 68, minibatch 32/32, validation error 15.000000 %
+epoch 69, minibatch 32/32, validation error 15.000000 %
+epoch 70, minibatch 32/32, validation error 15.000000 %
+epoch 71, minibatch 32/32, validation error 15.000000 %
+epoch 72, minibatch 32/32, validation error 15.000000 %
+epoch 73, minibatch 32/32, validation error 15.000000 %
+epoch 74, minibatch 32/32, validation error 15.000000 %
+epoch 75, minibatch 32/32, validation error 15.000000 %
+epoch 76, minibatch 32/32, validation error 15.000000 %
+epoch 77, minibatch 32/32, validation error 15.000000 %
+epoch 78, minibatch 32/32, validation error 15.000000 %
+epoch 79, minibatch 32/32, validation error 15.000000 %
+epoch 80, minibatch 32/32, validation error 15.000000 %
+epoch 81, minibatch 32/32, validation error 15.000000 %
+epoch 82, minibatch 32/32, validation error 15.000000 %
+epoch 83, minibatch 32/32, validation error 15.000000 %
+epoch 84, minibatch 32/32, validation error 15.000000 %
+epoch 85, minibatch 32/32, validation error 15.000000 %
+epoch 86, minibatch 32/32, validation error 15.000000 %
+epoch 87, minibatch 32/32, validation error 15.000000 %
+epoch 88, minibatch 32/32, validation error 15.000000 %
+epoch 89, minibatch 32/32, validation error 15.000000 %
+epoch 90, minibatch 32/32, validation error 15.000000 %
+epoch 91, minibatch 32/32, validation error 15.000000 %
+epoch 92, minibatch 32/32, validation error 15.000000 %
+epoch 93, minibatch 32/32, validation error 15.000000 %
+epoch 94, minibatch 32/32, validation error 15.000000 %
+epoch 95, minibatch 32/32, validation error 15.000000 %
+epoch 96, minibatch 32/32, validation error 15.000000 %
+epoch 97, minibatch 32/32, validation error 15.000000 %
+epoch 98, minibatch 32/32, validation error 15.000000 %
+epoch 99, minibatch 32/32, validation error 15.000000 %
+epoch 100, minibatch 32/32, validation error 15.000000 %
+epoch 101, minibatch 32/32, validation error 15.000000 %
+epoch 102, minibatch 32/32, validation error 15.000000 %
+epoch 103, minibatch 32/32, validation error 15.000000 %
+epoch 104, minibatch 32/32, validation error 15.000000 %
+epoch 105, minibatch 32/32, validation error 15.000000 %
+epoch 106, minibatch 32/32, validation error 15.000000 %
+epoch 107, minibatch 32/32, validation error 15.000000 %
+epoch 108, minibatch 32/32, validation error 15.000000 %
+epoch 109, minibatch 32/32, validation error 15.000000 %
+epoch 110, minibatch 32/32, validation error 15.000000 %
+epoch 111, minibatch 32/32, validation error 15.000000 %
+epoch 112, minibatch 32/32, validation error 15.000000 %
+epoch 113, minibatch 32/32, validation error 15.000000 %
+epoch 114, minibatch 32/32, validation error 15.000000 %
+epoch 115, minibatch 32/32, validation error 15.000000 %
+epoch 116, minibatch 32/32, validation error 15.000000 %
+epoch 117, minibatch 32/32, validation error 15.000000 %
+epoch 118, minibatch 32/32, validation error 15.000000 %
+epoch 119, minibatch 32/32, validation error 15.000000 %
+epoch 120, minibatch 32/32, validation error 15.000000 %
+epoch 121, minibatch 32/32, validation error 15.000000 %
+epoch 122, minibatch 32/32, validation error 15.000000 %
+epoch 123, minibatch 32/32, validation error 15.000000 %
+epoch 124, minibatch 32/32, validation error 15.000000 %
+epoch 125, minibatch 32/32, validation error 15.000000 %
+epoch 126, minibatch 32/32, validation error 15.000000 %
+epoch 127, minibatch 32/32, validation error 15.000000 %
+epoch 128, minibatch 32/32, validation error 15.000000 %
+epoch 129, minibatch 32/32, validation error 15.000000 %
+epoch 130, minibatch 32/32, validation error 15.000000 %
+epoch 131, minibatch 32/32, validation error 15.000000 %
+epoch 132, minibatch 32/32, validation error 15.000000 %
+epoch 133, minibatch 32/32, validation error 15.000000 %
+epoch 134, minibatch 32/32, validation error 15.000000 %
+epoch 135, minibatch 32/32, validation error 15.000000 %
+epoch 136, minibatch 32/32, validation error 15.000000 %
+epoch 137, minibatch 32/32, validation error 15.000000 %
+epoch 138, minibatch 32/32, validation error 15.000000 %
+epoch 139, minibatch 32/32, validation error 15.000000 %
+epoch 140, minibatch 32/32, validation error 15.000000 %
+epoch 141, minibatch 32/32, validation error 15.000000 %
+epoch 142, minibatch 32/32, validation error 15.000000 %
+epoch 143, minibatch 32/32, validation error 15.000000 %
+epoch 144, minibatch 32/32, validation error 15.000000 %
+epoch 145, minibatch 32/32, validation error 15.000000 %
+epoch 146, minibatch 32/32, validation error 15.000000 %
+epoch 147, minibatch 32/32, validation error 13.750000 %
+epoch 148, minibatch 32/32, validation error 13.750000 %
+epoch 149, minibatch 32/32, validation error 13.750000 %
+epoch 150, minibatch 32/32, validation error 13.750000 %
+epoch 151, minibatch 32/32, validation error 13.750000 %
+epoch 152, minibatch 32/32, validation error 13.750000 %
+epoch 153, minibatch 32/32, validation error 13.750000 %
+epoch 154, minibatch 32/32, validation error 13.750000 %
+epoch 155, minibatch 32/32, validation error 13.750000 %
+epoch 156, minibatch 32/32, validation error 13.750000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 16.111111 %
+The code run for 157 epochs, with 89.870407 epochs/sec
+... training softmax model with a learning rate= 0.01
+epoch 1, minibatch 32/32, validation error 13.750000 %
+epoch 2, minibatch 32/32, validation error 13.750000 %
+epoch 3, minibatch 32/32, validation error 13.750000 %
+epoch 4, minibatch 32/32, validation error 13.750000 %
+epoch 5, minibatch 32/32, validation error 13.750000 %
+epoch 6, minibatch 32/32, validation error 13.750000 %
+epoch 7, minibatch 32/32, validation error 13.750000 %
+epoch 8, minibatch 32/32, validation error 13.750000 %
+epoch 9, minibatch 32/32, validation error 13.750000 %
+epoch 10, minibatch 32/32, validation error 13.750000 %
+epoch 11, minibatch 32/32, validation error 13.750000 %
+epoch 12, minibatch 32/32, validation error 13.750000 %
+epoch 13, minibatch 32/32, validation error 13.750000 %
+epoch 14, minibatch 32/32, validation error 13.750000 %
+epoch 15, minibatch 32/32, validation error 13.750000 %
+epoch 16, minibatch 32/32, validation error 13.750000 %
+epoch 17, minibatch 32/32, validation error 13.750000 %
+epoch 18, minibatch 32/32, validation error 13.750000 %
+epoch 19, minibatch 32/32, validation error 13.750000 %
+epoch 20, minibatch 32/32, validation error 13.750000 %
+epoch 21, minibatch 32/32, validation error 13.750000 %
+epoch 22, minibatch 32/32, validation error 13.750000 %
+epoch 23, minibatch 32/32, validation error 13.750000 %
+epoch 24, minibatch 32/32, validation error 13.750000 %
+epoch 25, minibatch 32/32, validation error 13.750000 %
+epoch 26, minibatch 32/32, validation error 13.750000 %
+epoch 27, minibatch 32/32, validation error 13.750000 %
+epoch 28, minibatch 32/32, validation error 13.750000 %
+epoch 29, minibatch 32/32, validation error 13.750000 %
+epoch 30, minibatch 32/32, validation error 13.750000 %
+epoch 31, minibatch 32/32, validation error 13.750000 %
+epoch 32, minibatch 32/32, validation error 13.750000 %
+epoch 33, minibatch 32/32, validation error 13.750000 %
+epoch 34, minibatch 32/32, validation error 13.750000 %
+epoch 35, minibatch 32/32, validation error 13.750000 %
+epoch 36, minibatch 32/32, validation error 13.750000 %
+epoch 37, minibatch 32/32, validation error 13.750000 %
+epoch 38, minibatch 32/32, validation error 13.750000 %
+epoch 39, minibatch 32/32, validation error 13.750000 %
+epoch 40, minibatch 32/32, validation error 13.750000 %
+epoch 41, minibatch 32/32, validation error 13.750000 %
+epoch 42, minibatch 32/32, validation error 13.750000 %
+epoch 43, minibatch 32/32, validation error 13.750000 %
+epoch 44, minibatch 32/32, validation error 13.750000 %
+epoch 45, minibatch 32/32, validation error 13.750000 %
+epoch 46, minibatch 32/32, validation error 13.750000 %
+epoch 47, minibatch 32/32, validation error 13.750000 %
+epoch 48, minibatch 32/32, validation error 13.750000 %
+epoch 49, minibatch 32/32, validation error 13.750000 %
+epoch 50, minibatch 32/32, validation error 13.750000 %
+epoch 51, minibatch 32/32, validation error 13.750000 %
+epoch 52, minibatch 32/32, validation error 13.750000 %
+epoch 53, minibatch 32/32, validation error 13.750000 %
+epoch 54, minibatch 32/32, validation error 13.750000 %
+epoch 55, minibatch 32/32, validation error 13.750000 %
+epoch 56, minibatch 32/32, validation error 13.750000 %
+epoch 57, minibatch 32/32, validation error 13.750000 %
+epoch 58, minibatch 32/32, validation error 13.750000 %
+epoch 59, minibatch 32/32, validation error 13.750000 %
+epoch 60, minibatch 32/32, validation error 13.750000 %
+epoch 61, minibatch 32/32, validation error 13.750000 %
+epoch 62, minibatch 32/32, validation error 13.750000 %
+epoch 63, minibatch 32/32, validation error 13.750000 %
+epoch 64, minibatch 32/32, validation error 13.750000 %
+epoch 65, minibatch 32/32, validation error 13.750000 %
+epoch 66, minibatch 32/32, validation error 13.750000 %
+epoch 67, minibatch 32/32, validation error 13.750000 %
+epoch 68, minibatch 32/32, validation error 13.750000 %
+epoch 69, minibatch 32/32, validation error 13.750000 %
+epoch 70, minibatch 32/32, validation error 13.750000 %
+epoch 71, minibatch 32/32, validation error 13.750000 %
+epoch 72, minibatch 32/32, validation error 13.750000 %
+epoch 73, minibatch 32/32, validation error 13.750000 %
+epoch 74, minibatch 32/32, validation error 13.750000 %
+epoch 75, minibatch 32/32, validation error 13.750000 %
+epoch 76, minibatch 32/32, validation error 13.750000 %
+epoch 77, minibatch 32/32, validation error 13.750000 %
+epoch 78, minibatch 32/32, validation error 13.750000 %
+epoch 79, minibatch 32/32, validation error 13.750000 %
+epoch 80, minibatch 32/32, validation error 13.750000 %
+epoch 81, minibatch 32/32, validation error 13.750000 %
+epoch 82, minibatch 32/32, validation error 13.750000 %
+epoch 83, minibatch 32/32, validation error 13.750000 %
+epoch 84, minibatch 32/32, validation error 13.750000 %
+epoch 85, minibatch 32/32, validation error 13.750000 %
+epoch 86, minibatch 32/32, validation error 15.000000 %
+epoch 87, minibatch 32/32, validation error 15.000000 %
+epoch 88, minibatch 32/32, validation error 15.000000 %
+epoch 89, minibatch 32/32, validation error 15.000000 %
+epoch 90, minibatch 32/32, validation error 15.000000 %
+epoch 91, minibatch 32/32, validation error 15.000000 %
+epoch 92, minibatch 32/32, validation error 15.000000 %
+epoch 93, minibatch 32/32, validation error 15.000000 %
+epoch 94, minibatch 32/32, validation error 15.000000 %
+epoch 95, minibatch 32/32, validation error 15.000000 %
+epoch 96, minibatch 32/32, validation error 15.000000 %
+epoch 97, minibatch 32/32, validation error 15.000000 %
+epoch 98, minibatch 32/32, validation error 15.000000 %
+epoch 99, minibatch 32/32, validation error 15.000000 %
+epoch 100, minibatch 32/32, validation error 15.000000 %
+epoch 101, minibatch 32/32, validation error 15.000000 %
+epoch 102, minibatch 32/32, validation error 15.000000 %
+epoch 103, minibatch 32/32, validation error 15.000000 %
+epoch 104, minibatch 32/32, validation error 15.000000 %
+epoch 105, minibatch 32/32, validation error 15.000000 %
+epoch 106, minibatch 32/32, validation error 15.000000 %
+epoch 107, minibatch 32/32, validation error 15.000000 %
+epoch 108, minibatch 32/32, validation error 15.000000 %
+epoch 109, minibatch 32/32, validation error 15.000000 %
+epoch 110, minibatch 32/32, validation error 15.000000 %
+epoch 111, minibatch 32/32, validation error 15.000000 %
+epoch 112, minibatch 32/32, validation error 15.000000 %
+epoch 113, minibatch 32/32, validation error 15.000000 %
+epoch 114, minibatch 32/32, validation error 15.000000 %
+epoch 115, minibatch 32/32, validation error 15.000000 %
+epoch 116, minibatch 32/32, validation error 15.000000 %
+epoch 117, minibatch 32/32, validation error 15.000000 %
+epoch 118, minibatch 32/32, validation error 15.000000 %
+epoch 119, minibatch 32/32, validation error 15.000000 %
+epoch 120, minibatch 32/32, validation error 15.000000 %
+epoch 121, minibatch 32/32, validation error 15.000000 %
+epoch 122, minibatch 32/32, validation error 15.000000 %
+epoch 123, minibatch 32/32, validation error 15.000000 %
+epoch 124, minibatch 32/32, validation error 15.000000 %
+epoch 125, minibatch 32/32, validation error 15.000000 %
+epoch 126, minibatch 32/32, validation error 15.000000 %
+epoch 127, minibatch 32/32, validation error 15.000000 %
+epoch 128, minibatch 32/32, validation error 15.000000 %
+epoch 129, minibatch 32/32, validation error 15.000000 %
+epoch 130, minibatch 32/32, validation error 15.000000 %
+epoch 131, minibatch 32/32, validation error 15.000000 %
+epoch 132, minibatch 32/32, validation error 15.000000 %
+epoch 133, minibatch 32/32, validation error 15.000000 %
+epoch 134, minibatch 32/32, validation error 15.000000 %
+epoch 135, minibatch 32/32, validation error 15.000000 %
+epoch 136, minibatch 32/32, validation error 15.000000 %
+epoch 137, minibatch 32/32, validation error 15.000000 %
+epoch 138, minibatch 32/32, validation error 15.000000 %
+epoch 139, minibatch 32/32, validation error 15.000000 %
+epoch 140, minibatch 32/32, validation error 15.000000 %
+epoch 141, minibatch 32/32, validation error 15.000000 %
+epoch 142, minibatch 32/32, validation error 15.000000 %
+epoch 143, minibatch 32/32, validation error 15.000000 %
+epoch 144, minibatch 32/32, validation error 15.000000 %
+epoch 145, minibatch 32/32, validation error 15.000000 %
+epoch 146, minibatch 32/32, validation error 15.000000 %
+epoch 147, minibatch 32/32, validation error 15.000000 %
+epoch 148, minibatch 32/32, validation error 15.000000 %
+epoch 149, minibatch 32/32, validation error 15.000000 %
+epoch 150, minibatch 32/32, validation error 15.000000 %
+epoch 151, minibatch 32/32, validation error 15.000000 %
+epoch 152, minibatch 32/32, validation error 15.000000 %
+epoch 153, minibatch 32/32, validation error 15.000000 %
+epoch 154, minibatch 32/32, validation error 15.000000 %
+epoch 155, minibatch 32/32, validation error 15.000000 %
+epoch 156, minibatch 32/32, validation error 15.000000 %
+Softmax optimization complete with best validation score of 13.750000 %,with test performance 16.111111 %
+The code run for 157 epochs, with 88.982595 epochs/sec
+Class 0 has been misclassified  25 times
+Class 1 has been misclassified  6 times
+Class 2 has been misclassified  0 times
+Class 3 has been misclassified  0 times
+TP, TN, FP, FN
+(120, 29, 6, 25)
+Area under the roc curve:
+0.88039408867
+APCER =  0.0 BPCER =  0.0
+('best softmax LDA scores with a learning rate of', 0.0001, 'best validation score:', 0.13749999999999998, 'at iteration', 5000.0, 'and test loss:', 0.17222222222222222)
+Optimization complete.
+Best validation score of 12.500000 % obtained at iteration 6720, with test performance 10.555556 %
+The code for file casia_Lenet.py ran for 275.38m

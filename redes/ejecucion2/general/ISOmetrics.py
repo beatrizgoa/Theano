@@ -64,21 +64,23 @@ def calculate_sumatorios(clasificacion_real, clasificacion_predict, clas_user, c
 
 def metric(probabilidades, clasificacion_predict, clasificacion_real, probabilidades_son_de_clase, out_path):
 
-    clas_user = 1
-    clas_attack = 0
+    clas_user = 0
+    clas_attack = 1
 
 
     sum_APCER, sum_BPCER = calculate_sumatorios(clasificacion_real, clasificacion_predict, clas_user, clas_attack)
     # N_PAIS es como los verdaderos negativos en las etiquetas reales
-    #N_BF es como los verdaderos positicos en las etiqueta reales
+    # N_BF es como los verdaderos positicos en las etiqueta reales
     a = np.where(np.array(clasificacion_real)==clas_attack)
     N_PAIS = float(len(a[0]))
+    print('N_PAIS', N_PAIS)
 
     b = np.where(np.array(clasificacion_real)==clas_user)
     N_BF = float(len(b[0]))
     # Se calculan
     APCER = float(float(1/N_PAIS)*sum_APCER)
     BPCER = float(sum_BPCER/N_BF)
+    print('N_BF:', N_BF)
 
 
     print 'APCER = ',APCER, 'BPCER = ', BPCER
@@ -107,3 +109,13 @@ def metric(probabilidades, clasificacion_predict, clasificacion_real, probabilid
     plt.plot(APCER_ROC,BPCER_ROC)
     plt.savefig(out_path+'APCER-BPCER-curve.png')
     plt.close()
+
+
+if __name__ == '__main__':
+    y_real = [0,0,0,0,0,1,1,1,1,1,1,1,1,0,0] # 5 ceros, 5 unos
+    y_pred = [1,0,1,0,1,0,1,0,1,0,1,1,1,0,0] # 5 ceros, 5 unos
+    y_prob = [0.7,0.3,0.7,0.1,1,0.3,0.8,0,1,0,1,1,1,0,0]
+
+    son_de_clase = 1
+
+    APCR, BPCR = metric(y_prob, y_pred, y_real, 1, '/home/bea/Desktop/')

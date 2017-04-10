@@ -536,7 +536,7 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=600, nkerns=[96, 256, 386, 384,
 
     print((' test error of best model %f %%') % (test_score * 100.))
 
-    print ('SOFTMAX scores:', scores_SVM)
+    print ('SOFTMAX scores:', test_score)
     TP, TN, FP, FN = auxiliar_functions.analize_results(y_test, y_pred_junto, y_prob_junto, out_path+'SOFTMAX-')
     DETCurve(y_test, y_prob_junto, 1, out_path+'SOFTMAX-')
     metric(y_prob_junto, y_pred_junto, y_test, 1, out_path+'SOFTMAX-')

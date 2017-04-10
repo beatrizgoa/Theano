@@ -250,22 +250,7 @@ def evaluate_lenet5(learning_rate=0.01, n_epochs=400, nkerns=[96, 256, 386, 384,
 
 
    ########  FIN CLASIFICADORES #########
-    print('Optimization complete.')
-    print('Best validation score of %f %% obtained at iteration %i, '
-          'with test performance %f %%' %
-          (best_validation_loss * 100., best_iter + 1, test_score * 100.))
 
-    plt.clf()
-    plt.plot(error_epoch)
-    plt.ylabel('error')
-    plt.xlabel('epoch')
-    plt.savefig(out_path+'error.png')
-
-    plt.clf()
-    plt.plot(lista_coste)
-    plt.ylabel('cost_ij')
-    plt.xlabel('iteration')
-    plt.savefig(out_path+'cost.png')
 
     end_time = timeit.default_timer()
     print(('The code for file ' + os.path.split(__file__)[1] + ' ran for %.2fm' % ((end_time - start_time) / 60.)))

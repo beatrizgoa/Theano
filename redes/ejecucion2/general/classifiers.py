@@ -40,6 +40,7 @@ def KNNClas(X_train, y_train, X_test, y_test):
     print('---------- KNN results ---------')
     k_scores = []
     k_range = range(2, 32, 2)
+    k_malas =[] 
     for i in k_range:
         try:
             neigh = neighbors.KNeighborsClassifier(n_neighbors=i)
@@ -47,8 +48,9 @@ def KNNClas(X_train, y_train, X_test, y_test):
                                      scoring='accuracy')  # Con neg_log_loss el predict tiene que ser con probabilidad
             k_scores.append(scores.mean())
         except:
-            print i
+            k_malas.append(i)
 
+    print('k con las que no se ha podido calcular:', k_malas)
     optim_position = k_scores.index(max(k_scores))  # esto te da el indice
     optimk = k_range[optim_position]
     print('optim k value:', optimk)
@@ -72,6 +74,7 @@ def PCAClas(X_train, y_train, X_test, y_test, X_valid):
     ncomponentes = range(3, 5000, 10)
     PCA_scores = []
     pca = PCA()
+    com_malas = []
 
     for n in ncomponentes:
         try:
@@ -80,9 +83,9 @@ def PCAClas(X_train, y_train, X_test, y_test, X_valid):
             PCA_scores.append(scores.mean())
 
         except:
-            print n
+            com_malas.append(n)
 
-
+    print('PCA componentes con las que no se ha podido calcular:', com_malas)
     optimaNcomponentes = ncomponentes[PCA_scores.index(max(PCA_scores))]
     print('PCA optimous componentes number', optimaNcomponentes)
 
@@ -103,6 +106,7 @@ def LDAClas(X_train, y_train, X_test, y_test, X_valid):
     ncomponentes = range(1, len(X_train[0]), 10)
     LDA_scores = []
     lda = LDA()
+    com_malas = []
 
     for n in ncomponentes:
         print ('n', n)
@@ -112,10 +116,9 @@ def LDAClas(X_train, y_train, X_test, y_test, X_valid):
             LDA_scores.append(scores.mean())
 
         except:
-            print n
+            com_malas.append(n)
 
-    print ('LDA scores:', LDA_scores)
-
+    print('PCA componentes con las que no se ha podido calcular:', com_malas)
     optimaNcomponentes = ncomponentes[LDA_scores.index(max(LDA_scores))]
     print('LDA optimous componentes number', optimaNcomponentes)
 

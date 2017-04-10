@@ -170,9 +170,9 @@ def analize_results(y_real, y_pred, y_probabilidad, path):
     print (TP, TN, FP, FN)
 
     try:
-        precision, recall, threshold = precision_recall_curve(y_real,  y_probabilidad, pos_label=1)
+        precision, recall, threshold = precision_recall_curve(y_real,  y_probabilidad, pos_label=0)
     except:
-        precision, recall, threshold = precision_recall_curve(y_real,  y_probabilidad[:, 0], pos_label=1)
+        precision, recall, threshold = precision_recall_curve(y_real,  y_probabilidad[:, 1], pos_label=0)
 
     # setup plot details
     colors = cycle(['navy', 'turquoise', 'darkorange', 'cornflowerblue', 'teal'])
@@ -191,15 +191,15 @@ def analize_results(y_real, y_pred, y_probabilidad, path):
 
 
     try:
-        fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad, pos_label=1)
+        fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad, pos_label=0)
     except:
-        fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad[:,0], pos_label=1)
+        fpr, tpr, thresholds = roc_curve(y_real, y_probabilidad[:,1], pos_label=0)
 
     print('Area under the roc curve:')
     try:
         roc_auc = roc_auc_score(y_real, y_probabilidad)
     except:
-        roc_auc = roc_auc_score(y_real, y_probabilidad[:,0])
+        roc_auc = roc_auc_score(y_real, y_probabilidad[:,1])
     print(roc_auc)
 
     plt.clf()
